@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Created-By: RapidMiner GmbH
+Specification-Version: 1.0.0
+Specification-Vendor: RapidMiner GmbH
+Implementation-Version: 1.0.0
+Implementation-Vendor: RapidMiner GmbH
+Implementation-Title: NLP Parser
+Implementation-URL: www.rapidminer.com
+Specification-Title: NLP Parser
+RapidMiner-Version: 9.0.0
+RapidMiner-Type: RapidMiner_Extension
+Plugin-Dependencies: 
+Extension-ID: rmx_nlp_parser
+Namespace: nlp_parser
+Initialization-Class: com.rapidminer.extension.PluginInitTemplate
+IOObject-Descriptor: com/rapidminer/extension/resources/ioobjectsTempl
+ ate.xml
+Operator-Descriptor: com/rapidminer/extension/resources/OperatorsTempl
+ ate.xml
+ParseRule-Descriptor: com/rapidminer/extension/resources/parserulesTem
+ plate.xml
+Group-Descriptor: com/rapidminer/extension/resources/groupsTemplate.pr
+ operties
+Error-Descriptor: com/rapidminer/extension/resources/i18n/ErrorsTempla
+ te.properties
+UserError-Descriptor: com/rapidminer/extension/resources/i18n/UserErro
+ rMessagesTemplate.properties
+GUI-Descriptor: com/rapidminer/extension/resources/i18n/GUITemplate.pr
+ operties
+Settings-Descriptor: com/rapidminer/extension/resources/i18n/SettingsT
+ emplate.properties
+SettingsStructure-Descriptor: com/rapidminer/extension/resources/setti
+ ngsTemplate.xml
+

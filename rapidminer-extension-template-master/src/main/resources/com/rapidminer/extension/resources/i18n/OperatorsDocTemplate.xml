@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<operatorHelp lang="en_EN">
+    <!--  This is an example how to specify the translation of operator keys to names. -->
+    <!--
+    <operator>
+      <key>example_operator_key</key>
+      <name>Example Operator Name</name>
+    </operator>
+    -->
+
+    <!-- This is how group keys are translated: -->
+    <!--
+    <group>
+      <key>example_group</key>
+      <name>Example Group</name>
+    </group>
+    
+    
+    <operator>
+    	<key>my_own_operator</key>
+    	<name>My Operator</name>
+    	<tags>
+            <tag>My First Tag</tag>
+            <tag>My Second Tag</tag>
+        </tags>
+    </operator>
+    <operator>
+    	<key>token_operator</key>
+    	<name>Generate Token</name>
+    </operator>
+    -->
+    <operator>
+    	<key>berkeley_parser</key>
+    	<name>Berkeley Parser</name>
+    </operator>
+    
+    <operator>
+    	<key>opennlp_parser</key>
+    	<name>OpenNLP Parser</name>
+    </operator>
+    
+    <operator>
+    	<key>stanford_parser</key>
+    	<name>Stanford Parser</name>
+    </operator>
+    
+	<group>
+		<key>parser_group</key>
+		<name>Parser</name>
+	</group>
+</operatorHelp>
