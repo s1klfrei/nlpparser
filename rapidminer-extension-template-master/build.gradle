@@ -54,7 +54,8 @@ extensionConfig {
 dependencies {
 	//compile 'com.google.guava:guava:26.0'
 	//externalLibs files('lib/stanford-parser.jar')
-	compile files('lib/stanford-parser.jar')
+	//compile files('lib/stanford-parser.jar')
+	compile "edu.stanford.nlp:stanford-parser:3.9.2"
 	compile files('lib/text-8.1.0.jar')
 	//compile files('lib/opennlp-tools-1.9.0.jar')
 	compile "org.apache.opennlp:opennlp-tools:1.9.0"

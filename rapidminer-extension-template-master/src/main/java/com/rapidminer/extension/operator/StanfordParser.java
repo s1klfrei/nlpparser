@@ -5,9 +5,11 @@ import java.util.Collection;
 import java.util.List;
 import java.util.logging.Level;
 
+import com.rapidminer.operator.IOObject;
 import com.rapidminer.operator.Operator;
 import com.rapidminer.operator.OperatorDescription;
 import com.rapidminer.operator.OperatorException;
+import com.rapidminer.operator.ports.InputPort;
 import com.rapidminer.parameter.ParameterType;
 import com.rapidminer.parameter.ParameterTypeString;
 import com.rapidminer.tools.LogService;
@@ -21,6 +23,8 @@ import edu.stanford.nlp.trees.Tree;
 import edu.stanford.nlp.trees.TreebankLanguagePack;
 import edu.stanford.nlp.trees.TypedDependency;
 
+import com.rapidminer.operator.text.Document;
+
 
 public class StanfordParser extends Operator{
 	
@@ -31,6 +35,9 @@ public class StanfordParser extends Operator{
 	
 	public static final String PARAMETER_INPUT = "Input sentence for the parser";
 	
+	
+	//private InputPort documentInput = getInputPorts().createPort("document", Document.class);
+	private InputPort ioobjectInput = getInputPorts().createPort("io object", IOObject.class);
 	
 	public StanfordParser(OperatorDescription description) {
 		super(description);
@@ -57,6 +64,26 @@ public class StanfordParser extends Operator{
 	
 	@Override
 	public void doWork() throws OperatorException{
+		
+		//Document doc = documentInput.getData(Document.class);
+		IOObject ioo = ioobjectInput.getData(IOObject.class);
+		//Document iooDoc = ioobjectInput.getData(IOObject.class);
+		/*
+		if(ioo instanceof Document) {
+			LogService.getRoot().log(Level.INFO, "ioo ist Document");
+		} else {
+			LogService.getRoot().log(Level.INFO, "ioo ist kein Doc");
+		}
+		*/
+		
+		//LogService.getRoot().log(Level.INFO, );
+		
+		/*LogService.getRoot().log(Level.INFO, "Print Document: " + iooDoc.toString());
+		LogService.getRoot().log(Level.INFO, "Print IOObject: " + ioo.toString());
+		
+		
+		LogService.getRoot().log(Level.INFO, "Print Token Sequence: " + iooDoc.getTokenSequence());
+		LogService.getRoot().log(Level.INFO, "Print Token Text: " + iooDoc.getTokenText());*/
 
 		String grammar = getParameterAsString(PARAMETER_GRAMMAR);
 
@@ -69,8 +96,8 @@ public class StanfordParser extends Operator{
 		// Uncomment the following line to obtain original Stanford Dependencies
 		tlp.setGenerateOriginalDependencies(true);
 		GrammaticalStructureFactory gsf = tlp.grammaticalStructureFactory();
-		String[] sent = {"This", "is", "an", "easy", "sentence", "."};
-		// String[] sent = input.split("\\W+");
+		//String[] sent = {"This", "is", "an", "easy", "sentence", "."};
+		String[] sent = input.split(" ");
 		Tree parse = lp.apply(SentenceUtils.toWordList(sent));
 		GrammaticalStructure gs = gsf.newGrammaticalStructure(parse);
 		Collection<TypedDependency> tdl = gs.typedDependencies();
