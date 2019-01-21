@@ -104,14 +104,14 @@ public class StanfordParser extends Operator{
 		//LogService.getRoot().log(Level.INFO, "Text: " + iooDoc.getTokenText());
 		
 		String text = iooDoc.getTokenText();
-		String[] sentences = text.split("(?<=[a-z])\\.\\s+");
+		String[] sentences = text.split("\\r?\\n");
 		
 		String outputText = "";
 		
 		
 		
 		for(int i = 0; i < sentences.length; i++) {
-			sentences[i] += " .";
+		
 			//LogService.getRoot().log(Level.INFO, "Line: " + sentences[i]);
 			Tree parse = lp.apply(SentenceUtils.toWordList(sentences[i].split(" ")));
 			GrammaticalStructure gs = gsf.newGrammaticalStructure(parse);
@@ -125,7 +125,7 @@ public class StanfordParser extends Operator{
 		}
 		outputText = outputText.replaceAll("\\bROOT\\b", "");
 		Document outputDoc = new Document(outputText);
-		ioobjectOutput.deliver(outputDoc);
+		ioobjectOutput.deliver((IOObject)outputDoc);
 		/*
 		Tree parse = lp.apply(SentenceUtils.toWordList(sent));
 		GrammaticalStructure gs = gsf.newGrammaticalStructure(parse);

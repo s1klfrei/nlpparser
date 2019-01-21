@@ -48,6 +48,11 @@
 		<key>compare_results</key>
 		<name>Compare Results</name>
 	</operator>
+	
+	<operator>
+		<key>preprocessor</key>
+		<name>Text Preprocessor</name>
+	</operator>
     
 	<group>
 		<key>parser_group</key>

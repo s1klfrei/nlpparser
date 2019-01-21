@@ -42,9 +42,11 @@
          		<key>compare_results</key>
          		<class>com.rapidminer.extension.operator.CompareResults</class>
          	</operator>
+         	<operator>
+         		<key>preprocessor</key>
+         		<class>com.rapidminer.extension.operator.TextPreprocessor</class>
+         	</operator>
          </group>
-         
-         	
          
     </group>
 </operators>
