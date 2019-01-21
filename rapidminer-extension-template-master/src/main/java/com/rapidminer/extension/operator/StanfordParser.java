@@ -10,6 +10,7 @@ import com.rapidminer.operator.Operator;
 import com.rapidminer.operator.OperatorDescription;
 import com.rapidminer.operator.OperatorException;
 import com.rapidminer.operator.ports.InputPort;
+import com.rapidminer.operator.ports.OutputPort;
 import com.rapidminer.parameter.ParameterType;
 import com.rapidminer.parameter.ParameterTypeString;
 import com.rapidminer.tools.LogService;
@@ -38,6 +39,7 @@ public class StanfordParser extends Operator{
 	
 	//private InputPort documentInput = getInputPorts().createPort("document", Document.class);
 	private InputPort ioobjectInput = getInputPorts().createPort("io object", IOObject.class);
+	private OutputPort ioobjectOutput = getOutputPorts().createPort("io object");
 	
 	public StanfordParser(OperatorDescription description) {
 		super(description);
@@ -66,19 +68,19 @@ public class StanfordParser extends Operator{
 	public void doWork() throws OperatorException{
 		
 		//Document doc = documentInput.getData(Document.class);
-		IOObject ioo = ioobjectInput.getData(IOObject.class);
-		//Document iooDoc = ioobjectInput.getData(IOObject.class);
+		//IOObject ioo = ioobjectInput.getData(IOObject.class);
+		Document iooDoc =(Document) ioobjectInput.getData(IOObject.class);
 		/*
 		if(ioo instanceof Document) {
 			LogService.getRoot().log(Level.INFO, "ioo ist Document");
 		} else {
 			LogService.getRoot().log(Level.INFO, "ioo ist kein Doc");
 		}
-		*/
+		
 		
 		//LogService.getRoot().log(Level.INFO, );
 		
-		/*LogService.getRoot().log(Level.INFO, "Print Document: " + iooDoc.toString());
+		LogService.getRoot().log(Level.INFO, "Print Document: " + iooDoc.toString());
 		LogService.getRoot().log(Level.INFO, "Print IOObject: " + ioo.toString());
 		
 		
@@ -87,23 +89,51 @@ public class StanfordParser extends Operator{
 
 		String grammar = getParameterAsString(PARAMETER_GRAMMAR);
 
-		String input = getParameterAsString(PARAMETER_INPUT);
+		// String input = getParameterAsString(PARAMETER_INPUT);
 		
 		LexicalizedParser lp = LexicalizedParser.loadModel(
 				grammar,
 				"-maxLength", "80", "-retainTmpSubcategories");
 		TreebankLanguagePack tlp = new PennTreebankLanguagePack();
+		
 		// Uncomment the following line to obtain original Stanford Dependencies
 		tlp.setGenerateOriginalDependencies(true);
 		GrammaticalStructureFactory gsf = tlp.grammaticalStructureFactory();
+		
 		//String[] sent = {"This", "is", "an", "easy", "sentence", "."};
-		String[] sent = input.split(" ");
+		//LogService.getRoot().log(Level.INFO, "Text: " + iooDoc.getTokenText());
+		
+		String text = iooDoc.getTokenText();
+		String[] sentences = text.split("(?<=[a-z])\\.\\s+");
+		
+		String outputText = "";
+		
+		
+		
+		for(int i = 0; i < sentences.length; i++) {
+			sentences[i] += " .";
+			//LogService.getRoot().log(Level.INFO, "Line: " + sentences[i]);
+			Tree parse = lp.apply(SentenceUtils.toWordList(sentences[i].split(" ")));
+			GrammaticalStructure gs = gsf.newGrammaticalStructure(parse);
+			Collection<TypedDependency> tdl = gs.typedDependencies();
+			
+			//LogService.getRoot().log(Level.INFO, parse.toString());
+			if(i == 0)
+				outputText += parse.toString();
+			else 
+				outputText += '\n' + parse.toString();
+		}
+		outputText = outputText.replaceAll("\\bROOT\\b", "");
+		Document outputDoc = new Document(outputText);
+		ioobjectOutput.deliver(outputDoc);
+		/*
 		Tree parse = lp.apply(SentenceUtils.toWordList(sent));
 		GrammaticalStructure gs = gsf.newGrammaticalStructure(parse);
 		Collection<TypedDependency> tdl = gs.typedDependencies();
 		//System.out.println(parse);
 		
 		LogService.getRoot().log(Level.INFO, parse.toString());
+		*/
 		
 	}
 }

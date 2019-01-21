@@ -38,6 +38,13 @@
          		<key>stanford_parser</key>
          		<class>com.rapidminer.extension.operator.StanfordParser</class>
          	</operator>
+            <operator>
+         		<key>compare_results</key>
+         		<class>com.rapidminer.extension.operator.CompareResults</class>
+         	</operator>
          </group>
+         
+         	
+         
     </group>
 </operators>

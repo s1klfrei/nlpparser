@@ -44,8 +44,17 @@
     	<name>Stanford Parser</name>
     </operator>
     
+    <operator>
+		<key>compare_results</key>
+		<name>Compare Results</name>
+	</operator>
+    
 	<group>
 		<key>parser_group</key>
 		<name>Parser</name>
 	</group>
+	
+	
+	
+	
 </operatorHelp>
