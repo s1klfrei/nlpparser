@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="9.1.000">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="9.1.000" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="false" class="execute_script" compatibility="9.1.000" expanded="true" height="68" name="Stanford Parser Script" width="90" x="112" y="442">
+        <parameter key="script" value="/* &#10; * You can use both Java and Groovy syntax in this script.&#10; * &#10; * Note that you have access to the following two predefined variables:&#10; * 1) input (an array of all input data)&#10; * 2) operator (the operator instance which is running this script)&#10; */&#10;&#10;// Take first input data and treat it as generic IOObject&#10;// Alternatively, you could treat it as an ExampleSet if it is one:&#10;// ExampleSet inputData = input[0];&#10;&#10;// You can add any code here&#10;import com.rapidminer.tools.LogService;&#10;import java.util.logging.Level;&#10;&#10;import edu.stanford.nlp.trees.PennTreebankLanguagePack;&#10;import edu.stanford.nlp.trees.TreebankLanguagePack;&#10;import edu.stanford.nlp.ling.SentenceUtils;&#10;import edu.stanford.nlp.parser.lexparser.LexicalizedParser;&#10;import edu.stanford.nlp.trees.GrammaticalStructure;&#10;import edu.stanford.nlp.trees.GrammaticalStructureFactory;&#10;import edu.stanford.nlp.trees.PennTreebankLanguagePack;&#10;import edu.stanford.nlp.trees.Tree;&#10;import edu.stanford.nlp.trees.TreebankLanguagePack;&#10;import edu.stanford.nlp.trees.TypedDependency;&#10;&#10;&#10;&#10;LexicalizedParser lp = LexicalizedParser.loadModel(&#10;&#9;&#9;&#9;&#9;&quot;C:\\Users\\Klaus\\Documents\\Uni\\BachelorArbeit\\Parser\\stanford-parser-full-2018-02-27\\englishPCFG.ser.gz&quot;,&#10;&#9;&#9;&#9;&#9;&quot;-maxLength&quot;, &quot;80&quot;, &quot;-retainTmpSubcategories&quot;);&#10;&#9;&#9;&#9;&#9;&#10;TreebankLanguagePack tlp = new PennTreebankLanguagePack();&#10;&#10;// Uncomment the following line to obtain original Stanford Dependencies&#10;tlp.setGenerateOriginalDependencies(true);&#10;&#10;GrammaticalStructureFactory gsf = tlp.grammaticalStructureFactory();&#10;&#10;String[] sent = [&quot;This&quot;, &quot;is&quot;, &quot;an&quot;, &quot;easy&quot;, &quot;sentence&quot;, &quot;.&quot;];&#10;&#10;Tree parse = lp.apply(SentenceUtils.toWordList(sent));&#10;&#10;GrammaticalStructure gs = gsf.newGrammaticalStructure(parse);&#10;&#10;Collection&lt;TypedDependency&gt; tdl = gs.typedDependencies();&#10;//System.out.println(parse);&#10;&#10;LogService.getRoot().log(Level.INFO, parse.toString());&#10;"/>
+        <parameter key="standard_imports" value="true"/>
+      </operator>
+      <operator activated="false" class="productivity:execute_program" compatibility="9.1.000" expanded="true" height="103" name="Execute Program" width="90" x="246" y="493">
+        <parameter key="command" value="java -jar BerkeleyParser-1.7.jar -gr eng_sm6.gr -inputFile inputFile.txt -outputFile outputFile.txt"/>
+        <parameter key="log_stdout" value="true"/>
+        <parameter key="log_stderr" value="true"/>
+        <parameter key="working_directory" value="C:\Users\Klaus\Documents\Uni\BachelorArbeit\berkeleyparser-master"/>
+        <list key="env_variables"/>
+      </operator>
+      <operator activated="true" class="execute_script" compatibility="9.1.000" expanded="true" height="82" name="Initialize Stanford Parser" width="90" x="112" y="85">
+        <parameter key="script" value="/* &#10; * You can use both Java and Groovy syntax in this script.&#10; * &#10; * Note that you have access to the following two predefined variables:&#10; * 1) input (an array of all input data)&#10; * 2) operator (the operator instance which is running this script)&#10; */&#10;&#10;// Take first input data and treat it as generic IOObject&#10;// Alternatively, you could treat it as an ExampleSet if it is one:&#10;// ExampleSet inputData = input[0];&#10;&#10;// You can add any code here&#10;import com.rapidminer.tools.LogService;&#10;import java.util.logging.Level;&#10;&#10;import edu.stanford.nlp.trees.PennTreebankLanguagePack;&#10;import edu.stanford.nlp.trees.TreebankLanguagePack;&#10;import edu.stanford.nlp.ling.SentenceUtils;&#10;import edu.stanford.nlp.parser.lexparser.LexicalizedParser;&#10;import edu.stanford.nlp.trees.GrammaticalStructure;&#10;import edu.stanford.nlp.trees.GrammaticalStructureFactory;&#10;import edu.stanford.nlp.trees.PennTreebankLanguagePack;&#10;import edu.stanford.nlp.trees.Tree;&#10;import edu.stanford.nlp.trees.TreebankLanguagePack;&#10;import edu.stanford.nlp.trees.TypedDependency;&#10;&#10;TreebankLanguagePack tlp = new PennTreebankLanguagePack();&#10;tlp = null;"/>
+        <parameter key="standard_imports" value="true"/>
+      </operator>
+      <operator activated="false" class="nlp_parser:opennlp_parser" compatibility="1.0.000" expanded="true" height="68" name="OpenNLP Parser" width="90" x="380" y="493">
+        <parameter key="Input sentence" value="This is an easy senctence ."/>
+        <parameter key="Path to the model" value="C:\Users\Klaus\Documents\Uni\BachelorArbeit\Parser\apache-opennlp-1.9.0-bin.tar\apache-opennlp-1.9.0\en-parser-chunking.bin"/>
+      </operator>
+      <operator activated="false" class="text:read_document" compatibility="8.1.000" expanded="true" height="68" name="Read Document" width="90" x="112" y="544">
+        <parameter key="file" value="C:\Users\Klaus\Documents\Uni\BachelorArbeit\test.txt"/>
+        <parameter key="extract_text_only" value="true"/>
+        <parameter key="use_file_extension_as_type" value="true"/>
+        <parameter key="content_type" value="txt"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="text:read_document" compatibility="8.1.000" expanded="true" height="68" name="Read Source" width="90" x="246" y="85">
+        <parameter key="file" value="C:\Users\Klaus\Documents\Uni\BachelorArbeit\Treebanks\naist-ntt-ted-treebank-v1\en-sent\000-SheaHembrey_2011.txt"/>
+        <parameter key="extract_text_only" value="true"/>
+        <parameter key="use_file_extension_as_type" value="true"/>
+        <parameter key="content_type" value="txt"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="nlp_parser:stanford_parser" compatibility="1.0.000" expanded="true" height="68" name="Stanford Parser" width="90" x="380" y="85">
+        <parameter key="Grammar for StanfordParser" value="C:\Users\Klaus\Documents\Uni\BachelorArbeit\Parser\stanford-parser-full-2018-02-27\englishPCFG.ser.gz"/>
+        <parameter key="Input sentence for the parser" value="This is an easy Sentence ."/>
+      </operator>
+      <operator activated="true" class="text:read_document" compatibility="8.1.000" expanded="true" height="68" name="Read Gold Standard" width="90" x="246" y="187">
+        <parameter key="file" value="C:\Users\Klaus\Documents\Uni\BachelorArbeit\Treebanks\naist-ntt-ted-treebank-v1\en-mrg\000-SheaHembrey_2011.mrg"/>
+        <parameter key="extract_text_only" value="true"/>
+        <parameter key="use_file_extension_as_type" value="true"/>
+        <parameter key="content_type" value="txt"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="nlp_parser:compare_results" compatibility="1.0.000" expanded="true" height="82" name="Compare Results" width="90" x="648" y="85"/>
+      <connect from_port="input 1" to_port="result 1"/>
+      <connect from_port="input 2" to_op="Initialize Stanford Parser" to_port="input 1"/>
+      <connect from_op="Read Source" from_port="output" to_op="Stanford Parser" to_port="io object"/>
+      <connect from_op="Stanford Parser" from_port="io object" to_op="Compare Results" to_port="parser"/>
+      <connect from_op="Read Gold Standard" from_port="output" to_op="Compare Results" to_port="gold standard"/>
+      <connect from_op="Compare Results" from_port="res" to_port="result 2"/>
+      <connect from_op="Compare Results" from_port="doc" to_port="result 3"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="source_input 2" spacing="0"/>
+      <portSpacing port="source_input 3" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+      <portSpacing port="sink_result 3" spacing="0"/>
+      <portSpacing port="sink_result 4" spacing="0"/>
+    </process>
+  </operator>
+</process>
