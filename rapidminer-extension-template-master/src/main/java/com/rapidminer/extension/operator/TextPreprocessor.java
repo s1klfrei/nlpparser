@@ -38,6 +38,8 @@ public class TextPreprocessor extends Operator {
 		outputText = outputText.replaceAll("\\bhe's\\b", "he 's");
 		outputText = outputText.replaceAll("\\bshe's\\b", "she 's");
 		outputText = outputText.replaceAll("\\bit's\\b", "it 's");
+		outputText = outputText.replaceAll("\\there's\\b", "there 's");
+		outputText = outputText.replaceAll("\\that's\\b", "that 's");
 		
 		//Im Gold Standard wird das n mit abgetrennt
 		outputText = outputText.replaceAll("n't", " n't");
@@ -49,10 +51,12 @@ public class TextPreprocessor extends Operator {
 		
 		//Satzzeichen
 		outputText = outputText.replaceAll(",", " ,");
-		outputText = outputText.replaceAll(".", " .");
-		outputText = outputText.replaceAll("?", " ?");
+		outputText = outputText.replaceAll("\\.", " .");
+		outputText = outputText.replaceAll("\\?", " ?");
 		outputText = outputText.replaceAll("!", " !");
-		outputText = outputText.replaceAll("\"", " \"");
+		outputText = outputText.replaceAll("\"\\s", " \"");
+		outputText = outputText.replaceAll("\"[\\w]", " \" ");
+		outputText = outputText.replaceAll(":", " :");
 		
 		
 		//Bei allen Zeilen Trim aufrufen

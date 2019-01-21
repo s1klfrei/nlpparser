@@ -36,52 +36,57 @@ public class CompareResults extends Operator{
 		String[] parserLines = parserText.split("\\r?\\n");
 		String[] goldStandardLines = goldStandardText.split("\\r?\\n");
 		
-		String outputText = ""; 
-		int allLines = parserLines.length;
-		int correctLines = 0;
+		String falseLines = ""; 
+		String correctLines = "";
+		int numberAllLines = parserLines.length;
+		int numberCorrectLines = 0;
 		
 		if(parserLines.length > goldStandardLines.length) {
-			allLines = goldStandardLines.length;
+			numberAllLines = goldStandardLines.length;
 			for(int i = 0; i < goldStandardLines.length; i++) {
 				
 				parserLines[i] = parserLines[i].replaceAll(" ", "");
 				goldStandardLines[i] = goldStandardLines[i].replaceAll(" ", "");
 				
 				if(Objects.equals(goldStandardLines[i], parserLines[i])) {
-					correctLines++;
+					numberCorrectLines++;
+					correctLines += "\n" + "Zeile " + i + ": " + parserLines[i];
 				}
 				else {
-					outputText += parserLines[i] + "\n\n" + goldStandardLines[i] + "\n";
-					outputText += indexOfDifference(parserLines[i],  goldStandardLines[i]) + "\n";
+					falseLines += "\n" + "Parser(Zeile " + i + "): " + "\t" + parserLines[i];
+					falseLines += "\n" + "Standard(Zeile " + i + "): " + "\t" + goldStandardLines[i];
+					falseLines += "\n" + "Differenz bei(Zeile " + i + "): " + "\t" + indexOfDifference(parserLines[i],  goldStandardLines[i]);
 				}
 			}
 		}
 		else {
 			for(int i = 0; i < parserLines.length; i++) {
 				
-				//parserLines[i] = parserLines[i].replaceAll(" ", "");
-				//goldStandardLines[i] = goldStandardLines[i].replaceAll(" ", "");
+				parserLines[i] = parserLines[i].replaceAll(" ", "");
+				goldStandardLines[i] = goldStandardLines[i].replaceAll(" ", "");
 				
 				if(Objects.equals(goldStandardLines[i], parserLines[i])) {
-					correctLines++;
+					numberCorrectLines++;
+					correctLines += "\n" + "Zeile " + i + ": " + parserLines[i];
 				}
 				else {
-					outputText += "\n" + "Parser(Zeile " + i + "): " + "\t" + parserLines[i];
-					outputText += "\n" + "Standard(Zeile " + i + "): " + "\t" + goldStandardLines[i];
-					outputText += "\n" + "Differenz bei(Zeile " + i + "): " + "\t" + indexOfDifference(parserLines[i],  goldStandardLines[i]);
+					falseLines += "\n" + "Parser(Zeile " + i + "): " + "\t" + parserLines[i];
+					falseLines += "\n" + "Standard(Zeile " + i + "): " + "\t" + goldStandardLines[i];
+					falseLines += "\n" + "Differenz bei(Zeile " + i + "): " + "\t" + indexOfDifference(parserLines[i],  goldStandardLines[i]);
 				}
 			}
 		}
 		
-		float result = correctLines/allLines;
+		int result =(int) ( 100 * ((float)numberCorrectLines/(float)numberAllLines)) ;
 		
-		String resultNumbers = "Correct lines: " + correctLines 
-				+ "\n" + "All lines: " + allLines
-				+ "\n" + "Ratio: " + Float.toString(result);
+		String correctString = "Correct lines: " + numberCorrectLines 
+				+ "\n" + "All lines: " + numberAllLines
+				+ "\n" + "Ratio: " + result + "%"
+				+ "\n" + correctLines;
 		
 		
-		Document resultDoc = new Document(resultNumbers);
-		Document mistakeDoc = new Document(outputText);
+		Document resultDoc = new Document(correctString);
+		Document mistakeDoc = new Document(falseLines);
 		resultOutput.deliver(resultDoc);
 		documentOutput.deliver(mistakeDoc);
 		
