@@ -7,9 +7,13 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.logging.Level;
 
+import com.rapidminer.operator.IOObject;
 import com.rapidminer.operator.Operator;
 import com.rapidminer.operator.OperatorDescription;
 import com.rapidminer.operator.OperatorException;
+import com.rapidminer.operator.ports.InputPort;
+import com.rapidminer.operator.ports.OutputPort;
+import com.rapidminer.operator.text.Document;
 import com.rapidminer.parameter.ParameterType;
 import com.rapidminer.parameter.ParameterTypeString;
 import com.rapidminer.tools.LogService;
@@ -25,14 +29,15 @@ public class OpenNlpParser extends Operator{
 	/**
 	 * @param PARAMETER_TEXT Eingabe des Users
 	 */
-	public static final String PARAMETER_TEXT = "Input sentence"; //Name des Parameters
-	
-	
-	/**
-	 * @param PARAMETER_TEXT Eingabe des Users
-	 */
 	public static final String PARAMETER_PATH = "Path to the model"; //Name des Parameters
 	
+	
+	//private InputPort documentInput = getInputPorts().createPort("document", Document.class);
+	private InputPort ioobjectInput = getInputPorts().createPort("io object", IOObject.class);
+	private OutputPort ioobjectOutput = getOutputPorts().createPort("io object");
+	
+		
+		
 	public OpenNlpParser(OperatorDescription description) {
 		super(description);
 	}
@@ -40,12 +45,6 @@ public class OpenNlpParser extends Operator{
 	@Override
 	public List<ParameterType> getParameterTypes(){
 	    List<ParameterType> types = super.getParameterTypes();
-	    types.add(new ParameterTypeString(
-	    		PARAMETER_TEXT,
-	    		"This is the input sentence.",
-	    		"This is an easy senctence.",
-	    		false
-	    		));
 	    
 	    types.add(new ParameterTypeString(
 	    		PARAMETER_PATH,
@@ -60,9 +59,14 @@ public class OpenNlpParser extends Operator{
 	@Override
 	public void doWork() throws OperatorException{
 		
-		String text = getParameterAsString(PARAMETER_TEXT);
+		Document iooDoc =(Document) ioobjectInput.getData(IOObject.class);
+		
 		String pfad = getParameterAsString(PARAMETER_PATH);
 	
+		String text = iooDoc.getTokenText();
+		String[] sentences = text.split("\\r?\\n");
+		
+		String outputText = "";
 		
 		InputStream modelIn;
 		try {
@@ -73,12 +77,19 @@ public class OpenNlpParser extends Operator{
 			try {
 			  ParserModel model = new ParserModel(modelIn);
 			  Parser parser = ParserFactory.create(model);
-			  String sentence = text;
-			  Parse topParses[] = ParserTool.parseLine(sentence, parser, 1);
-			  for(int i = 0; i < topParses.length; i++) {
-				  StringBuffer sb = new StringBuffer(topParses[i].getText().length() * 4);
-				  topParses[i].show(sb); 
-				  LogService.getRoot().log(Level.INFO, sb.toString());
+
+			  for(int i = 0; i < sentences.length; i++) {
+				  
+				  Parse topParses[] = ParserTool.parseLine(sentences[i], parser, 1);
+				  for(int j = 0; j < topParses.length; j++) {
+					  StringBuffer sb = new StringBuffer(topParses[j].getText().length() * 4);
+					  topParses[j].show(sb); 
+					  //LogService.getRoot().log(Level.INFO, sb.toString());
+					  if(i == 0)
+							outputText += sb.toString();
+						else 
+							outputText += '\n' + sb.toString(); 
+				  }
 			  }
 			  
 			}
@@ -98,5 +109,8 @@ public class OpenNlpParser extends Operator{
 			// TODO Auto-generated catch block
 			LogService.getRoot().log(Level.INFO, e1.getMessage());
 		}
+		outputText = outputText.replaceAll("\\bTOP\\b", "");
+		Document outputDoc = new Document(outputText);
+		ioobjectOutput.deliver((IOObject)outputDoc);
 	}
 }
