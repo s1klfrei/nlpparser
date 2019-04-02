@@ -5,6 +5,7 @@ package com.rapidminer.extension.operator;
 
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FilePermission;
@@ -23,6 +24,7 @@ import com.rapidminer.operator.IOObject;
 import com.rapidminer.operator.Operator;
 import com.rapidminer.operator.OperatorDescription;
 import com.rapidminer.operator.OperatorException;
+import com.rapidminer.operator.nio.file.SimpleFileObject;
 import com.rapidminer.operator.ports.InputPort;
 import com.rapidminer.operator.ports.OutputPort;
 import com.rapidminer.operator.text.Document;
@@ -48,36 +50,12 @@ import edu.berkeley.nlp.util.Numberer;
 
 public class BerkeleyParser extends Operator{
 	
-	/**
-	 * @param PARAMETER_GRAMMAR Grammatik für den Parser
-	 */
-	public static final String PARAMETER_GRAMMAR = "Grammar for StanfordParser"; //Name des Parameters
-	
-	public static final String PARAMETER_INPUT = "Input sentence for the parser";
-	
-	private InputPort ioobjectInput = getInputPorts().createPort("io object", IOObject.class);
-	private OutputPort ioobjectOutput = getOutputPorts().createPort("io object");
+	private InputPort ioobjectInputGrammar = getInputPorts().createPort("grammar", IOObject.class);
+	private InputPort ioobjectInputText = getInputPorts().createPort("text", IOObject.class);
+	private OutputPort ioobjectOutput = getOutputPorts().createPort("output");
 	
 	public BerkeleyParser(OperatorDescription description) {
 		super(description);
-	}
-	
-	@Override
-	public List<ParameterType> getParameterTypes(){
-	    List<ParameterType> types = super.getParameterTypes();
-	    types.add(new ParameterTypeString(
-	    		PARAMETER_GRAMMAR,
-	    		"This is the absolute path of the grammar file",
-	    		"C:\\Users\\Klaus\\Documents\\Uni\\BachelorArbeit\\Parser\\stanford-parser-full-2018-02-27\\englishPCFG.ser.gz",
-	    		false
-	    		));
-	    types.add(new ParameterTypeString(
-	    		PARAMETER_INPUT,
-	    		"This is the input sentence for the parser",
-	    		"This is an easy Sentence.",
-	    		false
-	    		));
-	    return types;
 	}
 	
 	@Override
@@ -106,10 +84,15 @@ public class BerkeleyParser extends Operator{
 			System.out.println(e.getMessage());
 		} */
 		
+		SimpleFileObject grammarObject = (SimpleFileObject) ioobjectInputGrammar.getData(IOObject.class);
+		File grammarFile = grammarObject.getFile();
+		String grammarPath = grammarFile.getAbsolutePath();
 		
-		Document iooDoc =(Document) ioobjectInput.getData(IOObject.class);
+		//LogService.getRoot().log(Level.INFO, grammarPath);
+
+		
+		Document iooDoc =(Document) ioobjectInputText.getData(IOObject.class);
 	
-		String grammarFile = getParameterAsString(PARAMETER_GRAMMAR);
 		
 		String text = iooDoc.getTokenText();
 		String[] sentences = text.split("\\r?\\n");
@@ -122,7 +105,8 @@ public class BerkeleyParser extends Operator{
 		
 		Options opts = new Options();
 		
-		opts.grFileName = "C:\\Users\\Klaus\\Documents\\Uni\\BachelorArbeit\\Parser\\berkeleyparser-master\\eng_sm6.gr";
+		//opts.grFileName = "C:\\Users\\Klaus\\Documents\\Uni\\BachelorArbeit\\Parser\\berkeleyparser-master\\eng_sm6.gr";
+		opts.grFileName = grammarPath;
 		opts.viterbi = false;
 		opts.binarize = false;
 		opts.scores = false;

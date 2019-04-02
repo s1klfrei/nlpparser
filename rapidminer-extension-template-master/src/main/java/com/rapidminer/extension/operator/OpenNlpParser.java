@@ -1,5 +1,6 @@
 package com.rapidminer.extension.operator;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -11,6 +12,7 @@ import com.rapidminer.operator.IOObject;
 import com.rapidminer.operator.Operator;
 import com.rapidminer.operator.OperatorDescription;
 import com.rapidminer.operator.OperatorException;
+import com.rapidminer.operator.nio.file.SimpleFileObject;
 import com.rapidminer.operator.ports.InputPort;
 import com.rapidminer.operator.ports.OutputPort;
 import com.rapidminer.operator.text.Document;
@@ -26,42 +28,23 @@ import opennlp.tools.parser.ParserModel;
 
 public class OpenNlpParser extends Operator{
 	
-	/**
-	 * @param PARAMETER_TEXT Eingabe des Users
-	 */
-	public static final String PARAMETER_PATH = "Path to the model"; //Name des Parameters
-	
-	
-	//private InputPort documentInput = getInputPorts().createPort("document", Document.class);
-	private InputPort ioobjectInput = getInputPorts().createPort("io object", IOObject.class);
-	private OutputPort ioobjectOutput = getOutputPorts().createPort("io object");
-	
-		
+	private InputPort ioobjectInputGrammar = getInputPorts().createPort("grammar", IOObject.class);
+	private InputPort ioobjectInputText = getInputPorts().createPort("text", IOObject.class);
+	private OutputPort ioobjectOutput = getOutputPorts().createPort("output");
 		
 	public OpenNlpParser(OperatorDescription description) {
 		super(description);
-	}
-	
-	@Override
-	public List<ParameterType> getParameterTypes(){
-	    List<ParameterType> types = super.getParameterTypes();
-	    
-	    types.add(new ParameterTypeString(
-	    		PARAMETER_PATH,
-	    		"This is the path to the model",
-	    		"C:\\Users\\Klaus\\Documents\\Uni\\BachelorArbeit\\Parser\\apache-opennlp-1.9.0-bin.tar\\apache-opennlp-1.9.0\\en-parser-chunking.bin",
-	    		false
-	    		));
-	    return types;
 	}
 	
 	
 	@Override
 	public void doWork() throws OperatorException{
 		
-		Document iooDoc =(Document) ioobjectInput.getData(IOObject.class);
+		Document iooDoc =(Document) ioobjectInputText.getData(IOObject.class);
 		
-		String pfad = getParameterAsString(PARAMETER_PATH);
+		SimpleFileObject grammarObject = (SimpleFileObject) ioobjectInputGrammar.getData(IOObject.class);
+		File grammarFile = grammarObject.getFile();
+		String grammarPath = grammarFile.getAbsolutePath();
 	
 		String text = iooDoc.getTokenText();
 		String[] sentences = text.split("\\r?\\n");
@@ -72,7 +55,7 @@ public class OpenNlpParser extends Operator{
 		try {
 			//Parameter fuer Filename
 			//modelIn = new FileInputStream("C:\\Users\\Klaus\\Documents\\Uni\\BachelorArbeit\\Parser\\apache-opennlp-1.9.0-bin.tar\\apache-opennlp-1.9.0\\en-parser-chunking.bin");
-			modelIn = new FileInputStream(pfad);
+			modelIn = new FileInputStream(grammarPath);
 			
 			try {
 			  ParserModel model = new ParserModel(modelIn);
