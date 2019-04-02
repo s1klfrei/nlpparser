@@ -30,7 +30,7 @@ import com.rapidminer.operator.text.Document;
 public class StanfordParser extends Operator{
 	
 	/**
-	 * @param PARAMETER_TEXT Eingabe des Users
+	 * @param PARAMETER_GRAMMAR Grammatik für den Parser
 	 */
 	public static final String PARAMETER_GRAMMAR = "Grammar for StanfordParser"; //Name des Parameters
 	
