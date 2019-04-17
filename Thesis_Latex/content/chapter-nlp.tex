@@ -1,0 +1,41 @@
+% !TEX root = ../thesis-example.tex
+%
+\chapter{Natural Language Processing}
+\label{sec:nlp}
+
+\cleanchapterquote{A picture is worth a thousand words. An interface is worth a thousand pictures.}{Ben Shneiderman}{(Professor for Computer Science)}
+
+
+
+\section{Grundlagen}
+\label{sec:related:grundlagen}
+
+Betrachtet man einen Satz in einer natürlichen Sprache, die im Rahmen dieser Arbeit auf Englisch festgelegt ist, so kann ein Computer dessen Inhalt nicht ohne Weiteres herauslesen. Hierfür bedarf es verschiedener Hilfsstrukturen und zusätzlicher Informationen. Als ersten Schritt bietet es sich an, den einzelnen Wörtern eines Satzes ihre Wortart zuzuordnen. Mit Wortart, alternativ auch Wortklasse oder zu englisch part-of-speech (POS), ist gemeint, wie ein Wort im Satz auftritt. Beispiele für Wortarten sind Nomen, Verb und Adjektiv. In dieser Arbeit wird das Tagset, also die Menge an Wortarten, aus der Penn Treebank verwendet. %hier zitieren und evtl Tagset als Tabelle anzeigen
+%Außerdem Quelle für POS Informationen suchen oder Buch nehmen 
+Der Satz
+\begin{quote}
+My dog also likes eating sausage.
+\end{quote}
+würde mit diesem Tagset also folgendermaßen annotiert werden:
+\begin{quote}
+My/PRP\$ dog/NN also/RB likes/VBZ eating/VBG sausage/NN ./.
+\end{quote}
+Wie ein Satz maschinell mit POS-Tags versehen werden kann wird in dieser Arbeit allerdings nicht weiter behandelt. 
+Über diese zusätzliche Notation hinaus kann man erkennen, dass sich in der englischen Sprache oftmals mehrere Wörter als Gruppe oder als eine Komponente innerhalb des Satzes verhalten. So eine Gruppe wäre zum Beispiel die Nominalphrase \textit{My Dog} oder die Verbalphrase \textit{likes eating sausage}. Auch hier wird wieder die Annotation der Penn Treebank verwendet. %Siehe Abbildung mit Phrase Tags
+Der Satz, welcher sich aus der zusätzlichen Annotation ergibt, lautet:
+\begin{quote}
+(S\\
+	(NP (PRP\$ My) (NN dog))\\
+    (ADVP (RB also))\\
+    (VP (VBZ likes)\\
+      (S\\
+        (VP (VBG eating)\\
+          (NP (NN sausage)))))\\
+    (. .))
+\end{quote}
+%Formation noch machen
+Wie man am Beispiel erkennen kann, sind auch diverse Verschachtelungen dieser Komponenten möglich. Um diese Anordnungsstruktur innerhalb einer Sprache zu beschreiben, bieten sich kontextfreie Grammatiken an. %Exkurs CFG?
+
+
+\section{Conclusion}
+\label{sec:related:conclusion}
