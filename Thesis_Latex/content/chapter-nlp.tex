@@ -17,7 +17,7 @@ würde mit diesem Tagset also folgendermaßen annotiert werden:
 My/PRP\$ dog/NN also/RB likes/VBZ eating/VBG sausage/NN ./.
 \end{quote}
 Wie ein Satz maschinell mit POS-Tags versehen werden kann wird in dieser Arbeit nicht weiter behandelt. 
-Über diese zusätzliche Notation hinaus kann man erkennen, dass sich in der englischen Sprache oftmals mehrere Wörter als Gruppe oder als eine Komponente innerhalb des Satzes verhalten. So eine Gruppe wäre zum Beispiel die Nominalphrase \textit{My Dog} oder die Verbalphrase \textit{likes eating sausage}. Auch hier wird wieder die Annotation der Penn Treebank verwendet. %TODO Siehe Abbildung mit Phrase Tags
+Über diese zusätzliche Notation hinaus kann man erkennen, dass sich in der englischen Sprache oftmals mehrere Wörter als Gruppe oder als eine Komponente innerhalb des Satzes verhalten. So eine Gruppe wäre zum Beispiel die Nominalphrase \textit{My Dog} oder die Verbalphrase \textit{likes eating sausage}. Auch hier wird wieder die Annotation der Penn Treebank verwendet. %TODO Siehe Abbildung mit Phrase Tags, welche version wird verwendet? 2 oder 3 oder ...?
 Der Satz, welcher sich aus der zusätzlichen Annotation ergibt, lautet:
 \begin{lstlisting}
 (S
@@ -30,6 +30,9 @@ Der Satz, welcher sich aus der zusätzlichen Annotation ergibt, lautet:
   (. .))
 \end{lstlisting}
 %TODO hier noch Bäume reinbringen und Baum zeichnen!
+Alternativ zur geklammerten Lösung kann man dieses Ergebnis auch als Syntaxbaum zeichnen:\\
+
+\qtreecentertrue\Tree [.S [.NP [.PRP My ] [.NN dog ] ] [.ADVP [.RB also ] ] [.VP [.VBZ likes ] [.S [.VP [.VBG eating ] [.NP [.NN sausage ] ] ] ] ] [.. . ] ]\\\\
 Wie man am Beispiel erkennen kann, sind auch diverse Verschachtelungen dieser Komponenten möglich. Um diese Anordnungsstruktur innerhalb einer Sprache zu beschreiben, bieten sich kontextfreie Grammatiken an. Auf der linken Seite der Regeln befindet sich also ein Nichtterminalsymbol und auf der rechten Seite können sich beliebig viele Terminale und Nichtterminale befinden. Für die Verarbeitung unseres Beispielsatzes wurden unter anderem folgende Regeln verwendet: %Exkurs CFG?
 \begin{lstlisting}
 S -> NP ADVP VP .
@@ -90,4 +93,40 @@ Falls man keine solche Treebank zur Verfügung hat, gibt es noch eine zweite Mö
 Die resultierenden Werte in der Grammatik hängen also davon ab, mit welchem Korpus sie berechnet wurden. Hierbei spielen Größe und Textart eine große Rolle. Um beim Parsen eines Textes möglichst gute Ergebnisse zu erhalten, sollte der Parser eine PCFG verwenden, welche mit einem Text des selben Genres erstellt wurde. So kann man beispielsweise mit einer Treebank aus technischen Handbüchern, unabhängig von ihrer Größe, beim Parsen eines privaten Briefes keine guten Ergebnisse erwarten, da sich die Sprache zu sehr unterscheidet.\\ %TODO Paper suchen über auswirken der unterschiedlichen Treebank arten für Parser!! 'Die' Treebank gibt es nicht - Diese These be - oder widerlegen!
 Außerdem weißt dieses neue Konzept auch zwei Nachteile auf.
 Das erste Problem der PCFG ergibt sich aus der Kontextfreiheit. Die Wahrscheinlichkeit einer Produktion ist immer gleich, egal an welcher Stelle im Satz sie auftritt. In der tatsächlichen natürlichen Sprache ist das aber im Allgemeinen nicht der Fall. Beispielweise kann die gewählte Produktion einer Nominalphrase abhängig davon sein ob die Phrase Objekt oder Subjekt des Satzes ist. Da diese Information ohne weiteres nicht in der Grammatik nicht berücksichtigt werden kann muss der Mittelwert aus beiden Fällen gebildet werden. Dies führt dazu, dass entweder im Falle des Objekts oder des Subjekts häufig die falsche Regel angewendet wird. 
-Als zweite Schwachstelle ergibt sich, dass die einzelnen eine zu kleine Rolle spielen. Als Beispiel hierfür dient die bereits erklärte Anhangs-Mehrdeutigkeit aus Kapitel \ref{sec:nlp:syn-parsen}. Wiederum wird eine Präpositionalphrase betrachtet, welche entweder an eine Verbal- oder eine Nominalphrase angebunden wird. An welche von beiden Typen hängt wieder von der Treebank ab. Dort kommt entweder die Produktion \[ VP  \to  \alpha \;\;  NP \;\; PP \] oder die Kombination aus \[ VP  \to  \alpha \;\; NP \] und \[ NP  \to  NP \;\; PP \] öfter vor.\( \alpha \) steht für eines der hier möglichen Verb-Nichtterminale, welches aber in beide Fällen immer das selbe ist und deswegen keine Rolle spielt. S.504 weitermachen
+Als zweite Schwachstelle ergibt sich, dass die einzelnen Wörter eine zu kleine Rolle spielen. Als Beispiel hierfür dient die bereits erklärte Anhangs-Mehrdeutigkeit aus Kapitel \ref{sec:nlp:syn-parsen}. Wiederum wird eine Präpositionalphrase betrachtet, welche entweder an eine Verbal- oder eine Nominalphrase angebunden wird. An welche von beiden hängt wieder allein von der Treebank ab. Dort kommt entweder die Produktion \[ VP  \to  \alpha \;\;  NP \;\; PP \] oder die Kombination aus \[ VP  \to  \alpha \;\; NP \] und \[ NP  \to  NP \;\; PP \] öfter vor.\( \alpha \) steht für eines der hier möglichen Verb-Nichtterminale, welches aber in beide Fällen immer das selbe ist und deswegen keine Rolle spielt. Wesentlich bessere Resultate sind hier erzielbar, wenn man das Verb aus \textit{VP}, das Nomen aus \textit{NP} und die Präposition aus \textit{PP} in die Entscheidungsfindung mit einbezieht. Es kann aus der Treebank die Information gewonnen werden, ob die gegebene Präposition sich öfter auf das Nomen oder das Verb bezieht. Angenommen es gibt eine Präposition die ausschließlich mit Verben in Verbindung steht. In der Treebank sind es nun aber die Nominalphrasen, an welche öfter Präpositionalphrasen gebunden werden, dann wird die eben angenommene Präposition mit einer PCFG immer falsch zugeordnet. Diese Schwäche der PCFG macht sich ebenso bei Koordinations-Mehrdeutigkeit bemerkbar. Beim Verbinden von Phrasen durch Konjunktionen kann wieder die konkrete Konjunktion und die Beziehung zu den entsprechenden Wörtern der zu verbindenden Phrasen betrachtet werden. Betrachtet man nochmal das Beispiel aus \ref{sec:nlp:syn-parsen}: \textit{old men and women}. Hier könnte eine Treebank die Information liefern, dass die Wörter \textit{men} und \textit{women} per \textit{and} öfter direkt miteinander verbunden werden als dass nur eines von beiden das Adjektiv \textit{old} zugeordnet bekommt. \\
+
+\begin{tabular}{ | l l l | l l l |}
+	\hline
+	\multicolumn{6}{|c|}{Penn Treebank Part-of-Speech Tags} \\
+	\hline
+	CC & Koordinierende Konjunktion & \textit{and} & TO & to & what \textit{to} do \\
+	CD & Kardinalzahl & \textit{third} & UH & Ausruf & \textit{oops} \\
+	DT & Artikel & \textit{the} & VB & Verb, Grundform & \textit{be} \\
+	Ex & Existentielles \textbf{there} & \textit{there} is & VBD & Verb, Vergangenheitsform & \textit{was} \\
+	FW & Fremdword & \textit{les} & VBG & Verb, Gerund \textbackslash Partizip Präsens & \textit{being} \\
+	IN & Präposition, unterordnende Konjunktion & \textit{in} & VBN & Verb, Partizip Perfekt & \textit{been} \\
+	JJ & Adjektiv & \textit{green} & VBP & Verb, Präsens, nicht 3.Person Singular & \textit{am} \\
+	JJR & Adjektiv, Komparativ & \textit{greener} & VBZ & Verb, Präsens, 3.Person Singular & \textit{is} \\
+	JJS & Adjektiv, Superlativ & \textit{greenest} & WDT & \textit{wh}-Artikel & \textit{which} \\
+	LS & Listenelement Markierung & \textit{1)} & WP & \textit{wh}-Pronomen & \textit{who} \\
+	MD & Modal & \textit{could} & WP\$ & \textit{wh}-Possesivpronomen & \textit{whose} \\
+	NN & Nomen, singular oder Masse & \textit{table} & WRB & \textit{wh}-Adverb & \textit{be} \\
+	NNS & Nomen, plural & \textit{tables} & \# & \# & \textit{\#} \\
+	NNP & Eingenname, singular & \textit{Germany} & \$ & \$ & \textit{\$} \\
+	NNPS & Eigenname, plural & \textit{Vikings} & . & . & \textit{.} \\
+	PDT & Predeterminer & \textit{both} his children & , & , & \textit{,} \\
+	POS & possesive Endung & \textit{'s} & : & Colon, Semicolon & \textit{:} \\
+	PRP & Personalpronomen & \textit{me} & ( & ( & \textit{(} \\
+	PRP\$ & Possesivpronomen & \textit{my} & ) & ) & \textit{)} \\
+	RB & Adverb & \textit{extremely} & `` & Öffnendes Anführungszeichen & \textit{``} \\
+	RBR & Adverb, Komparativ & \textit{better} & " & Schließendes Anführungszeichen & \textit{"} \\
+	RBS & Adverb, Superlativ & \textit{best} &  & Colon, Semicolon & \textit{:} \\
+	RP & Partikel & \textit{about} &  & Colon, Semicolon & \textit{:} \\
+	SYM & Symbol & \textit{\%} &  & Colon, Semicolon & \textit{:} \\
+	
+	
+	
+	
+	
+	\hline
+\end{tabular}
