@@ -6,8 +6,56 @@
 \section{Grundlagen}
 \label{sec:nlp:grundlagen}
 
-Betrachtet man einen Satz in einer natürlichen Sprache, die im Rahmen dieser Arbeit auf Englisch festgelegt ist, so kann ein Computer dessen Inhalt nicht ohne Weiteres herauslesen. Hierfür bedarf es verschiedener Hilfsstrukturen und zusätzlicher Informationen. Als ersten Schritt bietet es sich an, den einzelnen Wörtern eines Satzes ihre Wortart zuzuordnen. Mit Wortart, alternativ auch Wortklasse oder zu englisch part-of-speech (POS), ist gemeint, wie ein Wort im Satz auftritt. Beispiele für Wortarten sind Nomen, Verb und Adjektiv. In dieser Arbeit wird das Tagset, also die Menge an Wortarten, aus der Penn Treebank verwendet. %TODO hier zitieren und evtl Tagset als Tabelle anzeigen
-%TODO Außerdem Quelle für POS Informationen suchen oder Buch nehmen 
+Betrachtet man einen Satz in einer natürlichen Sprache, die im Rahmen dieser Arbeit auf Englisch festgelegt ist, so kann ein Computer dessen Inhalt nicht ohne Weiteres herauslesen. Hierfür bedarf es verschiedener Hilfsstrukturen und zusätzlicher Informationen. Als ersten Schritt bietet es sich an, den einzelnen Wörtern eines Satzes ihre Wortart zuzuordnen. Mit Wortart, alternativ auch Wortklasse oder zu englisch part-of-speech (POS), ist gemeint, wie ein Wort im Satz auftritt. Beispiele für Wortarten sind Nomen, Verb und Adjektiv. In dieser Arbeit wird das Tagset, also die Menge an Wortarten, aus der Penn Treebank verwendet. Siehe hierfür Tabelle \ref{tab:pos-tags}.
+\begin{table}
+\begin{tabular}{ | l l l |}
+	\hline
+	\multicolumn{3}{|c|}{Penn Treebank Part-of-Speech Tags} \\
+	\hline
+	\hline
+	Tag & Beschreibung & Beispiel \\
+	\hline
+	CC & Koordinierende Konjunktion & \textit{and} \\
+	CD & Kardinalzahl & \textit{third}\\
+	DT & Artikel & \textit{the}\\
+	Ex & Existentielles \textit{there} & \textit{there} is\\
+	FW & Fremdword & \textit{les}\\
+	IN & Präposition, unterordnende Konjunktion & \textit{in}\\
+	JJ & Adjektiv & \textit{green}\\
+	JJR & Adjektiv, Komparativ & \textit{greener}\\
+	JJS & Adjektiv, Superlativ & \textit{greenest}\\
+	LS & Listenelement Markierung & \textit{1)}\\
+	MD & Modal & \textit{could}\\
+	NN & Nomen, singular oder Masse & \textit{table}\\
+	NNS & Nomen, plural & \textit{tables}\\
+	NNP & Eingenname, singular & \textit{Germany}\\
+	NNPS & Eigenname, plural & \textit{Vikings}\\
+	PDT & Predeterminer & \textit{both} his children \\
+	POS & possesive Endung & \textit{'s} \\
+	PRP & Personalpronomen & \textit{me} \\
+	PRP\$ & Possesivpronomen & \textit{my} \\
+	RB & Adverb & \textit{extremely} \\
+	RBR & Adverb, Komparativ & \textit{better} \\
+	RBS & Adverb, Superlativ & \textit{best} \\
+	RP & Partikel & \textit{about} \\
+	SYM & Symbol & \textit{\%} \\
+	TO & to & what \textit{to} do \\
+	UH & Ausruf & \textit{oops} \\
+	VB & Verb, Grundform & \textit{be} \\
+	VBD & Verb, Vergangenheitsform & \textit{was} \\
+	VBG & Verb, Gerund \textbackslash Partizip Präsens & \textit{being} \\
+	VBN & Verb, Partizip Perfekt & \textit{been} \\
+	VBP & Verb, Präsens, nicht 3.Person Singular & \textit{am}  \\
+	VBZ & Verb, Präsens, 3.Person Singular & \textit{is} \\
+	WDT & \textit{wh}-Artikel & \textit{which} \\
+	WP & \textit{wh}-Pronomen & \textit{who} \\
+	WP\$ & \textit{wh}-Possesivpronomen & \textit{whose} \\
+	WRB & \textit{wh}-Adverb & \textit{be} \\
+	\hline
+\end{tabular}
+\caption{Penn Treebank POS Tags} %TODO Ref paper oder https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html Stand 08.05. 12:00
+\label{tab:pos-tags}
+\end{table}
 Der Satz
 \begin{quote}
 My dog also likes eating sausage.
@@ -17,7 +65,48 @@ würde mit diesem Tagset also folgendermaßen annotiert werden:
 My/PRP\$ dog/NN also/RB likes/VBZ eating/VBG sausage/NN ./.
 \end{quote}
 Wie ein Satz maschinell mit POS-Tags versehen werden kann wird in dieser Arbeit nicht weiter behandelt. 
-Über diese zusätzliche Notation hinaus kann man erkennen, dass sich in der englischen Sprache oftmals mehrere Wörter als Gruppe oder als eine Komponente innerhalb des Satzes verhalten. So eine Gruppe wäre zum Beispiel die Nominalphrase \textit{My Dog} oder die Verbalphrase \textit{likes eating sausage}. Auch hier wird wieder die Annotation der Penn Treebank verwendet. %TODO Siehe Abbildung mit Phrase Tags, welche version wird verwendet? 2 oder 3 oder ...?
+Über diese zusätzliche Notation hinaus kann man erkennen, dass sich in der englischen Sprache oftmals mehrere Wörter als Gruppe oder als eine Komponente innerhalb des Satzes verhalten. So eine Gruppe wäre zum Beispiel die Nominalphrase \textit{My Dog} oder die Verbalphrase \textit{likes eating sausage}. Auch hier wird wieder die Annotation der Penn Treebank verwendet, abgebildet in Tabelle \ref{tab:phrase-tags}.
+\begin{table}
+\begin{tabular}{ | l p{7cm} p{4cm} |}
+	\hline
+	\multicolumn{3}{|c|}{Penn Treebank Syntactic Tags} \\
+	\hline
+	\hline
+	Tag & Beschreibung & Beispiel \\
+	\hline
+	S & einfacher deklarativer Satz & \textit{There we go.} \\
+	SBAR & Satz beginnend mit unterordnender Konjunktion & feels \textit{like we have to move} \\
+	SBARQ & Direkte Frage beginnend mit \textit{wh}-Wort oder \textit{wh}-Phrase & \textit{So what's that about?} \\
+	SINV & Invertierter deklarativer Satz & neither \textit{am I a pessimist.} \\
+	SQ & Invertierte Ja/Nein Frage oder Hauptsatz einer \textit{wh}-Frage & \textit{Will they move on?} \\
+	
+	ADJP & Adjektivphrase & \textit{relatively cheap} \\
+	ADVP & Adverbphrase & \textit{down here} \\
+	CONJP & Konjunktionalphrase &  \textit{but also for tissues}\\
+	FRAG & Fragment & if \textit{not today}, ... \\
+	INTJ & Zwischenruf &  \textit{Well} \\
+	LST & Listenmarkierung & \textit{1} \\
+	NAC & Keine Komponente & via the \textit{Freedom of Information} \\
+	NP & Nominalphrase & \textit{the sun} \\
+	NX & Markiert Kopf in komplexen NP & fresh \textit{apples and cinnamon} \\
+	PP & Präpositionalphrase & \textit{in some way} \\
+	PRN & Nebenläufige Phrase & \textit{..., bless his heart, ...} \\
+	PRT & Partikel & \textit{up} \\
+	QP & Quantifizierende Phrase & \textit{or two a day} \\
+	RRC & Reduzierter Relativsatz & titles \textit{not presently in the collection} \\
+	UCP & Ungleich Koordinierte Phrasen & She flew \textit{yesterday and on July 4th.} \\
+	VP & Verbalphrase & this \textit{is my dog.} \\
+	WHADJP	& \textit{Wh}-Adjektivphrase & \textit{how great you are} \\
+	WHADVP & \textit{Wh}-Adverbphrase & \textit{When} I see it\\
+	WHNP & \textit{Wh}-Nominalphrase & \textit{What} they've done \\
+	WHPP & \textit{Wh}-Präpositional & \textit{At which} \\
+	X & Unbekannt & \textit{The more} ..., \textit{the less} ... \\	
+	
+	\hline
+\end{tabular}
+\caption{Penn Treebank Syntaktische Tags} %TODO Ref paper Bracketing Guidelines for Treebank II Style 
+\label{tab:phrase-tags}
+\end{table}
 Der Satz, welcher sich aus der zusätzlichen Annotation ergibt, lautet:
 \begin{lstlisting}
 (S
@@ -29,7 +118,7 @@ Der Satz, welcher sich aus der zusätzlichen Annotation ergibt, lautet:
         (NP (NN sausage)))))
   (. .))
 \end{lstlisting}
-%TODO hier noch Bäume reinbringen und Baum zeichnen!
+%TODO Def Bäume?
 Alternativ zur geklammerten Lösung kann man dieses Ergebnis auch als Syntaxbaum zeichnen:\\
 
 \qtreecentertrue\Tree [.S [.NP [.PRP My ] [.NN dog ] ] [.ADVP [.RB also ] ] [.VP [.VBZ likes ] [.S [.VP [.VBG eating ] [.NP [.NN sausage ] ] ] ] ] [.. . ] ]\\\\
@@ -40,12 +129,12 @@ NP -> PRP$ NN
 PRP$ -> My
 NN -> dog
 \end{lstlisting}
-%TODO listing durch Formel ersetzen
-Das Startsymbol für Grammatiken einer natürlichen Sprache ist oftmals \textit{S}, was als das englische Wort \textit{sentence} aufgefasst werden kann. %TODO zitat aus kapitel 12.2
+%TODO listing durch Formel ersetzen --> Nein, da links align ganz gut passt so wie es ist.
+Da ein englischer Satz nicht unbedingt \textit{S} als oberstes erstes Nichtterminal hat, sondern auch \textit{FRAG}, \textit{SBARQ} und mehr möglich sind, muss in den Grammatiken ein zusätzliches Startsymbol eingeführt werden. Dieses wird zum Beispiel \textit{ROOT} oder \textit{TOP} genannt. %TODO Verweis auf Parser die das so machen oder noch mehr ausführen
 Anhand dem vollständigen Regelsatz der Grammatik einer Sprache kann man theoretisch jeden grammatikalisch korrekten Satz dieser Sprache annotieren. Es gibt für diverse natürliche Sprache Sammlungen von annotierten Sätzen, diese werden Treebank oder Korpus genannt. Ein bekannter Korpus der englischen Sprache ist die Penn Treebank, aus welcher auch die hier verwendete Annotation stammt. Dieser Korpus wird vom Linguistic Data Consortium, mit Sitz in der Univertität von Pennsylvania, herausgegeben. %TODO https://www.ldc.upenn.edu/about#
 %Er umfasst über 4,5 Millionen Wörter 
 %TODO Recherche über PTB betreiben - aktuelle Infos bekommen - Seite 442 im Buch nochmal genauer anschauen
-Im Rahmen des Penn Treebank Projekts wurden von 1989 bis 1992 über 4,5 Millionen Wörter der Treebank hinzugefügt. Die Texte hierfür stammen zu einem Großteil aus dem Wall Street Journal. Der Ursprung der Sätze in einer Treebank kann eine Rolle spielen, da Parser mit Hilfe von Treebanks trainiert werden. Dazu mehr in Kapitel ... %TODO verweis auf kapitel parser trainieren und zitat von paper ptb_info
+Im Rahmen des Penn Treebank Projekts wurden von 1989 bis 1992 über 4,5 Millionen Wörter der Treebank hinzugefügt. Die Texte hierfür stammen zu einem Großteil aus dem Wall Street Journal. Der Ursprung der Sätze in einer Treebank kann eine Rolle spielen, da Parser mit Hilfe von Treebanks trainiert werden. Dazu mehr in Kapitel \ref{sec:nlp:stat-parsen}. %TODO zitat von paper ptb_info
 
 \section{Syntaktisches Parsen}
 \label{sec:nlp:syn-parsen}
@@ -58,7 +147,7 @@ Das Hauptproblem, welches sich beim Finden des korrekten Baumes ergibt, ist die 
 \begin{quote}
 I shot an elephant in my pajamas.
 \end{quote}
-In dieser Satzstruktur kann sich \textit{in my pajamas} sowohl auf den Erzähler, als auch auf den Elefanten beziehen und gibt es mehr als einen korrekten Baum. % Grammatikalisch sind also mehrere Bäume korrekt, inhaltlich aber nur einer. %TODO Hier besser ausdrücken
+In dieser Satzstruktur kann sich \textit{in my pajamas} sowohl auf den Erzähler, als auch auf den Elefanten beziehen und gibt es mehr als einen korrekten Baum. % Grammatikalisch sind also mehrere Bäume korrekt, inhaltlich aber nur einer. %Hier besser ausdrücken
 Diese Art der strukturellen Mehrdeutigkeit ist die Anhangs-Mehrdeutigkeit. Eine Komponente des Satzes, in diesem Fall die Präpostionalphrase, kann an mehreren Stellen angehängt werden. Kombiniert man die Präpositional- an die Verbalphrase hat der Satz die Bedeutung, dass das Schießen im Pyjama stattgefunden hat. Bindet man diese an das Nomen Elefant wird ausgesagt, dass dieser sich im Pyjama befindet. Grammatikalische Korrektheit ist in beiden Fällen gegeben. Eine andere Art ist die Koordinations-Mehrdeutigkeit, welche in Verbindung mit Konjunktionen und Satzverbindungen auftritt. Beispielsweise kann der Satzausschnitt \textit{old men and women} unterschiedlich interpretiert werden. \textit{Old} kann sich auf \textit{men and women} oder nur auf \textit{men} beziehen. \\
 Die Anzahl an unterschiedlichen und dennoch korrekten Bäumen für einen Satz kann also oft groß sein. %TODO kann sogar exponentiell wachsen, Seite 467
 Von diesen Bäumen beschreibt aber nur einer den Inhalt des Satzes so, wie er vom Autor gemeint ist. Ein Parser braucht als weitere Kriterien um sich zwischen den verschiedenen Möglichkeiten entscheiden zu können. Hierzu mehr in Kapitel \ref{sec:nlp:stat-parsen}. Ohne zusätzliche Informationen kann der Parser nur alle möglichen Bäume erstellen. Um das effizient zu bewerkstelligen bietet sich dynamisches Programmieren an. 
@@ -93,40 +182,6 @@ Falls man keine solche Treebank zur Verfügung hat, gibt es noch eine zweite Mö
 Die resultierenden Werte in der Grammatik hängen also davon ab, mit welchem Korpus sie berechnet wurden. Hierbei spielen Größe und Textart eine große Rolle. Um beim Parsen eines Textes möglichst gute Ergebnisse zu erhalten, sollte der Parser eine PCFG verwenden, welche mit einem Text des selben Genres erstellt wurde. So kann man beispielsweise mit einer Treebank aus technischen Handbüchern, unabhängig von ihrer Größe, beim Parsen eines privaten Briefes keine guten Ergebnisse erwarten, da sich die Sprache zu sehr unterscheidet.\\ %TODO Paper suchen über auswirken der unterschiedlichen Treebank arten für Parser!! 'Die' Treebank gibt es nicht - Diese These be - oder widerlegen!
 Außerdem weißt dieses neue Konzept auch zwei Nachteile auf.
 Das erste Problem der PCFG ergibt sich aus der Kontextfreiheit. Die Wahrscheinlichkeit einer Produktion ist immer gleich, egal an welcher Stelle im Satz sie auftritt. In der tatsächlichen natürlichen Sprache ist das aber im Allgemeinen nicht der Fall. Beispielweise kann die gewählte Produktion einer Nominalphrase abhängig davon sein ob die Phrase Objekt oder Subjekt des Satzes ist. Da diese Information ohne weiteres nicht in der Grammatik nicht berücksichtigt werden kann muss der Mittelwert aus beiden Fällen gebildet werden. Dies führt dazu, dass entweder im Falle des Objekts oder des Subjekts häufig die falsche Regel angewendet wird. 
-Als zweite Schwachstelle ergibt sich, dass die einzelnen Wörter eine zu kleine Rolle spielen. Als Beispiel hierfür dient die bereits erklärte Anhangs-Mehrdeutigkeit aus Kapitel \ref{sec:nlp:syn-parsen}. Wiederum wird eine Präpositionalphrase betrachtet, welche entweder an eine Verbal- oder eine Nominalphrase angebunden wird. An welche von beiden hängt wieder allein von der Treebank ab. Dort kommt entweder die Produktion \[ VP  \to  \alpha \;\;  NP \;\; PP \] oder die Kombination aus \[ VP  \to  \alpha \;\; NP \] und \[ NP  \to  NP \;\; PP \] öfter vor.\( \alpha \) steht für eines der hier möglichen Verb-Nichtterminale, welches aber in beide Fällen immer das selbe ist und deswegen keine Rolle spielt. Wesentlich bessere Resultate sind hier erzielbar, wenn man das Verb aus \textit{VP}, das Nomen aus \textit{NP} und die Präposition aus \textit{PP} in die Entscheidungsfindung mit einbezieht. Es kann aus der Treebank die Information gewonnen werden, ob die gegebene Präposition sich öfter auf das Nomen oder das Verb bezieht. Angenommen es gibt eine Präposition die ausschließlich mit Verben in Verbindung steht. In der Treebank sind es nun aber die Nominalphrasen, an welche öfter Präpositionalphrasen gebunden werden, dann wird die eben angenommene Präposition mit einer PCFG immer falsch zugeordnet. Diese Schwäche der PCFG macht sich ebenso bei Koordinations-Mehrdeutigkeit bemerkbar. Beim Verbinden von Phrasen durch Konjunktionen kann wieder die konkrete Konjunktion und die Beziehung zu den entsprechenden Wörtern der zu verbindenden Phrasen betrachtet werden. Betrachtet man nochmal das Beispiel aus \ref{sec:nlp:syn-parsen}: \textit{old men and women}. Hier könnte eine Treebank die Information liefern, dass die Wörter \textit{men} und \textit{women} per \textit{and} öfter direkt miteinander verbunden werden als dass nur eines von beiden das Adjektiv \textit{old} zugeordnet bekommt. \\
+Als zweite Schwachstelle ergibt sich, dass die einzelnen Wörter eine zu kleine Rolle spielen. Als Beispiel hierfür dient die bereits erklärte Anhangs-Mehrdeutigkeit aus Kapitel \ref{sec:nlp:syn-parsen}. Wiederum wird eine Präpositionalphrase betrachtet, welche entweder an eine Verbal- oder eine Nominalphrase angebunden wird. An welche von beiden hängt wieder allein von der Treebank ab. Dort kommt entweder die Produktion \[ VP  \to  \alpha \;\;  NP \;\; PP \] oder die Kombination aus \[ VP  \to  \alpha \;\; NP \] und \[ NP  \to  NP \;\; PP \] öfter vor. \( \alpha \) steht für eines der hier möglichen Verb-Nichtterminale, welches aber in beide Fällen immer das selbe ist und deswegen keine Rolle spielt. Wesentlich bessere Resultate sind hier erzielbar, wenn man das Verb aus \textit{VP}, das Nomen aus \textit{NP} und die Präposition aus \textit{PP} in die Entscheidungsfindung mit einbezieht. Es kann aus der Treebank die Information gewonnen werden, ob die gegebene Präposition sich öfter auf das Nomen oder das Verb bezieht. Angenommen es gibt eine Präposition die ausschließlich mit Verben in Verbindung steht. In der Treebank sind es nun aber die Nominalphrasen, an welche öfter Präpositionalphrasen gebunden werden, dann wird die eben angenommene Präposition mit einer PCFG immer falsch zugeordnet. Diese Schwäche der PCFG macht sich ebenso bei Koordinations-Mehrdeutigkeit bemerkbar. Beim Verbinden von Phrasen durch Konjunktionen kann wieder die konkrete Konjunktion und die Beziehung zu den entsprechenden Wörtern der zu verbindenden Phrasen betrachtet werden. Betrachtet man nochmal das Beispiel aus \ref{sec:nlp:syn-parsen}: \textit{old men and women}. Hier könnte eine Treebank die Information liefern, dass die Wörter \textit{men} und \textit{women} per \textit{and} öfter direkt miteinander verbunden werden, als dass nur eines von beiden das Adjektiv \textit{old} zugeordnet bekommt. \\
+Eine mögliche Verbesserung der PCFG ergibt sich durch das Erweitern der Nichtterminale um die Information wessen Kind es ist. Es wird also ein \textit{NP} als \textit{NP\^{}S} geschrieben, wenn \textit{S} der Elternknoten ist oder als \textit{NP\^{}VP}, falls es \textit{VP} ist. Hierdurch ergeben sich zwei neue Regeln in der Grammatik und damit auch zwei neue Wahrscheinlichkeiten. Mit diesem Konzept kann, obwohl die Kontextfreiheit im grammatikalischen Sinne behalten wird, dem Nichtterminal ein Kontext gegeben werden. Allerdings wird die Grammatik enorm aufgeblasen, wenn jedes Nichtterminal für jeden möglichen Elternknoten eine neue Produktion erhält. Nebeneffekt dieser neuen Größe ist, dass bei gleich bleibender Treebank für jede Regel weniger Trainingsdaten zur Verfügung stehen und damit die erhaltenen Wahrscheinlichkeitswerte ungenauer sind. Für einen gegebenen Korpus muss also ein Split und Merge Algorithmus ausgeführt werden, der errechnet wie weit eine Aufteilung der Nichtterminale sinnvoll ist. 
 
-\begin{tabular}{ | l l l | l l l |}
-	\hline
-	\multicolumn{6}{|c|}{Penn Treebank Part-of-Speech Tags} \\
-	\hline
-	CC & Koordinierende Konjunktion & \textit{and} & TO & to & what \textit{to} do \\
-	CD & Kardinalzahl & \textit{third} & UH & Ausruf & \textit{oops} \\
-	DT & Artikel & \textit{the} & VB & Verb, Grundform & \textit{be} \\
-	Ex & Existentielles \textbf{there} & \textit{there} is & VBD & Verb, Vergangenheitsform & \textit{was} \\
-	FW & Fremdword & \textit{les} & VBG & Verb, Gerund \textbackslash Partizip Präsens & \textit{being} \\
-	IN & Präposition, unterordnende Konjunktion & \textit{in} & VBN & Verb, Partizip Perfekt & \textit{been} \\
-	JJ & Adjektiv & \textit{green} & VBP & Verb, Präsens, nicht 3.Person Singular & \textit{am} \\
-	JJR & Adjektiv, Komparativ & \textit{greener} & VBZ & Verb, Präsens, 3.Person Singular & \textit{is} \\
-	JJS & Adjektiv, Superlativ & \textit{greenest} & WDT & \textit{wh}-Artikel & \textit{which} \\
-	LS & Listenelement Markierung & \textit{1)} & WP & \textit{wh}-Pronomen & \textit{who} \\
-	MD & Modal & \textit{could} & WP\$ & \textit{wh}-Possesivpronomen & \textit{whose} \\
-	NN & Nomen, singular oder Masse & \textit{table} & WRB & \textit{wh}-Adverb & \textit{be} \\
-	NNS & Nomen, plural & \textit{tables} & \# & \# & \textit{\#} \\
-	NNP & Eingenname, singular & \textit{Germany} & \$ & \$ & \textit{\$} \\
-	NNPS & Eigenname, plural & \textit{Vikings} & . & . & \textit{.} \\
-	PDT & Predeterminer & \textit{both} his children & , & , & \textit{,} \\
-	POS & possesive Endung & \textit{'s} & : & Colon, Semicolon & \textit{:} \\
-	PRP & Personalpronomen & \textit{me} & ( & ( & \textit{(} \\
-	PRP\$ & Possesivpronomen & \textit{my} & ) & ) & \textit{)} \\
-	RB & Adverb & \textit{extremely} & `` & Öffnendes Anführungszeichen & \textit{``} \\
-	RBR & Adverb, Komparativ & \textit{better} & " & Schließendes Anführungszeichen & \textit{"} \\
-	RBS & Adverb, Superlativ & \textit{best} &  & Colon, Semicolon & \textit{:} \\
-	RP & Partikel & \textit{about} &  & Colon, Semicolon & \textit{:} \\
-	SYM & Symbol & \textit{\%} &  & Colon, Semicolon & \textit{:} \\
-	
-	
-	
-	
-	
-	\hline
-\end{tabular}
