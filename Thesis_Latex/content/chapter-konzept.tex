@@ -1,0 +1,7 @@
+% !TEX root = ../thesis-example.tex
+%
+\chapter{Konpzept}
+\label{sec:konzept}
+
+Die Eingabe des Parsers sind Sätze, die nach Tokens getrennt sind . Das heißt, alles was ein POS-Tag bekommt wird mit Leerzeichen getrennt. Die meisten Wörter brauchen keine weitere Verarbeitung da sie bereits Leerzeichen zum nächsten Wort haben. Ein typisches Beispiel für die Notwendigkeit der Aufteilung ist \textit{he's}, hier erkennt der Parser nur dass es sich um die Wörter \textit{he} und \textit{is} handelt, wenn ein Leerzeichen vor dem Apostroph eingeschoben wird. Bekommt man aus einem Korpus keine Version des Satzes bei dem dieser Arbeitsschritt schon erledigt ist, muss man einen Tokenizer vorschalten. Hierfür gibt es unterschiedliche Anbieter, wie z.B. .... %TODO Tokenizer suchen
+allerdings wird in meiner Implementierung kein Tokenizer verwendet.

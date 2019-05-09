@@ -53,6 +53,11 @@
 % Load and Configure Packages
 % **************************************************
 \usepackage[utf8]{inputenc}		% defines file's character encoding
+%%Meine Packages:
+\usepackage{listings} % für grammatikregeln
+\usepackage{qtree}
+\usepackage{amsmath}
+%%
 \usepackage[english]{babel} % babel system, adjust the language of the content
 \usepackage[					% clean thesis style
 	figuresep=colon,%
@@ -78,6 +83,13 @@
 	bookmarksnumbered=true,		%
 	bookmarksopen=true			%
 }
+
+\lstset{
+  basicstyle=\itshape,
+  xleftmargin=3em,
+  literate={->}{$\rightarrow$}{2}
+}
+
 
 % **************************************************
 % Document CONTENT
@@ -120,6 +132,8 @@
 \input{content/chapter-introduction} % INCLUDE: introduction
 
 \input{content/chapter-nlp}
+\input{content/chapter-konzept}
+\input{content/chapter-implementierung}
 \cleardoublepage
 
 % --------------------------
@@ -140,6 +154,8 @@
 
 \listoftables
 \cleardoublepage
+
+
 
 \input{content/declaration}
 \clearpage

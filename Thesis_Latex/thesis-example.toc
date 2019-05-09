@@ -17,4 +17,18 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}Grundlagen}{7}{section*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Conclusion}{8}{section*.11}
+\contentsline {section}{\numberline {2.2}Syntaktisches Parsen}{11}{section*.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}Dynamische Programmierung}{12}{section*.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Statistisches Parsen}{12}{section*.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.1}Probabilistische Kontextfreie Grammatiken}{12}{section*.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.2}Probabilistische Lexikalisierte Kontextfreie Grammatiken}{15}{section*.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Konpzept}{19}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Implementierung}{21}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Zielsetzung}{21}{section*.22}
