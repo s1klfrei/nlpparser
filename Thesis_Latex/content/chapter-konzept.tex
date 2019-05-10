@@ -3,5 +3,24 @@
 \chapter{Konpzept}
 \label{sec:konzept}
 
-Die Eingabe des Parsers sind Sätze, die nach Tokens getrennt sind . Das heißt, alles was ein POS-Tag bekommt wird mit Leerzeichen getrennt. Die meisten Wörter brauchen keine weitere Verarbeitung da sie bereits Leerzeichen zum nächsten Wort haben. Ein typisches Beispiel für die Notwendigkeit der Aufteilung ist \textit{he's}, hier erkennt der Parser nur dass es sich um die Wörter \textit{he} und \textit{is} handelt, wenn ein Leerzeichen vor dem Apostroph eingeschoben wird. Bekommt man aus einem Korpus keine Version des Satzes bei dem dieser Arbeitsschritt schon erledigt ist, muss man einen Tokenizer vorschalten. Hierfür gibt es unterschiedliche Anbieter, wie z.B. .... %TODO Tokenizer suchen
-allerdings wird in meiner Implementierung kein Tokenizer verwendet.
+\section{Parser Input}
+
+Die Eingabe des Parsers sind Sätze, die nach Tokens getrennt sind . Das heißt, alles was ein POS-Tag bekommt wird mit Leerzeichen getrennt. Die meisten Wörter brauchen keine weitere Verarbeitung da sie bereits ein Leerzeichen zum nächsten Wort haben. Ein typisches Beispiel für die Notwendigkeit der Aufteilung ist \textit{he's}, hier erkennt der Parser nur dass es sich um die Wörter \textit{he} und \textit{is} handelt, wenn ein Leerzeichen vor dem Apostroph eingeschoben wird. Bekommt man aus einem Korpus keine Version des Satzes, bei dem dieser Arbeitsschritt schon erledigt ist, muss man einen Tokenizer vorschalten. Hierfür gibt es unterschiedliche Anbieter, wie z.B. ...., %TODO Tokenizer suchen
+allerdings wird in meiner Implementierung kein Tokenizer verwendet. Die Sätze der Eingabe müssen über ein Textdokument übergeben und zeilenweise getrennt sein. Der Parser erstellt für jede Zeile einen Baum.
+
+\section{Parser Output}
+Als Ausgabe gibt der Parser die annotierten Sätze in der Reihenfolge, in der sie eingegeben wurden, zurück. Es wird hierfür wieder ein Textdokument erstellt.% Bei manchen Parsern besteht die Möglichkeit für einen Satz die \textit{n} besten Bäume ausgeben zulassen. %TODO Entweder top n implementieren oder erklären wieso nicht implementiert und was man damit machen kann
+Die annotierten Version des Satzes
+\begin{quote}
+It goes 150 miles an hour .
+\end{quote}
+lautet
+\begin{quote}
+( (S (NP (PRP It)) (VP (VBZ goes) (NP (NP (CD 150) (NNS miles)) \\(NP (DT an) (NN hour)))) (. .)) )
+\end{quote}
+Das äußerste Klammerpaar hat kein führendes Nichtterminal und könnte also weggelassen werden. Es enthält typischerweise das Startsymbol der Parser, also \textit{ROOT}, \textit{TOP} oder ähnliches. Dieses wird aber für die Evaluierung aus dem Ergebnisbaum herausgenommen, weil es keine syntaktische Notation ist. Da der Satz des Goldstandards ebenfalls diese Klammern besitzt, werden sie aus beiden Bäumen nicht gelöscht sondern später einfach ignoriert.
+\section{Parser Modell}
+Ein Parser erzielt, je nachdem welches Modell ihm zu Grunde liegt, sehr unterschiedliche Ergebnisse. Daher ist dieses Modell nicht fest im Parser verankert, sondern wird ihm als Datei übergeben. Somit kann man selbst Modelle anhand einer Treebank erstellen lassen und dann auf einem Parser die unterschiedlichen Modelle vergleichen. %TODO für die verwendeten Parser gibt es bereits erstelle Modelle die mit der ... Treebank trainiert wurden. Diese werden eingesetzt.
+
+\section{Goldstandard}
+Der Goldstandard sind die von Menschenhand erstellten Bäume zu den Sätzen der Eingabe. Es muss also für ein eingegebenes Textdokument, welches vom Parser bearbeitet werden soll auch ein Textdokument geben, das für jeden dieser Sätze die annotierte Version enthält. Die gratis verfügbaren Treebanks weisen oft ein unterschiedliches Sortiment an Dateien auf. Der in dieser Arbeit verwendete Korpus heißt "The NAIST-NTT TED Talk Treebank" %TODO zitat paper treebank
