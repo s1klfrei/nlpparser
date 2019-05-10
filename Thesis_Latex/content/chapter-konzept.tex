@@ -5,7 +5,7 @@
 
 \section{Parser Input}
 
-Die Eingabe des Parsers sind Sätze, die nach Tokens getrennt sind . Das heißt, alles was ein POS-Tag bekommt wird mit Leerzeichen getrennt. Die meisten Wörter brauchen keine weitere Verarbeitung da sie bereits ein Leerzeichen zum nächsten Wort haben. Ein typisches Beispiel für die Notwendigkeit der Aufteilung ist \textit{he's}, hier erkennt der Parser nur dass es sich um die Wörter \textit{he} und \textit{is} handelt, wenn ein Leerzeichen vor dem Apostroph eingeschoben wird. Bekommt man aus einem Korpus keine Version des Satzes, bei dem dieser Arbeitsschritt schon erledigt ist, muss man einen Tokenizer vorschalten. Hierfür gibt es unterschiedliche Anbieter, wie z.B. ...., %TODO Tokenizer suchen
+Die Eingabe des Parsers sind Sätze, die nach Tokens getrennt sind. Das heißt, alles was ein POS-Tag bekommt wird mit Leerzeichen getrennt. Ein solcher Satz wird \textit{sequenziert} genannt. Die meisten Wörter brauchen keine weitere Verarbeitung, da sie bereits ein Leerzeichen zum nächsten Wort haben. Ein typisches Beispiel für die Notwendigkeit der Aufteilung ist \textit{he's}, hier erkennt der Parser nur dass es sich um die Wörter \textit{he} und \textit{is} handelt, wenn ein Leerzeichen vor dem Apostroph eingeschoben wird. Bekommt man aus einem Korpus keine Version des Satzes, bei dem dieser Arbeitsschritt schon erledigt ist, muss man einen Tokenizer vorschalten. Hierfür gibt es unterschiedliche Anbieter, wie z.B. ...., %TODO Tokenizer suchen
 allerdings wird in meiner Implementierung kein Tokenizer verwendet. Die Sätze der Eingabe müssen über ein Textdokument übergeben und zeilenweise getrennt sein. Der Parser erstellt für jede Zeile einen Baum.
 
 \section{Parser Output}
@@ -18,9 +18,27 @@ lautet
 \begin{quote}
 ( (S (NP (PRP It)) (VP (VBZ goes) (NP (NP (CD 150) (NNS miles)) \\(NP (DT an) (NN hour)))) (. .)) )
 \end{quote}
-Das äußerste Klammerpaar hat kein führendes Nichtterminal und könnte also weggelassen werden. Es enthält typischerweise das Startsymbol der Parser, also \textit{ROOT}, \textit{TOP} oder ähnliches. Dieses wird aber für die Evaluierung aus dem Ergebnisbaum herausgenommen, weil es keine syntaktische Notation ist. Da der Satz des Goldstandards ebenfalls diese Klammern besitzt, werden sie aus beiden Bäumen nicht gelöscht sondern später einfach ignoriert.
+Das äußerste Klammerpaar hat kein führendes Nichtterminal und könnte deshalb weggelassen werden. Es enthält typischerweise das Startsymbol der Parser, also \textit{ROOT}, \textit{TOP} oder ähnliches. Dieses wird aber für die Evaluierung aus dem Ergebnisbaum herausgenommen, weil es keine syntaktische Information liefert. Da der Satz des Goldstandards ebenfalls diese unannotierten Klammern besitzt, werden sie aus beiden Bäumen nicht gelöscht sondern später einfach ignoriert.
 \section{Parser Modell}
-Ein Parser erzielt, je nachdem welches Modell ihm zu Grunde liegt, sehr unterschiedliche Ergebnisse. Daher ist dieses Modell nicht fest im Parser verankert, sondern wird ihm als Datei übergeben. Somit kann man selbst Modelle anhand einer Treebank erstellen lassen und dann auf einem Parser die unterschiedlichen Modelle vergleichen. %TODO für die verwendeten Parser gibt es bereits erstelle Modelle die mit der ... Treebank trainiert wurden. Diese werden eingesetzt.
+Ein Parser erzielt, je nachdem welches Modell ihm zu Grunde liegt, sehr unterschiedliche Ergebnisse. Daher ist dieses Modell nicht fest im Parser verankert, sondern wird ihm als Datei übergeben. Somit kann man selbst Modelle anhand einer Treebank erstellen lassen um dann beispielsweise auf einem Parser die unterschiedlichen Modelle vergleichen. %TODO für die verwendeten Parser gibt es bereits erstelle Modelle die mit der ... Treebank trainiert wurden. Diese werden eingesetzt.
 
 \section{Goldstandard}
-Der Goldstandard sind die von Menschenhand erstellten Bäume zu den Sätzen der Eingabe. Es muss also für ein eingegebenes Textdokument, welches vom Parser bearbeitet werden soll auch ein Textdokument geben, das für jeden dieser Sätze die annotierte Version enthält. Die gratis verfügbaren Treebanks weisen oft ein unterschiedliches Sortiment an Dateien auf. Der in dieser Arbeit verwendete Korpus heißt "The NAIST-NTT TED Talk Treebank" %TODO zitat paper treebank
+Der Goldstandard sind die von Menschenhand erstellten Bäume zu den Sätzen der Eingabe. Es muss also für ein eingegebenes Textdokument, welches vom Parser bearbeitet werden soll auch ein Textdokument geben, das für jeden dieser Sätze die annotierte Version enthält. Die gratis verfügbaren Treebanks weisen oft ein unterschiedliches Sortiment an Dateien auf.\\
+Der in dieser Arbeit verwendete Korpus heißt "The NAIST-NTT TED Talk Treebank". %TODO zitat paper treebank und ein zwei Sätze über diesen verlieren
+Hier gibt es für jeden Satz eine Rohversion, eine sequenzierte und eine annotierte Version. Da es sich bei den Texten um Gespräche handelt sind sogar noch weitere Informationen, wie zum Beispiel Dauer und ähnliches vorhanden. Das wird hier aber nicht weiter verwendet. Falls man das Problem hat, dass nur die korrekten Lösungsbäume zur Eingabe verfügbar sind, so kann man sich z.B. mit NLTK %TODO Nltk verlinken
+die Blätter jedes Lösungsbaums ausgeben lassen. Hierdurch erhält man, den in seine Token aufgeteilten Satz.\\
+Ist der Lösungsbaum nicht einzeilig, sondern erstreckt sich ähnlich zu \ref{eqn:multiline-annotated-dog-eating}  über mehrere Zeilen, so muss hier auch eine Vorverarbeitung geschehen. Entweder kann anhand der Klammerung erkannt werden wo die Grenzen des Baumes liegen oder es müssen alle Zeilen, die mit einer Art Leerzeichen (Tabulator, u.ä.) beginnen, an die vorherige gehangen werden.
+
+\section{Parser}
+
+Alle Parser erhalten die Eingabe in selber Form, allerdings kann jeder Parser noch eine individuelle Vorverarbeitung benötigen. Dazu mehr in Abschnitt ... . %TODO ref Kapitel impl:parser
+%TODO erklären dass keine Dependency parser verwendet werden und was das ist, erklären dass alle selbes Tagset verwenden und das keine relational tags verwendet werden
+
+\subsection{Stanford Parser}
+
+\subsection{Berkeley Parser}
+
+\subsection{OpenNLP Parser}
+
+\section{Evaluierung}
+

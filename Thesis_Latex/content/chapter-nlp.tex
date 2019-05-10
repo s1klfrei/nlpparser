@@ -107,18 +107,20 @@ Wie ein Satz maschinell mit POS-Tags versehen werden kann wird in dieser Arbeit 
 \caption{Penn Treebank Syntaktische Tags} %TODO Ref paper Bracketing Guidelines for Treebank II Style 
 \label{tab:phrase-tags}
 \end{table}
-Der Satz, welcher sich aus der zusätzlichen Annotation ergibt, lautet:
-\begin{lstlisting}
-(S
-  (NP (PRP$ My) (NN dog))
-  (ADVP (RB also))
-  (VP (VBZ likes)
-    (S
-      (VP (VBG eating)
-        (NP (NN sausage)))))
-  (. .))
-\end{lstlisting}
+In \ref{eqn:multiline-annotated-dog-eating} wird der Satz mit der zusätzlichen Annotation dargestellt.
+
 %TODO Def Bäume?
+\begin{align}
+&(S \nonumber \\ 
+& \qquad (NP \;\;(PRP\$ \;\; My)\; (NN \;\; dog)) \nonumber \\
+& \qquad (ADVP \;\;(RB \;\; also)) \nonumber \\
+& \qquad (VP \;\;(VBZ \;\; likes) \nonumber \\
+& \qquad \qquad (S \nonumber \\
+& \qquad \qquad \qquad (VP \;\;(VBG eating) \nonumber \\
+& \qquad \qquad \qquad (NP \;\;(NN \;\; sausage)))))\nonumber \\
+& \qquad (. \;\; .))
+\label{eqn:multiline-annotated-dog-eating}
+\end{align}
 Alternativ zur geklammerten Lösung kann man dieses Ergebnis auch als Syntaxbaum zeichnen, siehe hierfür Abbildung \ref{fig:syn-tree-dog-likes}. \\
 \begin{figure}
 \qtreecentertrue\Tree [.S [.NP [.PRP My ] [.NN dog ] ] [.ADVP [.RB also ] ] [.VP [.VBZ likes ] [.S [.VP [.VBG eating ] [.NP [.NN sausage ] ] ] ] ] [.. . ] ]
