@@ -46,6 +46,10 @@
          		<key>preprocessor</key>
          		<class>com.rapidminer.extension.operator.TextPreprocessor</class>
          	</operator>
+         	<operator>
+         		<key>show_results</key>
+         		<class>com.rapidminer.extension.operator.ShowResults</class>
+         	</operator>
          </group>
          
     </group>

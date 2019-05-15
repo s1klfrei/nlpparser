@@ -36,6 +36,7 @@ public class StanfordParser extends Operator{
 	private InputPort ioobjectInputGrammar = getInputPorts().createPort("grammar", IOObject.class);
 	private InputPort ioobjectInputText = getInputPorts().createPort("text", IOObject.class);
 	private OutputPort ioobjectOutput = getOutputPorts().createPort("output");
+	private OutputPort nameOutput = getOutputPorts().createPort("name");
 	
 	public StanfordParser(OperatorDescription description) {
 		super(description);
@@ -106,6 +107,9 @@ public class StanfordParser extends Operator{
 		outputText = outputText.replaceAll("\\bROOT\\b", "");
 		Document outputDoc = new Document(outputText);
 		ioobjectOutput.deliver((IOObject)outputDoc);
+		
+		Document nameDoc = new Document("Stanford Parser");
+		nameOutput.deliver((IOObject)nameDoc);
 		/*
 		Tree parse = lp.apply(SentenceUtils.toWordList(sent));
 		GrammaticalStructure gs = gsf.newGrammaticalStructure(parse);

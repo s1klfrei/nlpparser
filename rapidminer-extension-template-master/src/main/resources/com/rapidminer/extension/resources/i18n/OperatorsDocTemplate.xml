@@ -53,6 +53,11 @@
 		<key>preprocessor</key>
 		<name>Text Preprocessor</name>
 	</operator>
+	
+	<operator>
+		<key>show_results</key>
+		<name>Show Results</name>
+	</operator>
     
 	<group>
 		<key>parser_group</key>

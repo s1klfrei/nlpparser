@@ -31,6 +31,7 @@ public class OpenNlpParser extends Operator{
 	private InputPort ioobjectInputGrammar = getInputPorts().createPort("grammar", IOObject.class);
 	private InputPort ioobjectInputText = getInputPorts().createPort("text", IOObject.class);
 	private OutputPort ioobjectOutput = getOutputPorts().createPort("output");
+	private OutputPort nameOutput = getOutputPorts().createPort("name");
 		
 	public OpenNlpParser(OperatorDescription description) {
 		super(description);
@@ -95,5 +96,8 @@ public class OpenNlpParser extends Operator{
 		outputText = outputText.replaceAll("\\bTOP\\b", "");
 		Document outputDoc = new Document(outputText);
 		ioobjectOutput.deliver((IOObject)outputDoc);
+		
+		Document nameDoc = new Document("OpenNLP Parser");
+		nameOutput.deliver((IOObject)nameDoc);
 	}
 }

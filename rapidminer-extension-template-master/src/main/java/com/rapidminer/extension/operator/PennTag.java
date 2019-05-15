@@ -9,7 +9,7 @@ public enum PennTag {
 	VBN("VBN"), VBG("VBG"), WDT("WDT"), DP("DP"), DP$("DP$"), WRB("WRB"), //POS Tags
 	A1("A1"), P1("P1"), //Anchor Tags
 	Punkt("."), Komma(","), Semicolon(";"), Colon(":"), Dollar("$"), OpeningMark("``"), ClosingMark("''"),  //Satzzeichen
-	None("")
+	Empty("")
 	;
 	private final String text;
 	
@@ -26,6 +26,6 @@ public enum PennTag {
 				return pennTags[i];
 			}
 		}
-		return PennTag.None;
+		return PennTag.Empty;
 	}
 }
