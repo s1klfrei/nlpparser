@@ -50,11 +50,6 @@
 	</operator>
 	
 	<operator>
-		<key>preprocessor</key>
-		<name>Text Preprocessor</name>
-	</operator>
-	
-	<operator>
 		<key>show_results</key>
 		<name>Show Results</name>
 	</operator>

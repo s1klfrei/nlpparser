@@ -52,8 +52,9 @@ public class BerkeleyParser extends Operator{
 	
 	private InputPort ioobjectInputGrammar = getInputPorts().createPort("grammar", IOObject.class);
 	private InputPort ioobjectInputText = getInputPorts().createPort("text", IOObject.class);
-	private OutputPort ioobjectOutput = getOutputPorts().createPort("output");
+	
 	private OutputPort nameOutput = getOutputPorts().createPort("name");
+	private OutputPort ioobjectOutput = getOutputPorts().createPort("output");
 	
 	public BerkeleyParser(OperatorDescription description) {
 		super(description);
