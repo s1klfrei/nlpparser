@@ -23,8 +23,8 @@ Das äußerste Klammerpaar hat kein führendes Nichtterminal und könnte deshalb
 Ein Parser erzielt, je nachdem welches Modell ihm zu Grunde liegt, sehr unterschiedliche Ergebnisse. Daher ist dieses Modell nicht fest im Parser verankert, sondern wird ihm als Datei übergeben. Somit kann man selbst Modelle anhand einer Treebank erstellen lassen um dann beispielsweise auf einem Parser die unterschiedlichen Modelle vergleichen. %TODO für die verwendeten Parser gibt es bereits erstelle Modelle die mit der ... Treebank trainiert wurden. Diese werden eingesetzt.
 
 \section{Goldstandard}
-Der Goldstandard sind die von Menschenhand erstellten Bäume zu den Sätzen der Eingabe. Es muss also für ein eingegebenes Textdokument, welches vom Parser bearbeitet werden soll auch ein Textdokument geben, das für jeden dieser Sätze die annotierte Version enthält. Die gratis verfügbaren Treebanks weisen oft ein unterschiedliches Sortiment an Dateien auf.\\
-Der in dieser Arbeit verwendete Korpus heißt "The NAIST-NTT TED Talk Treebank". %TODO zitat paper treebank und ein zwei Sätze über diesen verlieren
+Als Goldstandard werden die von Menschenhand erstellten Bäume bezeichnet. Es muss also für ein eingegebenes Textdokument, welches vom Parser bearbeitet werden soll auch ein Textdokument geben, das für jeden dieser Sätze die annotierte Version enthält. Die gratis verfügbaren Treebanks weisen oft ein unterschiedliches Sortiment an Dateien auf.\\
+Der in dieser Arbeit verwendete Korpus heißt "The NAIST-NTT TED Talk Treebank". %TODO zitat paper treebank und ein zwei Sätze über diesen verlieren und sagen, dass goldstandard bedeutet zu ca 99 prozent korrekt....
 Hier gibt es für jeden Satz eine Rohversion, eine sequenzierte und eine annotierte Version. Da es sich bei den Texten um Gespräche handelt sind sogar noch weitere Informationen, wie zum Beispiel Dauer und ähnliches vorhanden. Das wird hier aber nicht weiter verwendet. Falls man das Problem hat, dass nur die korrekten Lösungsbäume zur Eingabe verfügbar sind, so kann man sich z.B. mit NLTK %TODO Nltk verlinken
 die Blätter jedes Lösungsbaums ausgeben lassen. Hierdurch erhält man, den in seine Token aufgeteilten Satz.\\
 Ist der Lösungsbaum nicht einzeilig, sondern erstreckt sich ähnlich zu \ref{eqn:multiline-annotated-dog-eating}  über mehrere Zeilen, so muss hier auch eine Vorverarbeitung geschehen. Entweder kann anhand der Klammerung erkannt werden wo die Grenzen des Baumes liegen oder es müssen alle Zeilen, die mit einer Art Leerzeichen (Tabulator, u.ä.) beginnen, an die vorherige gehangen werden.
@@ -35,6 +35,7 @@ Alle Parser erhalten die Eingabe in selber Form, allerdings kann jeder Parser no
 %TODO erklären dass keine Dependency parser verwendet werden und was das ist, erklären dass alle selbes Tagset verwenden und das keine relational tags verwendet werden
 
 \subsection{Stanford Parser}
+%TODO https://nlp.stanford.edu/nlp/javadoc/javanlp/edu/stanford/nlp/parser/lexparser/package-summary.html
 
 \subsection{Berkeley Parser}
 
@@ -42,3 +43,51 @@ Alle Parser erhalten die Eingabe in selber Form, allerdings kann jeder Parser no
 
 \section{Evaluierung}
 
+Für die Evaluierung wird das Ergebnis der Parser zeilenweise mit dem Goldstandard verglichen. Zu diesem Zweck werden die Konstituenten der Bäume betrachtet. Eine Konstituente beschreibt einen Knoten im Baum und enthält die Information über das Nichtterminal, den Start- und den Endpunkt. Die Punkte geben den Index des ersten und letzten Wortes dieses Teilbaums an. Mit jedem Wort wird der Zähler inkrementiert. Für den Beispielsatz \textit{They learn much faster.} (Baum in Abbildung \ref{fig:korrekter-baum-eval}) sind die Konstituenten in Tabelle \ref{tab:konstituenten-korrekter-baum-eval} dargestellt. \\
+\begin{figure}
+\qtreecentertrue\Tree [.S [.NP [.PRP They ] ] [.VP [.VBP learn ] [.S [.ADJP [.RB much ] [.RBR faster ] ] ] ] [.. . ] ]
+\caption{Syntaxbaum zu \textit{They learn much faster.}}
+\label{fig:korrekter-baum-eval}
+\end{figure}
+\begin{table}
+\begin{tabular}{ | l | l | l | l |}
+	\hline
+	Nichtterminal & Text & Start & Ende \\
+	\hline
+	S & They learn much faster . & 0 & 5 \\
+	NP & They & 0 & 1 \\
+	PRP & They & 0 & 1 \\
+	VP & learn much faster & 1 & 4 \\
+	VBD & learn & 1 & 2 \\
+	S & much faster & 2 & 4 \\
+	ADJP & much faster & 2 & 4 \\
+	RB & much & 2 & 3 \\
+	RBR & faster & 3 & 4 \\
+	. & . & 4 & 5 \\
+	\hline
+	
+\end{tabular}
+\caption{Konstituenten zu Abbildung \ref{fig:korrekter-baum-eval}}
+\label{tab:konstituenten-korrekter-baum-eval}
+\end{table}
+Falls es für eine Konstituente des Parsers im Goldstandard eine mit gleichem Nichtterminal und gleicher Spanne gibt, wird diese als richtig bewertet. Hier muss bei der Ausführung entschieden werden, welche Nichtterminale gewertet werden. Zum einen kann man alle in das Resultat einbeziehen. Zum anderen können die POS-Tags herausgelassen und nur die syntaktischen Tags aus Tabelle \ref{tab:phrase-tags} bewertet werden. Der Grund ist, dass man so Parser einbringen kann, die als Eingabe einen mit POS-Tags versehenen Text bekommen. Diese Tags verfälschen dann die Korrektheitsrate der Parser und müssen ignoriert werden. Da in dieser Arbeit ausschließlich Parser genutzt werden, die als Eingabe sequenzierten Text bekommen, betrachten wir hier den Fall in dem alle Tags relevant sind. Der Evaluierungsmechanismus ist angelehnt an ... %TODO Zitieren Paper Parseval und dessen Quelle und Buch kap 12
+Als Bewertungskriterien werden folgende vier Werte errechnet: \textit{Precision}, \textit{Recall}, \(F_1\) und \textit{Relative Cross Brackets} (kurz: RCB). Siehe Formeln \ref{eqn:precision} bis \ref{eqn:rcb}. \\ 
+\begin{equation}
+Precision = \frac{\# \;\; korrekte \;\; Konstituenten}{ \# \;\; Konstituenten \;\; im \;\; Parseroutput}
+\label{eqn:precision}
+\end{equation}
+
+\begin{equation}
+Recall = \frac{\# \;\; korrekte \;\; Konstituenten}{ \# \;\; Konstituenten \;\; im \;\; Goldstandard}
+\end{equation}
+
+\begin{equation}
+F_1 = \frac{2 \times Precision \times Recall}{ Precision + Recall}
+\end{equation}
+
+\begin{equation}
+RCB = \frac{\# \; Parser \; Konst. \; die \; Goldstandard \; Konst. \; kreuzen}{ \# \;\; Konst. \;\; im \;\; Parseroutput}
+\label{eqn:rcb}
+\end{equation}
+Die \textit{Precision}, im Deutschen \textit{Genauigkeit}, gibt an, wieviele der Konstituenten des Parsers korrekt sind. \textit{Recall}, oder \textit{Trefferquote}, beschreibt zu welchem Teil die Konsituenten des Goldstandards mit den Parser-Konstituenten abgedeckt wurden. \(F_\alpha\) ist das gewichtete harmonische Mittel aus beiden. Im Rahmen dieser Arbeit wurde nur \(F_1\) betrachtet, d.h. beide werden gleich gewichtet. Beim \textit{RCB}-Wert handelt es sich um einen Indikator der ausschließlich für Syntaxbäume eingesetzt wird. Er gibt an wieviele der Konstituenten des Parsers sich mit denen des Standards kreuzen. Kreuzen ist in diesem Kontext folgendermaßen definiert. Seien \textit{k1} und \textit{k2} zwei Konstituenten mit unterschiedlichen Start- und Endpunkten. Außerdem gilt o.B.d.A., dass \textit{k1} den niedrigeren Startpunkt hat. Dann kreuzen sie, falls der Endpunkt von \textit{k1} größer als der Startpunkt und kleiner als der Endpunkt von \textit{k2} ist. Anders ausgedrückt, sie sind nicht ineinander enthalten aber teilen sich mindestens ein Wort. % Das Kreuzen ist in Abbildung ... veranschaulicht %TODO zeichnen
+Aus der Definition ergibt sich, für \textit{k1} aus dem Parser und \textit{k2} aus dem Goldstandard gilt, dass \textit{k1} nicht korrekt sein kann. Angenommen es wäre korrekt, so müsste es ein \textit{k1'} im Goldstandard mit identischen Grenzen geben. \textit{k1'} beginnt vor \textit{k2} und hört auch vor diesem auf und kann somit kein Eltern- oder Kindknoten von diesem sein. Da sie sich aber mindestens ein Wort teilen würde für dieses Wort gelten, dass es Blatt von zwei verschiedenen Teilbäumen wäre, also zwei Eltern hätte. Hier ergibt sich also ein Widerspruch. Aus den Formeln folgt damit außerdem: \( RCB \leq 1 - Precision \).

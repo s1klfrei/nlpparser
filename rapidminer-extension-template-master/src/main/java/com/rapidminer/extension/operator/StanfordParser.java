@@ -30,13 +30,16 @@ import com.rapidminer.operator.text.Document;
 
 
 public class StanfordParser extends Operator{
-
+	// Port für Parser Modell
 	private InputPort ioobjectInputGrammar = getInputPorts().createPort("grammar", IOObject.class);
+	// Port für zu parsenden Text
 	private InputPort ioobjectInputText = getInputPorts().createPort("text", IOObject.class);
 	
+	// Outputport für eigenen Namen
 	private OutputPort nameOutput = getOutputPorts().createPort("name");
+	// Outputport für annotierten Text
 	private OutputPort ioobjectOutput = getOutputPorts().createPort("output");
-
+		
 	public StanfordParser(OperatorDescription description) {
 		super(description);
 	}
@@ -44,79 +47,56 @@ public class StanfordParser extends Operator{
 	
 	@Override
 	public void doWork() throws OperatorException{
-		
-		//Document doc = documentInput.getData(Document.class);
-		//IOObject ioo = ioobjectInput.getData(IOObject.class);
+		// Document aus Port holen
 		Document iooDoc =(Document) ioobjectInputText.getData(IOObject.class);
-		/*
-		if(ioo instanceof Document) {
-			LogService.getRoot().log(Level.INFO, "ioo ist Document");
-		} else {
-			LogService.getRoot().log(Level.INFO, "ioo ist kein Doc");
-		}
 		
-		
-		//LogService.getRoot().log(Level.INFO, );
-		
-		LogService.getRoot().log(Level.INFO, "Print Document: " + iooDoc.toString());
-		LogService.getRoot().log(Level.INFO, "Print IOObject: " + ioo.toString());
-		
-		
-		LogService.getRoot().log(Level.INFO, "Print Token Sequence: " + iooDoc.getTokenSequence());
-		LogService.getRoot().log(Level.INFO, "Print Token Text: " + iooDoc.getTokenText());*/
-		
+		// Für Grammatik Modell wird nur Pfad der Datei benötigt
 		SimpleFileObject grammarObject = (SimpleFileObject) ioobjectInputGrammar.getData(IOObject.class);
 		File grammarFile = grammarObject.getFile();
 		String grammarPath = grammarFile.getAbsolutePath();
-
-		// String input = getParameterAsString(PARAMETER_INPUT);
 		
+		
+		// Standard Code aus Stanford Webseite um Parser zu starten
 		LexicalizedParser lp = LexicalizedParser.loadModel(
 				grammarPath,
-				"-maxLength", "80", "-retainTmpSubcategories");
+				"-maxLength", "80");
 		TreebankLanguagePack tlp = new PennTreebankLanguagePack();
 		
 		// Uncomment the following line to obtain original Stanford Dependencies
-		tlp.setGenerateOriginalDependencies(true);
+		// tlp.setGenerateOriginalDependencies(true);
 		GrammaticalStructureFactory gsf = tlp.grammaticalStructureFactory();
-		
-		//String[] sent = {"This", "is", "an", "easy", "sentence", "."};
-		//LogService.getRoot().log(Level.INFO, "Text: " + iooDoc.getTokenText());
-		
+	
+		// Eingabe Document in Zeilen aufteilen
 		String text = iooDoc.getTokenText();
 		String[] sentences = text.split("\\r?\\n");
 		
+		// AusgabeText, an welchen jede annotierte Zeile angehangen wird
 		String outputText = "";
 		
 		
-		
+		// Jede Zeile in den Parser schicken
 		for(int i = 0; i < sentences.length; i++) {
-		
-			//LogService.getRoot().log(Level.INFO, "Line: " + sentences[i]);
+			
+			// Parser nimmt String Array als Eingabe. Split teilt Token der Eingabe
 			Tree parse = lp.apply(SentenceUtils.toWordList(sentences[i].split(" ")));
 			GrammaticalStructure gs = gsf.newGrammaticalStructure(parse);
 			Collection<TypedDependency> tdl = gs.typedDependencies();
 			
-			//LogService.getRoot().log(Level.INFO, parse.toString());
+			// Rückgabe String befüllen
 			if(i == 0)
 				outputText += parse.toString();
 			else 
 				outputText += '\n' + parse.toString();
 		}
-		outputText = outputText.replaceAll("\\bROOT\\b", "");
+		// Startelement des Parser 'ROOT' entfernen, Klammer ist notwendig, falls ein Satz das Terminal 'ROOT' enthaelt
+		outputText = outputText.replaceAll("\\(ROOT ", "( ");
+		
+		// Ausgabe Document erstellen
 		Document outputDoc = new Document(outputText);
 		ioobjectOutput.deliver((IOObject)outputDoc);
 		
+		// Name als Document ausgeben
 		Document nameDoc = new Document("Stanford Parser");
-		nameOutput.deliver((IOObject)nameDoc);
-		/*
-		Tree parse = lp.apply(SentenceUtils.toWordList(sent));
-		GrammaticalStructure gs = gsf.newGrammaticalStructure(parse);
-		Collection<TypedDependency> tdl = gs.typedDependencies();
-		//System.out.println(parse);
-		
-		LogService.getRoot().log(Level.INFO, parse.toString());
-		*/
-		
+		nameOutput.deliver((IOObject)nameDoc);		
 	}
 }

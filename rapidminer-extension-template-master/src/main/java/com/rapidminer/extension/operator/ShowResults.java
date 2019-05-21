@@ -48,6 +48,8 @@ public class ShowResults extends Operator{
 		attributes.add(AttributeFactory.createAttribute("Precision",Ontology.REAL));
 		attributes.add(AttributeFactory.createAttribute("Recall",Ontology.REAL));
 		attributes.add(AttributeFactory.createAttribute("F1",Ontology.REAL));
+		attributes.add(AttributeFactory.createAttribute("Crossing Brackets", Ontology.REAL));
+
 		
 		ExampleSetBuilder examplesetBuilder = ExampleSets.from(attributes);
 		
@@ -58,14 +60,15 @@ public class ShowResults extends Operator{
 			Example ex = parserSet.getExample(0);
 			
 			// Schreibe Zeile mit identischen Daten in Ausgabe Tabelle
-			double[] row = new double[4];
+			double[] row = new double[5];
 		    
 			// Notwendig, da sonst String als '?' in Ausgabetabelle steht
 			row[0] = attributes.get(0).getMapping().mapString(ex.getNominalValue(ex.getAttributes().get("Name")));
 		    row[1] = ex.getValue(attributes.get(1));
 		    row[2] = ex.getValue(attributes.get(2));
 		    row[3] = ex.getValue(attributes.get(3));
-			
+		    row[4] = ex.getValue(attributes.get(4));
+		    
 			examplesetBuilder.addRow(row);
 		}
 		

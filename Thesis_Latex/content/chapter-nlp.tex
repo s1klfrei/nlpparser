@@ -18,7 +18,7 @@ Betrachtet man einen Satz in einer natürlichen Sprache, die im Rahmen dieser Ar
 	CC & Koordinierende Konjunktion & \textit{and} \\
 	CD & Kardinalzahl & \textit{third}\\
 	DT & Artikel & \textit{the}\\
-	Ex & Existentielles \textit{there} & \textit{there} is\\
+	EX & Existentielles \textit{there} & \textit{there} is\\
 	FW & Fremdword & \textit{les}\\
 	IN & Präposition, unterordnende Konjunktion & \textit{in}\\
 	JJ & Adjektiv & \textit{green}\\
@@ -234,5 +234,6 @@ Für die Regel \ref{eqn:lexikal-dumped-sacks} errechnet sich die Wahrscheinlichk
 \begin{align}
 P & = P_H(VBD|VP, dumped) \nonumber \\ & \times P_R(NP(sacks, NNS)|VP, dumped, VBD) \nonumber \\ & \times P_R(PP(into, IN)|VP, dumped, VBD) \nonumber \\ & \times P_R(STOP|VP, dumped, VBD) \nonumber \\ & \times P_L(STOP|VP, dumped, VBD)
 \end{align}
-Im Gegensatz zu vorher muss also nicht die Kombination aus \textit{NP(sacks, NNS)}, \textit{PP(into, IN)} und \textit{VBD(dumped, VBD)} vorhanden sein. Es genügt, wenn jedes einzeln, als Kind von \textit{VP(dumped, VBD)} auf der entsprechenden Seite des Heads in der Treebank zu finden ist. %TODO eventuell erklären warum man das so machen kann: Markov, MLE, ...
-%TODO Distanz, Model 2 und 3 erklären?
+Im Gegensatz zu vorher muss also nicht die Kombination aus \textit{NP(sacks, NNS)}, \textit{PP(into, IN)} und \textit{VBD(dumped, VBD)} vorhanden sein. Es genügt, wenn jedes einzeln, als Kind von \textit{VP(dumped, VBD)} auf der entsprechenden Seite des Heads in der Treebank zu finden ist. %TODO eventuell erklären warum man das so machen kann: Markov, MLE, ... %TODO Distanz, Model 2 und 3 erklären?
+Darüber hinaus wird das Modell noch um die Information der Distanz erweitert. Es wird also zusätzlich berücksichtigt wie weit ein Nichtterminal vom Kopf der Regel entfernt ist. 
+Der Vollständigkeit halber ist außerdem zu erwähnen, dass es neben Model 1 noch zwei weitere Modelle gibt. Diese Modelle bilden die Grundlage für den Collins Parser. %TODO zu finden unter...

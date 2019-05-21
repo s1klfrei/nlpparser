@@ -90,7 +90,7 @@ public class CompareResults extends Operator{
 		double globalPrecision = 0.0;
 		double globalRecall = 0.0;
 		double globalF1 = 0.0;
-		double globalCrossBrackets = 0.0;
+		double globalCrossingBrackets = 0.0;
 		
 		// Zeilenzähler
 		int count = 0;
@@ -115,27 +115,60 @@ public class CompareResults extends Operator{
 			
 			// Alle Teilbäume des Parserbaumes auf Korrektheit testen
 			int numberCorrectNodes = 0;
+			int numberCrossingBrackets = 0;
+			
 			for(int j = 0; j < parserNodes.size(); j++) {
-				boolean korrekt = false;
-				for(int k = 0; k < goldStandardNodes.size(); k++) {
+				
+				// Alle unbekannten ParseNodes (also auf Empty zugeordnet) werden nicht als richtig gewertet
+				if(parserNodes.get(j).typ != PennTag.Empty) {
 					
-					if(!korrekt) {
-						if(parserNodes.get(j).equals(goldStandardNodes.get(k))){
-							numberCorrectNodes ++;
-							korrekt = true;
+					// korrekt verhindert, dass ein ParseNode 2 mal im Goldstandard vorkommt und 2 mal als richtig gewertet wird
+					boolean korrekt = false;
+					
+					for(int k = 0; k < goldStandardNodes.size(); k++) {	
+						
+						if(!korrekt) {
+							
+							if(parserNodes.get(j).equals(goldStandardNodes.get(k))){
+								numberCorrectNodes ++;
+								korrekt = true;
+							}					
 						}					
-					}					
-				}	
+					}				
+				}
 				
 			}
+			
+			// Die Crossing Bracket Rate berechnen
+			for(int j = 0; j < parserNodes.size(); j++) {
+				ParseTreeNode pNode = parserNodes.get(j);
+				// Für die Rate wird jeder ParserNode nur einmal gewertet, daher der boolean
+				boolean isCrossing = false;
+				
+				for(int k = 0; k < goldStandardNodes.size(); k++) {	
+					
+					if(!isCrossing) {
+						ParseTreeNode gNode = goldStandardNodes.get(k);		
+						
+						// Test ob Grenzen sich kreuzen
+						if((pNode.start < gNode.start && gNode.start < pNode.ende && pNode.ende < gNode.ende) ||
+								(gNode.start < pNode.start && pNode.start < gNode.ende && gNode.ende < pNode.ende)) {
+							numberCrossingBrackets ++;
+							isCrossing = true;
+						}						
+					}
+				}
+			}
 
-			// Precision, Recall und F1 der Zeile nach Vorschrift berechnen
+			// Precision, Recall, F1 und CrossingBrackets der Zeile nach Vorschrift berechnen
 			double precision = 0.0;
 			double recall = 0.0;
 			double f1 = 0.0;
+			double crossing = 0.0;
 			
 			if(parserNodes.size() != 0) {
 				precision = (double)numberCorrectNodes/(double)parserNodes.size();
+				crossing = (double)numberCrossingBrackets/(double)parserNodes.size();
 			}
 
 			if(goldStandardNodes.size() != 0) {
@@ -151,6 +184,7 @@ public class CompareResults extends Operator{
 				globalPrecision += precision;
 				globalRecall += recall;
 				globalF1 += f1;
+				globalCrossingBrackets += crossing;
 			}
 			count ++;
 			
@@ -160,6 +194,7 @@ public class CompareResults extends Operator{
 		globalPrecision /= (double)count;
 		globalRecall /= (double)count;
 		globalF1 /= (double)count;
+		globalCrossingBrackets /= (double)count;
 		
 		// Tabelle erstellen
 		List<Attribute> attributes = new ArrayList<Attribute>();
@@ -167,17 +202,19 @@ public class CompareResults extends Operator{
 		attributes.add(AttributeFactory.createAttribute("Precision", Ontology.REAL));
 		attributes.add(AttributeFactory.createAttribute("Recall", Ontology.REAL));
 		attributes.add(AttributeFactory.createAttribute("F1", Ontology.REAL));
+		attributes.add(AttributeFactory.createAttribute("Crossing Brackets", Ontology.REAL));
 		
 		ExampleSetBuilder examplesetBuilder = ExampleSets.from(attributes);
 
 		
 		// Eine Zeile mit den Ergebniswerten befüllen und zur Tabelle hinzufügen
-		double[] row = new double[4];
+		double[] row = new double[5];
 	    
 		row[0] = attributes.get(0).getMapping().mapString(parserName);
 	    row[1] = globalPrecision;
 	    row[2] = globalRecall;
 	    row[3] = globalF1;
+	    row[4] = globalCrossingBrackets;
 	    
 	    examplesetBuilder.addRow(row);
 		ExampleSet resSet = examplesetBuilder.build();

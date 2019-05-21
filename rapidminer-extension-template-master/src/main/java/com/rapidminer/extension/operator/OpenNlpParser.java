@@ -94,7 +94,7 @@ public class OpenNlpParser extends Operator{
 			// TODO Auto-generated catch block
 			LogService.getRoot().log(Level.INFO, e1.getMessage());
 		}
-		outputText = outputText.replaceAll("\\bTOP\\b", "");
+		outputText = outputText.replaceAll("\\(TOP ", "( ");
 		Document outputDoc = new Document(outputText);
 		ioobjectOutput.deliver((IOObject)outputDoc);
 		

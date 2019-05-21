@@ -307,7 +307,7 @@ public class BerkeleyParser extends Operator{
 		// System.exit(0);
 		
 		////////////////////////////////////////////////////////////////////////
-		
+
 		Document outputDoc = new Document(outputText);
 		ioobjectOutput.deliver((IOObject)outputDoc);
 		
