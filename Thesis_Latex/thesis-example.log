@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.22)  9 MAY 2019 19:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.22)  22 MAY 2019 18:43
 entering extended mode
 **./thesis-example.tex
 (thesis-example.tex
@@ -1584,14 +1584,7 @@ Package biblatex Info: ... file 'english.lbx' found.
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\engli
 sh.lbx"
 File: english.lbx 2017/12/19 v3.10 biblatex localization (PK/JW/AB)
-) (thesis-example.aux
-
-LaTeX Warning: Label `sec:implementierung' multiply defined.
-
-
-LaTeX Warning: Label `sec:system:sec1' multiply defined.
-
-)
+) (thesis-example.aux)
 \openout1 = `thesis-example.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
@@ -1608,13 +1601,15 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 97.
 LaTeX Font Info:    ... okay on input line 97.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 97.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 97.
- ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+
+("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 97.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 97.
 LaTeX Font Info:    ... okay on input line 97.
 LaTeX Font Info:    Try loading font information for T1+bch on input line 97.
+
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1bch.fd"
 File: t1bch.fd 2004/10/18 font definitions for T1/bch.
 )
@@ -1740,7 +1735,7 @@ Package biblatex Info: Reference segment=0 on input line 97.
 Package scrbase Info: activating english \figurename on input line 104.
 Package scrbase Info: activating english \tablename on input line 105.
 (content/titlepages.tex
-<gfx/AI4.png, id=87, 2283.53125pt x 832.10875pt>
+<gfx/AI4.png, id=111, 2283.53125pt x 832.10875pt>
 File: gfx/AI4.png Graphic file (type png)
 <use gfx/AI4.png>
 Package pdftex.def Info: gfx/AI4.png  used on input line 6.
@@ -1863,131 +1858,94 @@ Class scrreprt Warning: \float@addtolists detected!
 (scrreprt)              a package that still implements the
 (scrreprt)              deprecated \float@addtolist interface .
 
-LaTeX Font Info:    Try loading font information for T1+pbk on input line 6.
-("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1pbk.fd"
-File: t1pbk.fd 2001/06/04 font definitions for T1/pbk.
-)
-LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <11> not available
-(Font)              Font shape `T1/pbk/l/n' tried instead on input line 6.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `pbk' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <75> not available
-(Font)              Font shape `T1/pbk/l/n' tried instead on input line 6.
-LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <75> not available
-(Font)              Font shape `T1/pbk/l/it' tried instead on input line 6.
 
-[1
-
-
-] [2]
-
-LaTeX Warning: Citation 'Jurgens:2000' on page 3 undefined on input line 22.
-
-
-LaTeX Warning: Citation 'Jurgens:1995' on page 3 undefined on input line 22.
-
-
-LaTeX Warning: Citation 'Miede:2011' on page 3 undefined on input line 22.
-
-
-LaTeX Warning: Citation 'Kohm:2011' on page 3 undefined on input line 22.
-
-
-LaTeX Warning: Citation 'Apple:keynote:2010' on page 3 undefined on input line 
-22.
-
-
-LaTeX Warning: Citation 'Apple:numbers:2010' on page 3 undefined on input line 
-22.
-
-
-LaTeX Warning: Citation 'Apple:pages:2010' on page 3 undefined on input line 22
+LaTeX Warning: Citation 'WEB:GNU:GPL:2010' on page 1 undefined on input line 14
 .
 
 
-LaTeX Warning: Citation 'WEB:GNU:GPL:2010' on page 3 undefined on input line 31
-.
+LaTeX Warning: Citation 'WEB:Miede:2011' on page 1 undefined on input line 14.
+
+) (content/chapter-nlp.tex [1
 
 
-LaTeX Warning: Citation 'WEB:Miede:2011' on page 3 undefined on input line 31.
-
-
-LaTeX Warning: Reference `sec:related' on page 3 undefined on input line 36.
-
-[3]
-
-LaTeX Warning: Reference `sec:system' on page 4 undefined on input line 39.
-
-
-LaTeX Warning: Reference `sec:concepts' on page 4 undefined on input line 42.
-
-
-LaTeX Warning: Reference `sec:concepts' on page 4 undefined on input line 45.
-
-
-LaTeX Warning: Reference `sec:conclusion' on page 4 undefined on input line 48.
-
-
-) (content/chapter-nlp.tex
-Underfull \vbox (badness 5741) has occurred while \output is active []
-
- [4]
-[5] [6
+] [2
 
 
 ]
 chapter 2.
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <10> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 56.
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 57.
 
-Underfull \hbox (badness 1783) in paragraph at lines 78--79
+Underfull \hbox (badness 1783) in paragraph at lines 79--80
 []\T1/bch/m/n/10.95 (+20) feels \T1/bch/m/it/10.95 (+20) like we have to
  []
 
-[7] [8] [9]
-Underfull \vbox (badness 2726) has occurred while \output is active []
+[3] [4] [5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
+[7] [8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10]
-[11] [12]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [14]
-
-Package caption Warning: \label without proper reference on input line 210.
+Package caption Warning: \label without proper reference on input line 213.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:lex-tree-dumped-sacks' on page 15 undefined on in
-put line 206.
+LaTeX Warning: Reference `fig:lex-tree-dumped-sacks' on page 11 undefined on in
+put line 208.
 
-
-Overfull \hbox (27.42444pt too wide) detected at line 220
+[11]
+Overfull \hbox (27.42444pt too wide) detected at line 222
 [][]
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [16])
-(content/chapter-konzept.tex [17] [18
+ [12])
+(content/chapter-konzept.tex [13] [14
 
 
 ]
 chapter 3.
-) (content/chapter-implementierung.tex [19] [20
+
+Package caption Warning: \label without proper reference on input line 10.
+See the caption package documentation for explanation.
 
 
-]
+LaTeX Warning: Reference `fig:konzept-aufbau' on page 15 undefined on input lin
+e 5.
+
+<gfx/konzept-aufbau-png.png, id=288, 652.23676pt x 417.9615pt>
+File: gfx/konzept-aufbau-png.png Graphic file (type png)
+<use gfx/konzept-aufbau-png.png>
+Package pdftex.def Info: gfx/konzept-aufbau-png.png  used on input line 9.
+(pdftex.def)             Requested size: 395.45181pt x 253.41277pt.
+
+Overfull \hbox (0.35298pt too wide) in paragraph at lines 5--13
+\T1/bch/m/n/10.95 (-20) Abbildung [][][] zeigt das Konzept nach dem im-ple-men-
+tiert wurde. Hier wird dargestellt,
+ []
+
+[15 <./gfx/konzept-aufbau-png.png>] [16] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 62--92
+
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[18]) (content/chapter-implementierung.tex [19] [20]
 chapter 4.
-) [21] [22
+) [21
+
+
+] [22
 
 
 ]
@@ -2035,20 +1993,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 168.
  (thesis-example.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 168.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 168.
+Package rerunfilecheck Info: File `thesis-example.out' has not changed.
+(rerunfilecheck)             Checksum: 0D4A12E158D0DEA4530346965BB8D033;1732.
 
-
-Package rerunfilecheck Warning: File `thesis-example.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `thesis-example.out':
-(rerunfilecheck)             Before: 782B2708BA689E6139B308D683B3ECB9;1352
-(rerunfilecheck)             After:  39C770118FF7341728BFDAF37A99901D;1283.
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
@@ -2061,44 +2013,40 @@ Package logreq Info: Writing requests to 'thesis-example.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 168.
  ) 
 Here is how much of TeX's memory you used:
- 24272 strings out of 493303
- 403339 string characters out of 3129784
- 1030016 words of memory out of 3000000
- 27145 multiletter control sequences out of 15000+200000
- 113708 words of font info for 190 fonts, out of 3000000 for 9000
+ 24258 strings out of 493303
+ 403100 string characters out of 3129784
+ 1009016 words of memory out of 3000000
+ 27098 multiletter control sequences out of 15000+200000
+ 113218 words of font info for 204 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,13n,106p,8827b,1951s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{section*.23} has been referenced but does not exi
-st, replaced by a fixed one
-
-{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}
-{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.
-enc}{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mat
-hex.enc}{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm
--mathsy.enc}{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/b
-ase/8r.enc}{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm
-/lm-ec.enc}{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/te
-x-gyre/q-ec.enc}<C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/b
-itstrea/charter/bchb8a.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/bitstrea/charter/bchr8a.pfb><C:/Users/Klaus/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/bitstrea/charter/bchri8a.pfb><C:/Users/Klaus/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/Klaus/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Klaus/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Klaus/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/Klaus
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Kla
-us/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss10.pfb><C:/Users
-/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:
-/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb
-><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/tex-gyre/
-qhvb.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/t
-ex-gyre/qhvr.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/tex-gyre/qhvri.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/urw/bookman/ubkli8a.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on thesis-example.pdf (36 pages, 374886 bytes).
+ 65i,13n,106p,8827b,3351s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.en
+c}{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathi
+t.enc}{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-m
+athex.enc}{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/
+lm-mathsy.enc}{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips
+/lm/lm-ec.enc}{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips
+/base/8r.enc}{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/
+tex-gyre/q-ec.enc}<C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/bitstrea/charter/bchb8a.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/bitstrea/charter/bchr8a.pfb><C:/Users/Klaus/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/bitstrea/charter/bchri8a.pfb><C:/Users/Klaus/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/Klaus/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Klaus/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Klaus/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/Kla
+us/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/K
+laus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss10.pfb><C:/Use
+rs/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><
+C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.p
+fb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/tex-gyr
+e/qhvb.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/tex-gyre/qhvr.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/tex-gyre/qhvri.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on thesis-example.pdf (36 pages, 403031 bytes).
 PDF statistics:
- 415 PDF objects out of 1000 (max. 8388607)
- 106 named destinations out of 1000 (max. 500000)
- 36526 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 464 PDF objects out of 1000 (max. 8388607)
+ 118 named destinations out of 1000 (max. 500000)
+ 35043 words of extra memory for PDF output out of 35830 (max. 10000000)
 

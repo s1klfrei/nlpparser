@@ -5,7 +5,7 @@ public class ParseTreeNode {
 	public PennTag typ;
 	public int start;
 	public int ende;
-	
+		
 	@Override
 	public boolean equals(Object obj) {
 		if(obj instanceof ParseTreeNode) {

@@ -14,6 +14,7 @@ public enum PennTag {
 	VBN("VBN"), VBG("VBG"), WDT("WDT"), WP("WP"), WP$("WP$"), WRB("WRB"),
 	// Satzzeichen
 	Punkt("."), Komma(","), Semicolon(";"), Colon(":"), Dollar("$"), OpeningMark("``"), ClosingMark("''"), 
+	OpeningBracket("("), ClosingBracket(")"), 
 	// Default Tag
 	Empty("")
 	;
@@ -39,6 +40,8 @@ public enum PennTag {
 	 */
 	public static PennTag stringToPennTag(String s, boolean removeSuffix) {
 		if(removeSuffix) {
+			// Falls Option removeSuffix gewählt werden alle Texte bis zum ersten '-' gekürzt
+			// Somit wird aus statt nach NP-TMP nach NP gesucht
 			
 			int index = s.indexOf('-');
 			
@@ -46,6 +49,7 @@ public enum PennTag {
 				s = s.substring(0, index);
 			}
 		}
+		
 		// Hole alle Tags
 		PennTag[] pennTags = PennTag.values();
 		

@@ -27,6 +27,7 @@ import com.rapidminer.operator.OperatorException;
 import com.rapidminer.operator.nio.file.SimpleFileObject;
 import com.rapidminer.operator.ports.InputPort;
 import com.rapidminer.operator.ports.OutputPort;
+import com.rapidminer.operator.ports.OutputPortExtender;
 import com.rapidminer.operator.text.Document;
 import com.rapidminer.parameter.ParameterType;
 import com.rapidminer.parameter.ParameterTypeString;
@@ -49,65 +50,51 @@ import edu.berkeley.nlp.tokenizer.PTBLineLexer;
 import edu.berkeley.nlp.util.Numberer;
 
 public class BerkeleyParser extends Operator{
-	
+	// Port für Parser Modell
 	private InputPort ioobjectInputGrammar = getInputPorts().createPort("grammar", IOObject.class);
+	// Port für zu parsenden Text
 	private InputPort ioobjectInputText = getInputPorts().createPort("text", IOObject.class);
-	
-	private OutputPort nameOutput = getOutputPorts().createPort("name");
-	private OutputPort ioobjectOutput = getOutputPorts().createPort("output");
+	// Outputports für eigenen Name
+	private OutputPortExtender nameOutputExt = new OutputPortExtender("name", getOutputPorts());
+	// Outputports für annotierten Text
+	private OutputPortExtender resultOutputExt = new OutputPortExtender("output", getOutputPorts());
 	
 	public BerkeleyParser(OperatorDescription description) {
 		super(description);
+		//PortExtender starten, notwendig
+		nameOutputExt.start();
+		resultOutputExt.start();
 	}
 	
 	@Override
 	public void doWork() throws OperatorException{
-		/*
-		String text = getParameterAsString(PARAMETER_TEXT);
+		// Document aus Port holen
+		Document iooDoc =(Document) ioobjectInputText.getData(IOObject.class);
 		
-		Runtime rt = Runtime.getRuntime();
-		try {
-			//FilePermission permission = new FilePermission("C:\\Users\\Klaus\\Documents\\Uni\\BachelorArbeit\\Parser\\berkeleyparser-master\\BerkeleyParser-1.7.jar", "execute");
-
-			Process pr = rt.exec("java -jar C:\\Users\\Klaus\\Documents\\Uni\\BachelorArbeit\\Parser\\berkeleyparser-master\\BerkeleyParser-1.7.jar "
-					+ "-gr C:\\Users\\Klaus\\Documents\\Uni\\BachelorArbeit\\Parser\\berkeleyparser-master\\eng_sm6.gr "
-					+ "-inputFile C:\\Users\\Klaus\\Documents\\Uni\\BachelorArbeit\\Parser\\berkeleyparser-master\\inputFile.txt "
-					+ "-outputFile C:\\Users\\Klaus\\Documents\\Uni\\BachelorArbeit\\Parser\\berkeleyparser-master\\outputFile.txt");
-			
-			try {
-				pr.waitFor();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.out.println(e.getMessage());
-		} */
-		
+		// Für Grammatik Modell wird nur Pfad der Datei benötigt
 		SimpleFileObject grammarObject = (SimpleFileObject) ioobjectInputGrammar.getData(IOObject.class);
 		File grammarFile = grammarObject.getFile();
 		String grammarPath = grammarFile.getAbsolutePath();
 		
-		//LogService.getRoot().log(Level.INFO, grammarPath);
-
-		
-		Document iooDoc =(Document) ioobjectInputText.getData(IOObject.class);
-	
-		
+		// Eingabe Document in Zeilen aufteilen
 		String text = iooDoc.getTokenText();
 		String[] sentences = text.split("\\r?\\n");
 		
+		// AusgabeText, an welchen jede annotierte Zeile angehangen wird
 		String outputText = "";
 
 		
 		////////////////////////////////////////////////////////////////////////
 		
+		// Der nachfolgende Code ist aus der Klasse edu.berkeley.nlp.PCFGLA.BerkeleyParser
+		// entnommen. Diese Klasse wird beim Kommandozeilenaufruf angesprochen und die notwendigen
+		// Funktionen dieser Klasse wurden übernommen, da so am einfachsten die Ausgabe
+		// in ein DocumentObject realisiert werden konnte.
+		// Es wurden nur kleine Modifikationen vorgenommen, wie z.B. System.exit(0) auskommentiert
 		
+		// Options sind die Übergabeparameter beim Kommandozeilenaufruf, Dokumentation in edu.berkeley.nlp.PCFGLA.BerkeleyParser
 		Options opts = new Options();
 		
-		//opts.grFileName = "C:\\Users\\Klaus\\Documents\\Uni\\BachelorArbeit\\Parser\\berkeleyparser-master\\eng_sm6.gr";
 		opts.grFileName = grammarPath;
 		opts.viterbi = false;
 		opts.binarize = false;
@@ -122,11 +109,9 @@ public class BerkeleyParser extends Operator{
 		opts.variational = false;
 		opts.render = false;
 		opts.chinese = false;
-		//opts.inputFile = "C:\\Users\\Klaus\\Documents\\Uni\\BachelorArbeit\\Parser\\berkeleyparser-master\\inputFile.txt";
 		opts.maxLength = 200;
 		opts.nThreads = 1;
 		opts.kbest = 1;
-		//opts.outputFile = "C:\\Users\\Klaus\\Documents\\Uni\\BachelorArbeit\\Parser\\berkeleyparser-master\\outputFile.txt";
 		opts.goldPOS = false;
 		opts.dumpPosteriors = false;
 		opts.ec_format = false;
@@ -307,18 +292,25 @@ public class BerkeleyParser extends Operator{
 		// System.exit(0);
 		
 		////////////////////////////////////////////////////////////////////////
-
-		Document outputDoc = new Document(outputText);
-		ioobjectOutput.deliver((IOObject)outputDoc);
+		// Startelement des Parsers muss nicht entfernt werden, wird automatisch rausgelassen
 		
+		// Ausgabe Document erstellen
+		Document outputDoc = new Document(outputText);
+		resultOutputExt.deliverToAll((IOObject)outputDoc, true);
+		// Name als Document ausgeben
 		Document nameDoc = new Document("Berkeley Parser");
-		nameOutput.deliver((IOObject)nameDoc);
+		nameOutputExt.deliverToAll((IOObject)nameDoc, true);
 	}
 	
 	/**
-	 * @param parsedTree
-	 * @param outputData
+	 * Methode der Klasse edu.berkeley.nlp.PCFGLA.BerkeleyParser mit leichten Modifikationen
+	 * @param parseTrees
+	 * @param outputText
+	 * @param parser
 	 * @param opts
+	 * @param line
+	 * @param sentenceID
+	 * @return
 	 */
 	private static String outputTrees(List<Tree<String>> parseTrees,
 			String outputText, CoarseToFineMaxRuleParser parser,

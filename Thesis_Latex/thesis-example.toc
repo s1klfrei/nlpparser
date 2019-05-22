@@ -1,34 +1,48 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {english}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Postcards: My Address}{2}{section*.4}
+\contentsline {section}{\numberline {1.1}Motivation and Problem Statement}{1}{section*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Motivation and Problem Statement}{2}{section*.5}
+\contentsline {subsection}{\numberline {1.1.1}Some References}{1}{section*.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Results}{3}{section*.6}
+\contentsline {section}{\numberline {1.2}Thesis Structure}{1}{section*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.1}Some References}{3}{section*.7}
+\contentsline {chapter}{\numberline {2}Natural Language Processing}{3}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.4}Thesis Structure}{3}{section*.8}
+\contentsline {section}{\numberline {2.1}Grundlagen}{3}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Natural Language Processing}{7}{chapter.2}
+\contentsline {section}{\numberline {2.2}Syntaktisches Parsen}{7}{section*.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Grundlagen}{7}{section*.10}
+\contentsline {subsection}{\numberline {2.2.1}Dynamische Programmierung}{8}{section*.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Syntaktisches Parsen}{11}{section*.14}
+\contentsline {section}{\numberline {2.3}Statistisches Parsen}{9}{section*.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}Dynamische Programmierung}{12}{section*.15}
+\contentsline {subsection}{\numberline {2.3.1}Probabilistische Kontextfreie Grammatiken}{9}{section*.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Statistisches Parsen}{12}{section*.16}
+\contentsline {subsection}{\numberline {2.3.2}Probabilistische Lexikalisierte Kontextfreie Grammatiken}{11}{section*.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}Probabilistische Kontextfreie Grammatiken}{12}{section*.17}
+\contentsline {chapter}{\numberline {3}Konpzept}{15}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.2}Probabilistische Lexikalisierte Kontextfreie Grammatiken}{15}{section*.18}
+\contentsline {section}{\numberline {3.1}Input-Text}{15}{section*.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Konpzept}{19}{chapter.3}
+\contentsline {section}{\numberline {3.2}Parser Output}{16}{section*.21}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}Parser Modell}{16}{section*.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.4}Goldstandard}{17}{section*.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.5}Parser}{17}{section*.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.5.1}Stanford-Parser}{18}{section*.25}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.5.2}Berkeley-Parser}{18}{section*.26}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.5.3}OpenNLP-Parser}{18}{section*.27}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.6}Evaluierung}{18}{section*.28}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Implementierung}{21}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Zielsetzung}{21}{section*.22}
+\contentsline {section}{\numberline {4.1}Zielsetzung}{21}{section*.32}

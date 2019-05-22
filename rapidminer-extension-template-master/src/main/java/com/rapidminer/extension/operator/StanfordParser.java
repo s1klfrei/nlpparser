@@ -13,6 +13,7 @@ import com.rapidminer.operator.OperatorException;
 import com.rapidminer.operator.nio.file.SimpleFileObject;
 import com.rapidminer.operator.ports.InputPort;
 import com.rapidminer.operator.ports.OutputPort;
+import com.rapidminer.operator.ports.OutputPortExtender;
 import com.rapidminer.parameter.ParameterType;
 import com.rapidminer.parameter.ParameterTypeString;
 import com.rapidminer.tools.LogService;
@@ -34,14 +35,19 @@ public class StanfordParser extends Operator{
 	private InputPort ioobjectInputGrammar = getInputPorts().createPort("grammar", IOObject.class);
 	// Port für zu parsenden Text
 	private InputPort ioobjectInputText = getInputPorts().createPort("text", IOObject.class);
-	
-	// Outputport für eigenen Namen
-	private OutputPort nameOutput = getOutputPorts().createPort("name");
-	// Outputport für annotierten Text
-	private OutputPort ioobjectOutput = getOutputPorts().createPort("output");
 		
+	// Outputports für eigenen Namen
+	private OutputPortExtender nameOutputExt = new OutputPortExtender("name", getOutputPorts());
+	// Outputports für annotierten Text
+	private OutputPortExtender resultOutputExt = new OutputPortExtender("output", getOutputPorts());
+	
+	
 	public StanfordParser(OperatorDescription description) {
 		super(description);
+		
+		//PortExtender starten, notwendig
+		nameOutputExt.start();
+		resultOutputExt.start();
 	}
 	
 	
@@ -57,13 +63,12 @@ public class StanfordParser extends Operator{
 		
 		
 		// Standard Code aus Stanford Webseite um Parser zu starten
+		// MaxLength gibt an wieviele Wörter ein Satz maximal haben darf
 		LexicalizedParser lp = LexicalizedParser.loadModel(
 				grammarPath,
 				"-maxLength", "80");
 		TreebankLanguagePack tlp = new PennTreebankLanguagePack();
 		
-		// Uncomment the following line to obtain original Stanford Dependencies
-		// tlp.setGenerateOriginalDependencies(true);
 		GrammaticalStructureFactory gsf = tlp.grammaticalStructureFactory();
 	
 		// Eingabe Document in Zeilen aufteilen
@@ -93,10 +98,10 @@ public class StanfordParser extends Operator{
 		
 		// Ausgabe Document erstellen
 		Document outputDoc = new Document(outputText);
-		ioobjectOutput.deliver((IOObject)outputDoc);
+		resultOutputExt.deliverToAll((IOObject)outputDoc, true);
 		
 		// Name als Document ausgeben
 		Document nameDoc = new Document("Stanford Parser");
-		nameOutput.deliver((IOObject)nameDoc);		
+		nameOutputExt.deliverToAll((IOObject)nameDoc, true);	
 	}
 }

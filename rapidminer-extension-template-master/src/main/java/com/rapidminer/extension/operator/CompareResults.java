@@ -248,12 +248,44 @@ public class CompareResults extends Operator{
 		for(int i = 0; i < token.length; i ++) {
 			// Fall 1: '('
 			if(token[i].equals("(")) {
-				// Falls Satzbeginn kommt 2 mal '(' hintereinander und es wird ignoriert
-				// Andernfall wird neuer Node mit Startpunkt Wortzähler auf den Stack gelegt
-				if(!token[i+1].equals("(")) {
-					ParseTreeNode ptn = new ParseTreeNode();
-					ptn.start = wordCount;
-					st.push(ptn);
+				// Sonderfall: POS Opening oder Closing Bracket kommt als nächstes
+				// dann sind die aktuellen 4 Zeichen: '( ( x )' oder '( ) x )' 
+				// wobei x eine eckige runde oder geschweifte Klammer ist. 
+				// Sonst kann hier kein Zeichen an x stehen, deswegen wird es nicht abgefragt
+				// boolean, da i eventuell hochgezählt wurde und dann dieser Schleifendurchlauf verlassen werden muss
+				boolean bracketsFound = false;
+				/*if(token[i+1].equals("(") && token[i+3].equals(")")) {
+					if(!countOnlySyntacticTags) {
+						ParseTreeNode ptn = new ParseTreeNode();
+						ptn.start = wordCount;
+						wordCount ++; 
+						ptn.ende = wordCount;
+						ptn.typ = PennTag.OpeningBracket;
+						res.add(ptn);
+					}
+					i += 4;
+					bracketsFound = true;
+				}
+				else if (token[i+1].equals(")") && token[i+3].equals(")")) {
+					if(!countOnlySyntacticTags) {
+						ParseTreeNode ptn = new ParseTreeNode();
+						ptn.start = wordCount;
+						wordCount ++; 
+						ptn.ende = wordCount;
+						ptn.typ = PennTag.ClosingBracket;
+						res.add(ptn);
+					}
+					i += 4;
+					bracketsFound = true;
+				}*/
+				if(!bracketsFound) {
+					// Falls Satzbeginn kommt 2 mal '(' hintereinander und es wird ignoriert
+					// Andernfall wird neuer Node mit Startpunkt Wortzähler auf den Stack gelegt
+					if(!token[i+1].equals("(")) {
+						ParseTreeNode ptn = new ParseTreeNode();
+						ptn.start = wordCount;
+						st.push(ptn);
+					}
 				}
 			}
 			// Fall 2: ')'

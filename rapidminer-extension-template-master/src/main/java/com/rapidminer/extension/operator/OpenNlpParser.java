@@ -14,7 +14,9 @@ import com.rapidminer.operator.OperatorDescription;
 import com.rapidminer.operator.OperatorException;
 import com.rapidminer.operator.nio.file.SimpleFileObject;
 import com.rapidminer.operator.ports.InputPort;
+import com.rapidminer.operator.ports.InputPortExtender;
 import com.rapidminer.operator.ports.OutputPort;
+import com.rapidminer.operator.ports.OutputPortExtender;
 import com.rapidminer.operator.text.Document;
 import com.rapidminer.parameter.ParameterType;
 import com.rapidminer.parameter.ParameterTypeString;
@@ -27,49 +29,58 @@ import opennlp.tools.parser.ParserFactory;
 import opennlp.tools.parser.ParserModel;
 
 public class OpenNlpParser extends Operator{
-	
+	// Port für Parser Modell
 	private InputPort ioobjectInputGrammar = getInputPorts().createPort("grammar", IOObject.class);
+	// Port für zu parsenden Text
 	private InputPort ioobjectInputText = getInputPorts().createPort("text", IOObject.class);
-	
-	private OutputPort nameOutput = getOutputPorts().createPort("name");
-	private OutputPort ioobjectOutput = getOutputPorts().createPort("output");
+	// Outputports für eigenen Namen
+	private OutputPortExtender nameOutputExt = new OutputPortExtender("name", getOutputPorts());
+	// Outputports für annotierten Text
+	private OutputPortExtender resultOutputExt = new OutputPortExtender("output", getOutputPorts());
 	
 	public OpenNlpParser(OperatorDescription description) {
 		super(description);
+		//PortExtender starten, notwendig
+		nameOutputExt.start();
+		resultOutputExt.start();
 	}
 	
 	
 	@Override
 	public void doWork() throws OperatorException{
-		
+		// Document aus Port holen
 		Document iooDoc =(Document) ioobjectInputText.getData(IOObject.class);
-		
+
+		// Für Grammatik Modell wird nur Pfad der Datei benötigt
 		SimpleFileObject grammarObject = (SimpleFileObject) ioobjectInputGrammar.getData(IOObject.class);
 		File grammarFile = grammarObject.getFile();
 		String grammarPath = grammarFile.getAbsolutePath();
-	
+
+		// Eingabe Document in Zeilen aufteilen
 		String text = iooDoc.getTokenText();
 		String[] sentences = text.split("\\r?\\n");
-		
+
+		// AusgabeText, an welchen jede annotierte Zeile angehangen wird
 		String outputText = "";
 		
+		// Standard Code aus OpenNLP Webseite um Parser zu starten + auto-generierte Exceptions
 		InputStream modelIn;
 		try {
-			//Parameter fuer Filename
-			//modelIn = new FileInputStream("C:\\Users\\Klaus\\Documents\\Uni\\BachelorArbeit\\Parser\\apache-opennlp-1.9.0-bin.tar\\apache-opennlp-1.9.0\\en-parser-chunking.bin");
+			
 			modelIn = new FileInputStream(grammarPath);
 			
 			try {
 			  ParserModel model = new ParserModel(modelIn);
 			  Parser parser = ParserFactory.create(model);
-
+			  // Jede Zeile in den Parser schicken
 			  for(int i = 0; i < sentences.length; i++) {
 				  
 				  Parse topParses[] = ParserTool.parseLine(sentences[i], parser, 1);
 				  for(int j = 0; j < topParses.length; j++) {
 					  StringBuffer sb = new StringBuffer(topParses[j].getText().length() * 4);
 					  topParses[j].show(sb); 
-					  //LogService.getRoot().log(Level.INFO, sb.toString());
+					  
+					// Rückgabe String befüllen
 					  if(i == 0)
 							outputText += sb.toString();
 						else 
@@ -94,11 +105,15 @@ public class OpenNlpParser extends Operator{
 			// TODO Auto-generated catch block
 			LogService.getRoot().log(Level.INFO, e1.getMessage());
 		}
+		// Startelement des Parser 'TOP' entfernen, Klammer ist notwendig, falls ein Satz das Terminal 'TOP' enthaelt
 		outputText = outputText.replaceAll("\\(TOP ", "( ");
-		Document outputDoc = new Document(outputText);
-		ioobjectOutput.deliver((IOObject)outputDoc);
 		
+		// Ausgabe Document erstellen
+		Document outputDoc = new Document(outputText);
+		resultOutputExt.deliverToAll((IOObject)outputDoc, true);
+		
+		// Name als Document ausgeben
 		Document nameDoc = new Document("OpenNLP Parser");
-		nameOutput.deliver((IOObject)nameDoc);
+		nameOutputExt.deliverToAll((IOObject)nameDoc, true);
 	}
 }

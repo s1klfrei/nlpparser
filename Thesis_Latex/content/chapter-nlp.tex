@@ -2,11 +2,12 @@
 %
 \chapter{Natural Language Processing}
 \label{sec:nlp}
+In diesem Kapitel wird der theoretische Hintergrund, die Methoden des Natural-Language-Processings, eingeführt. Nach den Grundlagen werden zwei verschiedene Methoden zum Parsen vorgestellt. 
 
 \section{Grundlagen}
 \label{sec:nlp:grundlagen}
 
-Betrachtet man einen Satz in einer natürlichen Sprache, die im Rahmen dieser Arbeit auf Englisch festgelegt ist, so kann ein Computer dessen Inhalt nicht ohne Weiteres herauslesen. Hierfür bedarf es verschiedener Hilfsstrukturen und zusätzlicher Informationen. Als ersten Schritt bietet es sich an, den einzelnen Wörtern eines Satzes ihre Wortart zuzuordnen. Mit Wortart, alternativ auch Wortklasse oder im Englischen part-of-speech (POS), ist gemeint, wie ein Wort im Satz auftritt. Beispiele für Wortarten sind Nomen, Verb und Adjektiv. In dieser Arbeit wird das Tagset, also die Menge an Wortarten, aus der Penn Treebank verwendet. Siehe hierfür Tabelle \ref{tab:pos-tags}.
+Betrachtet man einen Satz in einer natürlichen Sprache, die im Rahmen dieser Arbeit auf Englisch festgelegt ist, so kann ein Algorithmus dessen Semantik nicht ohne Weiteres herauslesen. Hierfür bedarf es verschiedener Hilfsstrukturen und zusätzlicher Informationen. Als ersten Schritt bietet es sich an, den einzelnen Wörtern eines Satzes ihre Wortart zuzuordnen. Mit Wortart, alternativ auch Wortklasse oder im Englischen part-of-speech (POS), ist gemeint, wie ein Wort im Satz auftritt. Beispiele für Wortarten sind Nomen, Verb und Adjektiv. In dieser Arbeit wird das Tagset, also die Menge an Wortarten, aus der Penn Treebank verwendet. Siehe hierfür Tabelle \ref{tab:pos-tags}.
 \begin{table}
 \begin{tabular}{ | l l l |}
 	\hline
@@ -64,8 +65,8 @@ würde mit diesem Tagset also folgendermaßen annotiert werden:
 \begin{quote}
 My/PRP\$ dog/NN also/RB likes/VBZ eating/VBG sausage/NN ./.
 \end{quote}
-Wie ein Satz maschinell mit POS-Tags versehen werden kann wird in dieser Arbeit nicht weiter behandelt. 
-Über diese zusätzliche Notation hinaus kann man erkennen, dass sich in der englischen Sprache oftmals mehrere Wörter als Gruppe oder als eine Komponente innerhalb des Satzes verhalten. So eine Gruppe wäre zum Beispiel die Nominalphrase \textit{My Dog} oder die Verbalphrase \textit{likes eating sausage}. Auch hier wird wieder die Annotation der Penn Treebank verwendet, abgebildet in Tabelle \ref{tab:phrase-tags}.
+Wie ein Satz maschinell mit POS-Tags versehen werden kann, wird in dieser Arbeit nicht weiter behandelt. 
+Über diese zusätzliche Notation hinaus kann man erkennen, dass sich in der englischen Sprache oftmals mehrere Wörter als Gruppe oder als eine Komponente innerhalb des Satzes verhalten. So eine Gruppe wäre zum Beispiel die Nominalphrase \textit{My Dog} oder die Verbalphrase \textit{likes eating sausage}. Auch hier wird wieder die Annotation der Penn Treebank verwendet, abgebildet in Tabelle \ref{tab:phrase-tags}. Zu diesem Satz an Tags gibt es noch die Erweiterung um relationale Tags. Diese liefern eine Zusatzinformation und werden an die eben vorgestellten angehängt. Zum Beispiel bekommt das Subjekt eines Satzes das Suffix \textit{-SBJ}. Das heißt aus \textit{NP} wird \textit{NP-SBJ}. Dieser Erweiterungssatz wird im Rahmen dieser Arbeit herausgelassen, aber der Vollständigkeit halber erwähnt.
 \begin{table}
 \begin{tabular}{ | l p{7cm} p{4cm} |}
 	\hline
@@ -107,7 +108,7 @@ Wie ein Satz maschinell mit POS-Tags versehen werden kann wird in dieser Arbeit 
 \caption{Penn Treebank Syntaktische Tags} %TODO Ref paper Bracketing Guidelines for Treebank II Style 
 \label{tab:phrase-tags}
 \end{table}
-In \ref{eqn:multiline-annotated-dog-eating} wird der Satz mit der zusätzlichen Annotation dargestellt.
+In \ref{eqn:multiline-annotated-dog-eating} wird der Satz mit der syntaktischen Annotation dargestellt.
 
 %TODO Def Bäume?
 \begin{align}
@@ -127,16 +128,15 @@ Alternativ zur geklammerten Lösung kann man dieses Ergebnis auch als Syntaxbaum
 \caption{Syntaxbaum zum Satz \textit{My dog also likes eating sausage.}}
 \label{fig:syn-tree-dog-likes}
 \end{figure}
-Wie man am Beispiel erkennen kann, sind auch diverse Verschachtelungen dieser Komponenten möglich. Um diese Anordnungsstruktur innerhalb einer Sprache zu beschreiben, bieten sich kontextfreie Grammatiken an. Auf der linken Seite der Regeln befindet sich also ein Nichtterminalsymbol und auf der rechten Seite können sich beliebig viele Terminale und Nichtterminale befinden. Für die Verarbeitung unseres Beispielsatzes wurden unter anderem folgende Regeln verwendet: %Exkurs CFG?
+Wie man am Beispiel erkennen kann, sind, im Gegensatz zu den POS-Tags, auch diverse Verschachtelungen dieser Komponenten möglich. Um diese Anordnungsstruktur innerhalb einer Sprache zu beschreiben, bieten sich kontextfreie Grammatiken an. Diese Art der Grammatik zeichnet sich dadruch aus, dass sich auf der linken Seite der Regeln genau ein Nichtterminalsymbol und auf der rechten Seite können sich beliebig viele Terminale und Nichtterminale befinden. Das Nichtterminal auf der linken Seite hat keine Einschränkung welche Symbole sich um es herum befinden müssen. Es hat also keinen Kontext, daher die Bezeichnung kontextfrei. Für die Verarbeitung unseres Beispielsatzes wurden unter anderem folgende Regeln verwendet:
 \begin{lstlisting}
 S -> NP ADVP VP .
 NP -> PRP$ NN
 PRP$ -> My
 NN -> dog
 \end{lstlisting}
-%TODO listing durch Formel ersetzen --> Nein, da links align ganz gut passt so wie es ist.
-Da ein englischer Satz nicht unbedingt \textit{S} als oberstes erstes Nichtterminal hat, sondern auch \textit{FRAG}, \textit{SBARQ} und andere möglich sind, muss in den Grammatiken ein zusätzliches Startsymbol eingeführt werden. Dieses wird zum Beispiel \textit{ROOT} oder \textit{TOP} genannt. %TODO Verweis auf Parser die das so machen oder noch mehr ausführen
-Anhand dem vollständigen Regelsatz der Grammatik einer Sprache kann man theoretisch jeden grammatikalisch korrekten Satz dieser Sprache annotieren. Es gibt für diverse natürliche Sprache Sammlungen von annotierten Sätzen, diese werden Treebank oder Korpus genannt. Ein bekannter Korpus der englischen Sprache ist die Penn Treebank, aus welcher auch die hier verwendete Annotation stammt. Dieser Korpus wird vom Linguistic Data Consortium, mit Sitz in der Univertität von Pennsylvania, herausgegeben. %TODO https://www.ldc.upenn.edu/about#
+Da ein englischer Satz nicht unbedingt \textit{S} als oberstes Nichtterminal hat, sondern auch \textit{FRAG}, \textit{SBARQ} und andere möglich sind, muss in den Grammatiken ein zusätzliches Startsymbol eingeführt werden. Dieses wird zum Beispiel \textit{ROOT} oder \textit{TOP} genannt. %TODO Verweis auf Parser die das so machen oder noch mehr ausführen
+Anhand des vollständigen Regelsatzes der Grammatik einer Sprache, kann man theoretisch jedem grammatikalisch korrekten Satz dieser Sprache seine syntaktische Struktur zuweisen. Es gibt für diverse natürliche Sprachen Sammlungen von annotierten Sätzen, diese werden Treebank oder Korpus genannt. Ein bekannter Korpus der englischen Sprache ist die Penn Treebank, aus welcher auch die hier verwendete Annotation stammt. Dieser Korpus wird vom Linguistic Data Consortium, mit Sitz in der Univertität von Pennsylvania, herausgegeben. %TODO https://www.ldc.upenn.edu/about#
 %Er umfasst über 4,5 Millionen Wörter 
 %TODO Recherche über PTB betreiben - aktuelle Infos bekommen - Seite 442 im Buch nochmal genauer anschauen
 Im Rahmen des Penn Treebank Projekts wurden von 1989 bis 1992 über 4,5 Millionen Wörter der Treebank hinzugefügt. Die Texte hierfür stammen zu einem Großteil aus dem Wall Street Journal. Der Ursprung der Sätze in einer Treebank kann eine Rolle spielen, da Parser mit Hilfe von Treebanks trainiert werden. Dazu mehr in Kapitel \ref{sec:nlp:stat-parsen}. %TODO zitat von paper ptb_info
