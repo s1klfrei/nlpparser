@@ -9,19 +9,20 @@
 \BOOKMARK [1][]{section*.8}{2.1 Grundlagen}{chapter.2}% 9
 \BOOKMARK [1][]{section*.12}{2.2 Syntaktisches Parsen}{chapter.2}% 10
 \BOOKMARK [2][]{section*.13}{2.2.1 Dynamische Programmierung}{section*.12}% 11
-\BOOKMARK [1][]{section*.14}{2.3 Statistisches Parsen}{chapter.2}% 12
-\BOOKMARK [2][]{section*.15}{2.3.1 Probabilistische Kontextfreie Grammatiken}{section*.14}% 13
-\BOOKMARK [2][]{section*.16}{2.3.2 Probabilistische Lexikalisierte Kontextfreie Grammatiken}{section*.14}% 14
-\BOOKMARK [0][]{chapter.3}{3 Konpzept}{}% 15
-\BOOKMARK [1][]{section*.20}{3.1 Input-Text}{chapter.3}% 16
-\BOOKMARK [1][]{section*.21}{3.2 Parser Output}{chapter.3}% 17
-\BOOKMARK [1][]{section*.22}{3.3 Parser Modell}{chapter.3}% 18
-\BOOKMARK [1][]{section*.23}{3.4 Goldstandard}{chapter.3}% 19
-\BOOKMARK [1][]{section*.24}{3.5 Parser}{chapter.3}% 20
-\BOOKMARK [2][]{section*.25}{3.5.1 Stanford-Parser}{section*.24}% 21
-\BOOKMARK [2][]{section*.26}{3.5.2 Berkeley-Parser}{section*.24}% 22
-\BOOKMARK [2][]{section*.27}{3.5.3 OpenNLP-Parser}{section*.24}% 23
-\BOOKMARK [1][]{section*.28}{3.6 Evaluierung}{chapter.3}% 24
-\BOOKMARK [0][]{chapter.4}{4 Implementierung}{}% 25
-\BOOKMARK [1][]{section*.32}{4.1 Zielsetzung}{chapter.4}% 26
-\BOOKMARK [0][]{Declaration.0}{Declaration}{}% 27
+\BOOKMARK [2][]{section*.14}{2.2.2 Cocke-Kasami-Younger Algorithmus}{section*.12}% 12
+\BOOKMARK [1][]{section*.15}{2.3 Statistisches Parsen}{chapter.2}% 13
+\BOOKMARK [2][]{section*.16}{2.3.1 Probabilistische Kontextfreie Grammatiken}{section*.15}% 14
+\BOOKMARK [2][]{section*.17}{2.3.2 Probabilistische Lexikalisierte Kontextfreie Grammatiken}{section*.15}% 15
+\BOOKMARK [0][]{chapter.3}{3 Konpzept}{}% 16
+\BOOKMARK [1][]{section*.21}{3.1 Input-Text}{chapter.3}% 17
+\BOOKMARK [1][]{section*.22}{3.2 Parser Output}{chapter.3}% 18
+\BOOKMARK [1][]{section*.23}{3.3 Parser Modell}{chapter.3}% 19
+\BOOKMARK [1][]{section*.24}{3.4 Goldstandard}{chapter.3}% 20
+\BOOKMARK [1][]{section*.25}{3.5 Parser}{chapter.3}% 21
+\BOOKMARK [2][]{section*.26}{3.5.1 Stanford-Parser}{section*.25}% 22
+\BOOKMARK [2][]{section*.27}{3.5.2 Berkeley-Parser}{section*.25}% 23
+\BOOKMARK [2][]{section*.28}{3.5.3 OpenNLP-Parser}{section*.25}% 24
+\BOOKMARK [1][]{section*.29}{3.6 Evaluierung}{chapter.3}% 25
+\BOOKMARK [0][]{chapter.4}{4 Implementierung}{}% 26
+\BOOKMARK [1][]{section*.33}{4.1 Zielsetzung}{chapter.4}% 27
+\BOOKMARK [0][]{Declaration.0}{Declaration}{}% 28
