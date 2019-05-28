@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.22)  23 MAY 2019 13:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.22)  28 MAY 2019 21:54
 entering extended mode
 **./thesis-example.tex
 (thesis-example.tex
@@ -1584,7 +1584,11 @@ Package biblatex Info: ... file 'english.lbx' found.
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\engli
 sh.lbx"
 File: english.lbx 2017/12/19 v3.10 biblatex localization (PK/JW/AB)
-) (thesis-example.aux)
+) (thesis-example.aux
+
+LaTeX Warning: Label `fig:cky-beispiel' multiply defined.
+
+)
 \openout1 = `thesis-example.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
@@ -1601,15 +1605,13 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 97.
 LaTeX Font Info:    ... okay on input line 97.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 97.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 97.
-
-("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+ ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 97.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 97.
 LaTeX Font Info:    ... okay on input line 97.
 LaTeX Font Info:    Try loading font information for T1+bch on input line 97.
-
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1bch.fd"
 File: t1bch.fd 2004/10/18 font definitions for T1/bch.
 )
@@ -1735,7 +1737,7 @@ Package biblatex Info: Reference segment=0 on input line 97.
 Package scrbase Info: activating english \figurename on input line 104.
 Package scrbase Info: activating english \tablename on input line 105.
 (content/titlepages.tex
-<gfx/AI4.png, id=115, 2283.53125pt x 832.10875pt>
+<gfx/AI4.png, id=119, 2283.53125pt x 832.10875pt>
 File: gfx/AI4.png Graphic file (type png)
 <use gfx/AI4.png>
 Package pdftex.def Info: gfx/AI4.png  used on input line 6.
@@ -1885,48 +1887,87 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6]
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 169--173
+Underfull \hbox (badness 10000) in paragraph at lines 170--174
 
  []
 
-[8]
-Underfull \vbox (badness 7595) has occurred while \output is active []
 
- [9]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1325) has occurred while \output is active []
 
- [10]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [8]
 
- [11]
-
-Package caption Warning: \label without proper reference on input line 230.
+Package caption Warning: \label without proper reference on input line 203.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:lex-tree-dumped-sacks' on page 12 undefined on in
-put line 227.
+LaTeX Warning: Reference `fig:cky-beispiel' on page 9 undefined on input line 1
+91.
 
-[12]
-Overfull \hbox (27.42444pt too wide) detected at line 241
+[9]
+<gfx/cky-beispiel.png, id=258, 423.984pt x 241.50224pt>
+File: gfx/cky-beispiel.png Graphic file (type png)
+<use gfx/cky-beispiel.png>
+Package pdftex.def Info: gfx/cky-beispiel.png  used on input line 195.
+(pdftex.def)             Requested size: 395.45181pt x 225.25436pt.
+<gfx/grammatik-cky-beispiel.png, id=259, 428.19975pt x 339.06676pt>
+File: gfx/grammatik-cky-beispiel.png Graphic file (type png)
+<use gfx/grammatik-cky-beispiel.png>
+Package pdftex.def Info: gfx/grammatik-cky-beispiel.png  used on input line 202
+.
+(pdftex.def)             Requested size: 395.45181pt x 313.14032pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package caption Warning: \label without proper reference on input line 203.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:cky-beispiel' on page 10 undefined on input line 
+208.
+
+
+Underfull \vbox (badness 1668) has occurred while \output is active []
+
+ [10 <./gfx/cky-beispiel.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11 <./gfx/grammatik-cky-beispiel.png>] [12]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13]
+
+Package caption Warning: \label without proper reference on input line 258.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:lex-tree-dumped-sacks' on page 14 undefined on in
+put line 254.
+
+
+Underfull \vbox (badness 2980) has occurred while \output is active []
+
+ [14]
+Overfull \hbox (27.42444pt too wide) detected at line 268
 [][]
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13])
-(content/chapter-konzept.tex [14]
+ [15])
+(content/chapter-konzept.tex [16]
 chapter 3.
 
 Package caption Warning: \label without proper reference on input line 10.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:konzept-aufbau' on page 15 undefined on input lin
+LaTeX Warning: Reference `fig:konzept-aufbau' on page 17 undefined on input lin
 e 5.
 
-<gfx/konzept-aufbau-png.png, id=294, 652.23676pt x 417.9615pt>
+<gfx/konzept-aufbau-png.png, id=318, 652.23676pt x 417.9615pt>
 File: gfx/konzept-aufbau-png.png Graphic file (type png)
 <use gfx/konzept-aufbau-png.png>
 Package pdftex.def Info: gfx/konzept-aufbau-png.png  used on input line 9.
@@ -1937,23 +1978,26 @@ Overfull \hbox (0.35298pt too wide) in paragraph at lines 5--13
 tiert wurde. Hier wird dargestellt,
  []
 
-[15
+[17
 
 
- <./gfx/konzept-aufbau-png.png>] [16] [17]
-Underfull \hbox (badness 10000) in paragraph at lines 62--92
+ <./gfx/konzept-aufbau-png.png>] [18]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19]
+Underfull \hbox (badness 10000) in paragraph at lines 61--91
 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[18]) (content/chapter-implementierung.tex [19] [20]
+[20]) (content/chapter-implementierung.tex [21] [22]
 chapter 4.
-) [21
+) [23
 
 
-] [22
+] [24
 
 
 ]
@@ -1975,26 +2019,26 @@ LaTeX Warning: Empty bibliography on input line 148.
 \tf@lof=\write7
 \openout7 = `thesis-example.lof'.
 
- [23
+ [25
 
 
-] [24
+] [26
 
 
 ] (thesis-example.lot)
 \tf@lot=\write8
 \openout8 = `thesis-example.lot'.
 
- [25] [26
+ [27] [28
 
 
 ]
-(content/declaration.tex) [27
+(content/declaration.tex) [29
 
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 168.
- [28
+ [30
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 168.
@@ -2002,13 +2046,13 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 168.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 168.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 168.
 Package rerunfilecheck Info: File `thesis-example.out' has not changed.
-(rerunfilecheck)             Checksum: AE988D6BA624B821044A984856C95DA5;1819.
+(rerunfilecheck)             Checksum: 933FECDD44CBE78D15CB21350DFDEA70;1893.
 
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
@@ -2021,11 +2065,11 @@ Package logreq Info: Writing requests to 'thesis-example.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 168.
  ) 
 Here is how much of TeX's memory you used:
- 24262 strings out of 493303
- 403164 string characters out of 3129784
+ 24284 strings out of 493303
+ 403583 string characters out of 3129784
  1009016 words of memory out of 3000000
- 27100 multiletter control sequences out of 15000+200000
- 113218 words of font info for 204 fonts, out of 3000000 for 9000
+ 27110 multiletter control sequences out of 15000+200000
+ 113532 words of font info for 206 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,13n,106p,8827b,3351s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.en
@@ -2052,9 +2096,9 @@ e/qhvb.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
 /tex-gyre/qhvr.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type
 1/public/tex-gyre/qhvri.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/f
 onts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on thesis-example.pdf (36 pages, 405834 bytes).
+Output written on thesis-example.pdf (38 pages, 609909 bytes).
 PDF statistics:
- 470 PDF objects out of 1000 (max. 8388607)
- 120 named destinations out of 1000 (max. 500000)
- 35051 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 502 PDF objects out of 1000 (max. 8388607)
+ 127 named destinations out of 1000 (max. 500000)
+ 35069 words of extra memory for PDF output out of 35830 (max. 10000000)
 

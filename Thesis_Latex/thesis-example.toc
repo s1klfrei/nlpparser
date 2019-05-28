@@ -15,36 +15,38 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}Syntaktisches Parsen}{7}{section*.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}Dynamische Programmierung}{9}{section*.13}
+\contentsline {subsection}{\numberline {2.2.1}Ambiguit\IeC {\"a}t}{8}{section*.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}Cocke-Kasami-Younger Algorithmus}{9}{section*.14}
+\contentsline {subsection}{\numberline {2.2.2}Dynamische Programmierung}{9}{section*.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Statistisches Parsen}{10}{section*.15}
+\contentsline {subsection}{\numberline {2.2.3}Cocke-Kasami-Younger Algorithmus}{9}{section*.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}Probabilistische Kontextfreie Grammatiken}{10}{section*.16}
+\contentsline {section}{\numberline {2.3}Statistisches Parsen}{12}{section*.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.2}Probabilistische Lexikalisierte Kontextfreie Grammatiken}{12}{section*.17}
+\contentsline {subsection}{\numberline {2.3.1}Probabilistische Kontextfreie Grammatiken}{12}{section*.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Konpzept}{15}{chapter.3}
+\contentsline {subsection}{\numberline {2.3.2}Probabilistische Lexikalisierte Kontextfreie Grammatiken}{14}{section*.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Input-Text}{15}{section*.21}
+\contentsline {chapter}{\numberline {3}Konpzept}{17}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Parser Output}{16}{section*.22}
+\contentsline {section}{\numberline {3.1}Input Text}{17}{section*.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Parser Modell}{16}{section*.23}
+\contentsline {section}{\numberline {3.2}Parser Output}{18}{section*.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Goldstandard}{17}{section*.24}
+\contentsline {section}{\numberline {3.3}Parser Modell}{18}{section*.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Parser}{17}{section*.25}
+\contentsline {section}{\numberline {3.4}Goldstandard}{19}{section*.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.1}Stanford-Parser}{18}{section*.26}
+\contentsline {section}{\numberline {3.5}Parser}{19}{section*.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.2}Berkeley-Parser}{18}{section*.27}
+\contentsline {subsection}{\numberline {3.5.1}Stanford-Parser}{20}{section*.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.3}OpenNLP-Parser}{18}{section*.28}
+\contentsline {subsection}{\numberline {3.5.2}Berkeley-Parser}{20}{section*.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.6}Evaluierung}{18}{section*.29}
+\contentsline {subsection}{\numberline {3.5.3}OpenNLP-Parser}{20}{section*.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Implementierung}{21}{chapter.4}
+\contentsline {section}{\numberline {3.6}Evaluierung}{20}{section*.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Zielsetzung}{21}{section*.33}
+\contentsline {chapter}{\numberline {4}Implementierung}{23}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}RapidMiner Studio}{23}{section*.36}
