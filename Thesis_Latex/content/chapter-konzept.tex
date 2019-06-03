@@ -57,7 +57,7 @@ Der Stanford-Parser bringt ein Modell namens \textit{englishPCFG} mit. Es handel
 
 
 \section{Evaluierung}
-
+\label{sec:konzept:eval}
 Für die Evaluierung wird das Ergebnis der Parser zeilenweise mit dem Goldstandard verglichen. Zu diesem Zweck werden die Konstituenten der Bäume betrachtet. Eine Konstituente beschreibt einen Knoten im Baum und enthält die Information über das Nichtterminal, den Start- und den Endpunkt. Die Punkte geben den Index des ersten und letzten Wortes dieses Teilbaums an. Mit jedem Wort wird der Zähler inkrementiert. Für den Beispielsatz \textit{They learn much faster.} (Baum in Abbildung \ref{fig:korrekter-baum-eval}) sind die Konstituenten in Tabelle \ref{tab:konstituenten-korrekter-baum-eval} dargestellt. \\
 \begin{figure} [h]
 \qtreecentertrue\Tree [.S [.NP [.PRP They ] ] [.VP [.VBP learn ] [.S [.ADJP [.RB much ] [.RBR faster ] ] ] ] [.. . ] ]
