@@ -92,6 +92,11 @@ public class CompareResults extends Operator{
 		double globalF1 = 0.0;
 		double globalCrossingBrackets = 0.0;
 		
+		int globalCountCorrectNodes = 0;
+		int globalCountParserNodes = 0;
+		int globalCountGoldStandardNodes = 0;
+		int globalCountCrossingNodes = 0;
+		
 		// Zeilenzähler
 		int count = 0;
 		
@@ -188,13 +193,31 @@ public class CompareResults extends Operator{
 			}
 			count ++;
 			
+			globalCountCorrectNodes += numberCorrectNodes;
+			globalCountParserNodes += parserNodes.size();
+			globalCountGoldStandardNodes += goldStandardNodes.size();
+			globalCountCrossingNodes += numberCrossingBrackets;
+			
 		}
-		
+		/*
 		// Globale Werte durch Zeilenzähler teilen
 		globalPrecision /= (double)count;
 		globalRecall /= (double)count;
 		globalF1 /= (double)count;
 		globalCrossingBrackets /= (double)count;
+		*/
+		if(globalCountParserNodes != 0) {
+			globalPrecision =  (double)globalCountCorrectNodes /  (double)globalCountParserNodes;
+			globalCrossingBrackets =  (double)globalCountCrossingNodes /  (double)globalCountParserNodes;
+		}
+		
+		if(globalCountGoldStandardNodes != 0) {
+			globalRecall =  (double)globalCountCorrectNodes /  (double)globalCountGoldStandardNodes;
+		}
+		
+		if(globalPrecision + globalRecall != 0 ) {
+			globalF1 = 2 * (globalPrecision * globalRecall) / (globalPrecision + globalRecall);
+		}
 		
 		// Tabelle erstellen
 		List<Attribute> attributes = new ArrayList<Attribute>();
@@ -203,18 +226,26 @@ public class CompareResults extends Operator{
 		attributes.add(AttributeFactory.createAttribute("Recall", Ontology.REAL));
 		attributes.add(AttributeFactory.createAttribute("F1", Ontology.REAL));
 		attributes.add(AttributeFactory.createAttribute("Crossing Brackets", Ontology.REAL));
+		attributes.add(AttributeFactory.createAttribute("Count Correct Constituents", Ontology.INTEGER));
+		attributes.add(AttributeFactory.createAttribute("Count Parser Constituents", Ontology.INTEGER));
+		attributes.add(AttributeFactory.createAttribute("Count Goldstandard Constituents", Ontology.INTEGER));
+		attributes.add(AttributeFactory.createAttribute("Count Crossing Constituents", Ontology.INTEGER));
 		
 		ExampleSetBuilder examplesetBuilder = ExampleSets.from(attributes);
 
 		
 		// Eine Zeile mit den Ergebniswerten befüllen und zur Tabelle hinzufügen
-		double[] row = new double[5];
+		double[] row = new double[9];
 	    
 		row[0] = attributes.get(0).getMapping().mapString(parserName);
 	    row[1] = globalPrecision;
 	    row[2] = globalRecall;
 	    row[3] = globalF1;
 	    row[4] = globalCrossingBrackets;
+	    row[5] = globalCountCorrectNodes;
+	    row[6] = globalCountParserNodes;
+	    row[7] = globalCountGoldStandardNodes;
+	    row[8] = globalCountCrossingNodes;
 	    
 	    examplesetBuilder.addRow(row);
 		ExampleSet resSet = examplesetBuilder.build();

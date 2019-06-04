@@ -2,7 +2,8 @@
 %
 \chapter{Konpzept}
 \label{sec:konzept}
-Abbildung \ref{fig:konzept-aufbau} zeigt das Konzept nach dem implementiert wurde. Hier wird dargestellt, die Leistung eines Parsers evaluiert wird. Der Input-Text ist der rohe Text den der Parser mit syntaktischer Annotation versehen soll. Das Parser-Modell ist die Grundlage auf der ein Parser arbeitet. Der Goldstandard ist der Input-Text mit, als korrekt angesehener, Annotation. Dieser wird mit der Ausgabe des Parser verglichen. Daraus lassen sich Kennzahlen zur Leistung des Parsers errechnen, die am Ende ausgegeben werden.
+
+In diesem Kapitel wird das Konzept nach dem implementiert wurde vorgestellt. In Abbildung \ref{fig:konzept-aufbau} wird dargestellt, wie die Leistung eines Parsers evaluiert wird. Der Input-Text ist der rohe Text den der Parser mit syntaktischer Annotation versehen soll. Das Parser-Modell ist die Grundlage auf der ein Parser arbeitet. Der Goldstandard ist der Input-Text mit, als korrekt angesehener, Annotation. Dieser wird mit der Ausgabe des Parser verglichen. Daraus lassen sich Kennzahlen zur Leistung des Parsers errechnen, die am Ende ausgegeben werden.
 Um mehrere Parser miteinander zu vergleichen werden die Resultate der einzelnen in eine Tabelle zusammengefasst und dargestellt. Alle Elemente werden nachfolgend ausführlich vorgestellt. 
 \begin{figure} [h]
 
@@ -42,9 +43,10 @@ Ist der Lösungsbaum nicht einzeilig, sondern erstreckt sich ähnlich zu \ref{eq
 
 \section{Parser}
 
-Alle Parser erhalten die Eingabe in selber Form, allerdings kann jeder Parser noch eine individuelle Vorverarbeitung benötigen. Dazu mehr in Abschnitt ... . %TODO ref Kapitel impl:parser
-Im Rahmen dieser Arbeit sind drei Parser verglichen worden. Das sind der Stanford-Parser, der Berkeley-Parser und der Parser aus dem OpenNLP Paket. Jeder verwendet zum Annotieren die Penn Treebank Tags und liefert die Ausgabe standardmäßig ohne die zusätzlichen relationalen Tags.
+Alle Parser erhalten die Eingabe in selber Form, allerdings kann jeder Parser noch eine individuelle Vorverarbeitung benötigen. Dazu mehr in Abschnitt \ref{sec:impl:eigene}.
+Im Rahmen dieser Arbeit sind drei Parser verglichen worden. Das sind der Stanford-Parser, der Berkeley-Parser und der Parser aus dem OpenNLP Paket. Jeder verwendet zum Annotieren die Penn Treebank Tags und liefert die Ausgabe standardmäßig ohne die zusätzlichen relationalen Tags. 
 %TODO erklären dass keine Dependency parser verwendet werden und was das ist (evtl in kapitel grundlagen), erklären dass alle selbes Tagset verwenden und das keine relational tags verwendet werden
+%TODO WICHTIG: Was entscheidet ob der Parser gut ist? nur modell oder noch mehr? warum also nicht nur modelle entwickeln, sondern ganze parser?? liegt auch an algorithmus zum finden baumes vermutlich (cky, earley, ...) besser informieren darüber!
 
 
 
@@ -87,7 +89,7 @@ Für die Evaluierung wird das Ergebnis der Parser zeilenweise mit dem Goldstanda
 \label{tab:konstituenten-korrekter-baum-eval}
 \end{table}
 Falls es, für eine Konstituente des Parsers, im Goldstandard eine mit gleichem Nichtterminal und gleicher Spanne gibt, wird diese als richtig bewertet. Hier muss bei der Ausführung entschieden werden, welche Nichtterminale gewertet werden. Zum einen kann man alle in das Resultat einbeziehen. Zum anderen können die POS-Tags herausgelassen und nur die syntaktischen Tags aus Tabelle \ref{tab:phrase-tags} bewertet werden. Der Grund ist, dass man so Parser einbringen kann, die als Eingabe einen mit POS-Tags versehenen Text bekommen. Diese Tags verfälschen dann die Korrektheitsrate der Parser und müssen ignoriert werden. Da in dieser Arbeit ausschließlich Parser genutzt werden, die als Eingabe sequenzierten Text bekommen, betrachten wir hier den Fall in dem alle Tags relevant sind. Der Evaluierungsmechanismus ist angelehnt an ... %TODO Zitieren Paper Parseval und dessen Quelle und Buch kap 12
-Als Bewertungskriterien werden folgende vier Werte errechnet: \textit{Precision}, \textit{Recall}, \(F_1\) und \textit{Relative Cross Brackets} (kurz: RCB). Siehe Formeln \ref{eqn:precision} bis \ref{eqn:rcb}. \\ 
+Als Bewertungskriterien werden folgende vier Werte errechnet: \textit{Precision}, \textit{Recall}, \(F_1\) und \textit{Relative Cross Brackets} (kurz: RCB). Siehe Formeln (\ref{eqn:precision}) bis (\ref{eqn:rcb}). \\ 
 \begin{equation}
 Precision = \frac{\# \;\; korrekte \;\; Konstituenten}{ \# \;\; Konstituenten \;\; im \;\; Parseroutput}
 \label{eqn:precision}

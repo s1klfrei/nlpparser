@@ -49,7 +49,10 @@ public class ShowResults extends Operator{
 		attributes.add(AttributeFactory.createAttribute("Recall",Ontology.REAL));
 		attributes.add(AttributeFactory.createAttribute("F1",Ontology.REAL));
 		attributes.add(AttributeFactory.createAttribute("Crossing Brackets", Ontology.REAL));
-
+		attributes.add(AttributeFactory.createAttribute("Count Correct Constituents", Ontology.INTEGER));
+		attributes.add(AttributeFactory.createAttribute("Count Parser Constituents", Ontology.INTEGER));
+		attributes.add(AttributeFactory.createAttribute("Count Goldstandard Constituents", Ontology.INTEGER));
+		attributes.add(AttributeFactory.createAttribute("Count Crossing Constituents", Ontology.INTEGER));
 		
 		ExampleSetBuilder examplesetBuilder = ExampleSets.from(attributes);
 		
@@ -60,7 +63,7 @@ public class ShowResults extends Operator{
 			Example ex = parserSet.getExample(0);
 			
 			// Schreibe Zeile mit identischen Daten in Ausgabe Tabelle
-			double[] row = new double[5];
+			double[] row = new double[9];
 		    
 			// Notwendig, da sonst String als '?' in Ausgabetabelle steht
 			row[0] = attributes.get(0).getMapping().mapString(ex.getNominalValue(ex.getAttributes().get("Name")));
@@ -68,6 +71,11 @@ public class ShowResults extends Operator{
 		    row[2] = ex.getValue(attributes.get(2));
 		    row[3] = ex.getValue(attributes.get(3));
 		    row[4] = ex.getValue(attributes.get(4));
+		    row[5] = ex.getValue(attributes.get(5));
+		    row[6] = ex.getValue(attributes.get(6));
+		    row[7] = ex.getValue(attributes.get(7));
+		    row[8] = ex.getValue(attributes.get(8));
+		    
 		    
 			examplesetBuilder.addRow(row);
 		}

@@ -22,6 +22,7 @@ Der letzte verwendete Operator ist \textbf{Execute Script} aus dem Ordner \texti
 .
 
 \section{Eigene Operatoren}
+\label{sec:impl:eigene}
 
 Hier werden die Operatoren und alle dazu gehörigen Klassen, die für dieses Parser-Framework entwickelt wurden, vorgestellt. 
 
@@ -53,6 +54,7 @@ Die Ein- und Ausgabe in der Originalklasse war ein \texttt{BufferedReader} und e
 Die Methode \texttt{outputTrees(...)} wurde als Methode des Operators aufgenommen. Hierzu wurde der Rückgabe Typ von \texttt{void} auf \texttt{String} geändert und der Übergabeparameter zur Datenausgabe von \texttt{PrintWriter} auf \texttt{String} abgeändert. Das führt dazu, dass statt \texttt{outputData.write("...")} nun \texttt{outputText += "..."} verwendet wird. Außerdem wird die Möglichkeit, die Ausgabe als .png zu erhalten, entfernt. Zuletzt wird der Methode ein \texttt{return outputText} angehängt. In der \texttt{doWork()} wird dieser String als \texttt{Document} verpackt und über den PortExtender an die Output-Ports geliefert.
 
 \subsection{OpenNLP-Parser}
+\label{sec:impl:eigene:opennlp}
 
 OpenNLP bietet ein Manual zum Integrieren des Parsers in eine Anwendung mit Hilfe seiner API. %TODO ref http://opennlp.apache.org/docs/1.9.1/manual/opennlp.html#tools.parser
 Der Code aus diesem Manual wurde in die \texttt{doWork()} des Operator geschrieben. Dieser Code wurde von einem zusätzlichen \texttt{try-catch}-Block umgeben, um eine \texttt{FileNotFoundException} zu fangen. Diese Exception wird beim Öffnen der Datei des Parser-Modells geworfen. Per \texttt{for}-Schleife werden die Sätze der Eingabe in den Parser geschickt. 
@@ -60,6 +62,10 @@ Der Code aus diesem Manual wurde in die \texttt{doWork()} des Operator geschrieb
 Über die String Methode \texttt{outputText.replaceAll("\textbackslash \textbackslash (TOP ", "( ");} wird das Startsymbol des Parser entfernt. Um zu verhindern, dass das Auftreten des Wortes ``TOP'' im Eingabesatz gelöscht wird, wurde die Klammer mit in den regulären Ausdruck aufgenommen. Worte des Satzes haben in der Formatierung immer eine schließende Klammer nach sich, aber nie eine öffnende vorher.
 
 \subsection{Stanford-Parser}
+
+Beim Herunterladen des Parser wird eine Demo-Klasse mitgeliefert, in welcher der Code zum Starten des Parsers aufgeführt wird. Hieraus wurden die notwendigen Befehle in die \texttt{doWork()} des Operators übernommen. Zu beachten ist hier noch, dass der Parser den Satz nicht als \texttt{String} entgegen nimmt, sondern die Token des Satzes in einem \texttt{String}-Array.
+
+Das Startsymbol dieses Parser lautet ``ROOT'' und wird analog zum OpenNLP-Parser aus \ref{sec:impl:eigene:opennlp} entfernt.
 
 \subsection{Compare Results}
 
@@ -70,8 +76,8 @@ Hierzu gibt es drei Input-Ports, deren \texttt{IOObject} jeweils zu einem \textt
 Der Operator hat zwei \texttt{Boolean}-Parameter. \texttt{PARAMETER\_REMOVE\_SUFFIX} gibt an, ob den syntaktischen Tags die Suffixe entfernt werden sollen. Das heißt, dass NP-SBJ als NP gewertet wird. \texttt{PARAMETER\_COUNT\_ONLY\_SYNTACTIC\_TAGS} entscheidet ob alle Tags oder nur die syntaktischen in die Bewertung zählen. Die Parameter wurden entsprechend dem Extension Manual %TODO ref extension manual 
 erstellt. Default-Wert bezüglich der Suffixe ist \texttt{true} und bezüglich der syntaktischen Tags \texttt{false}.
 
-Für die Evaluierung benötigt dieser Operator zwei zusätzliche Hilfsstrukturen. Zum einen das Enum \textbf{PennTag}. Hier sind alle Tags der Penn Treebank aufgelistet. Jedes Literal hat einen String als Attribut, der die Schreibweise angibt. Somit kann über die statische Methode \texttt{stringToPennTag(String s, boolean removeSuffix)} ein String auf ein Enum-Literal abgebildet werden. Hierzu werden alle Tags durchlaufen und deren Attribut mit dem Übergabestring verglichen. Das entsprechende Literal wird zurückgegeben. Für den Fall, dass dem String kein Tag entspricht, wird das zusätzlich eingeführte Literal \texttt{Empty}, mit leerem String als Attribut, zurückgegeben. Das passiert beispielsweise dann, wenn im Parser oder Goldstandard zusätzliche Tags verwendet werden. \\
-Zum anderen wird die Klasse \textbf{ParseTreeNode} verwendet. Ein Objekt dieser Klasse entspricht einer Konstituente aus Kapitel \ref{sec:konzept:eval}. Realisiert wurde dieses Konzept über eine \texttt{PennTag} und zwei \texttt{int} Membervariablen für den Typ und die Grenzen. Über die Methode \texttt{equals(Object obj)} wird getestet, ob sowohl Tag, als auch Grenzen des übergebenen \texttt{ParseTreeNodes} übereinstimmen. 
+Für die Evaluierung benötigt dieser Operator zwei zusätzliche Hilfsstrukturen. Zum einen das Enum \textbf{PennTag}. Hier sind alle Tags der Penn Treebank aufgelistet. Jedes Literal hat einen String als Attribut, der die Schreibweise angibt. Somit kann über die statische Methode \texttt{stringToPennTag(String s, boolean removeSuffix)} ein String auf ein Enum-Literal abgebildet werden. Hierzu werden alle Tags durchlaufen und deren Attribut mit dem Übergabestring verglichen. Das entsprechende Literal wird zurückgegeben. Für den Fall, dass dem String kein Tag entspricht, wird das zusätzlich eingeführte Literal \texttt{Empty}, mit leerem String als Attribut, zurückgegeben. Das passiert beispielsweise dann, wenn im Parser oder Goldstandard zusätzliche Tags verwendet werden. \texttt{removeSuffix} sorgt dafür, dass die Tags ab dem ersten Bindestrich abgeschnitten werden und somit nur das ursprüngliche betrachtet wird. \\
+Zum anderen wird die Klasse \textbf{ParseTreeNode} verwendet. Ein Objekt dieser Klasse entspricht einer Konstituente aus Kapitel \ref{sec:konzept:eval}. Realisiert wurde dieses Konzept über eine \texttt{PennTag} und zwei \texttt{int} Membervariablen für den Typ und die Grenzen. Über die Methode \texttt{equals(Object obj)} wird getestet, ob sowohl Tag, als auch Grenzen des übergebenen \texttt{ParseTreeNodes} mit dem aufrufendem übereinstimmen. 
 
 Der Operator selbst bedient sich wiederum zweier Hilfsmethoden. Mit 
 
@@ -90,7 +96,8 @@ wird eine formatierte Zeile \texttt{s} in eine Liste von Konstituenten umgewande
 \end{itemize}
 Diese Methode gibt also alle zu bewertenden Konstituenten des Satzes zurück. 
 
-In der \texttt{doWork()} des Operators werden sowohl Parser-Ausgabe als auch Goldstandard in nach Zeilen aufgeteilt. Für jede Zeile der beiden Versionen werden die beschriebenen Hilfsmethoden aufgerufen. Die Parser-Konstituenten werden durchlaufen und im Goldstandard nach passendem Gegenstück gesucht. Hierdurch bekommt man die Anzahl an korrekten Konstituenten und kann daraus \textit{Precision}, \textit{Recall} und \(F_1\) des Satzes errechnen. Für den \textit{RCB}-Wert werden nochmals alle \texttt{ParseTreeNodes} des Parsers durchlaufen und getestet, ob sie mindestens eine Konstituente des Goldstandards kreuzen. Die Kennzahlen einer Zeile werden zu ihrem jeweiligen globalen Wert addiert. Dieser wird am Ende durch die Zahl der Zeilen geteilt. Zuletzt wird ein \texttt{ExampleSet} mit den Attributen \texttt{Name, Precision, Recall, F1} und \texttt{Crossing Brackets} erstellt und genau eine Zeile mit den Werten des Parsers eingefügt. Dieses wird an den OutputPort übergeben. %TODO prüfen ob globaler nicht besser anders berechnet wird, nämlich count korrektGlobal / count nodesGlobal
+In der \texttt{doWork()} des Operators werden sowohl Parser-Ausgabe als auch Goldstandard in nach Zeilen aufgeteilt. Für jede Zeile der beiden Versionen werden die beschriebenen Hilfsmethoden aufgerufen. Die Parser-Konstituenten werden durchlaufen und im Goldstandard nach passendem Gegenstück gesucht. Hierdurch bekommt man die Anzahl an korrekten Konstituenten. Für den \textit{RCB}-Wert werden nochmals die \texttt{ParseTreeNodes} des Parsers durchlaufen und alle gezählt, die mindestens eine Konstituente des Goldstandards kreuzen. Diese beiden Zahlen, sowie die Anzahl an Parser- und Goldstandard-Konstituenten werden für jede Zeile aufsummiert. Dadurch können, nach dem Vergleich aller Zeilen, entsprechend der Formeln (\ref{eqn:precision}) bis (\ref{eqn:rcb}), die Kennzahlen für den Parser errechnet werden. \\
+Zuletzt wird ein \texttt{ExampleSet} mit den Attributen \texttt{Name, Precision, Recall, F1, Crossing Brackets}, sowie der totalen Anzahlen der Konstitueten, aus denen die Kennzahlen berechnet wurden, erstellt. Diese eine Zeile, mit den Werten des Parsers, wird in dieses Set eingefügt, welches dann an den OutputPort übergeben wird. 
 
 \subsection{Show Results}
 

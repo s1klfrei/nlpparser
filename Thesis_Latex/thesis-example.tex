@@ -27,19 +27,20 @@
 \newcommand{\thesisTitle}{Bachelorarbeit}
 \newcommand{\thesisName}{Klaus Freiberger}
 \newcommand{\thesisSubject}{Rapid Miner NLP Tools: Syntax Parsing}
-\newcommand{\thesisDate}{Juni 1, 2019}
+\newcommand{\thesisDate}{Juni 14, 2019}
 \newcommand{\thesisVersion}{Final}
 
-\newcommand{\thesisFirstReviewer}{Prof. Dr.-Ing. Stefan Jablonski}
+
+\newcommand{\thesisFirstReviewer}{Dr. Lars Ackermann}
 \newcommand{\thesisFirstReviewerUniversity}{\protect{Universit{\"a}t Bayreuth}}
 \newcommand{\thesisFirstReviewerDepartment}{Fakult{\"a}t Mathematik, Physik, Informatik}
 
-\newcommand{\thesisSecondReviewer}{Dr. Lars Ackermann}
+\newcommand{\thesisSecondReviewer}{Prof. Dr.-Ing. Stefan Jablonski}
 \newcommand{\thesisSecondReviewerUniversity}{\protect{Universit{\"a}t Bayreuth}}
 \newcommand{\thesisSecondReviewerDepartment}{Fakult{\"a}t Mathematik, Physik, Informatik}
 
-\newcommand{\thesisFirstSupervisor}{Stefan Jablonski}
-\newcommand{\thesisSecondSupervisor}{Lars Ackermann}
+\newcommand{\thesisFirstSupervisor}{Lars Ackermann}
+\newcommand{\thesisSecondSupervisor}{Stefan Jablonski}
 
 \newcommand{\thesisUniversity}{\protect{Universit{\"a}t Bayreuth}}
 \newcommand{\thesisUniversityDepartment}{Fakult{\"a}t Mathematik, Physik, Informatik}
@@ -53,10 +54,13 @@
 % Load and Configure Packages
 % **************************************************
 \usepackage[utf8]{inputenc}		% defines file's character encoding
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%Meine Packages:
 \usepackage{listings} % für grammatikregeln
 \usepackage{qtree}
 \usepackage{amsmath}
+\usepackage{rotating}
+
 %%
 \usepackage[english]{babel} % babel system, adjust the language of the content
 \usepackage[					% clean thesis style
@@ -129,11 +133,13 @@
 \setcounter{page}{1}			% set page counter
 \pagestyle{maincontentstyle} 	% fancy header and footer
 
-\input{content/chapter-introduction} % INCLUDE: introduction
+\input{content/chapter-einleitung} % INCLUDE: introduction
 
 \input{content/chapter-nlp}
 \input{content/chapter-konzept}
 \input{content/chapter-implementierung}
+\input{content/chapter-evaluierung}
+\input{content/chapter-schluss}
 \cleardoublepage
 
 % --------------------------

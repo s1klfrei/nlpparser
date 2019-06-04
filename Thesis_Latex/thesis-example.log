@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.22)  28 MAY 2019 21:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.22)  4 JUN 2019 18:34
 entering extended mode
 **./thesis-example.tex
 (thesis-example.tex
@@ -657,8 +657,39 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
-("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.sty"
+("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\rotating.
+sty"
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+
+("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphicx.
+sty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphics.
+sty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\graph
+ics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+)
+\Gin@req@height=\dimen119
+\Gin@req@width=\dimen120
+)
+("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count114
+\rotFPtop=\skip133
+\rotFPbot=\skip134
+\rot@float@box=\box55
+\rot@mess@toks=\toks26
+) ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.st
+y"
 Package: babel 2018/01/24 3.17 The Babel package
+
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\switch.def
 "
 File: switch.def 2018/01/24 3.17 Babel switching mechanism
@@ -680,12 +711,12 @@ File: babel.def 2018/01/24 3.17 Babel common definitions
 "
 File: switch.def 2018/01/24 3.17 Babel switching mechanism
 )
-\babel@savecnt=\count114
-\U@D=\dimen119
+\babel@savecnt=\count115
+\U@D=\dimen121
 
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\txtbabel.d
 ef")
-\bbl@dirlevel=\count115
+\bbl@dirlevel=\count116
 )
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
@@ -702,10 +733,10 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 tex"
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xkeyval\xkvutils
 .tex"
-\XKV@toks=\toks26
-\XKV@tempa@toks=\toks27
+\XKV@toks=\toks27
+\XKV@tempa@toks=\toks28
 )
-\XKV@depth=\count116
+\XKV@depth=\count117
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
@@ -789,12 +820,12 @@ Already applied: [0000/00/00] Old fixltx2e package on input line 53.
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\microtype\microtyp
 e.sty"
 Package: microtype 2018/01/14 v2.7a Micro-typographical refinements (RS)
-\MT@toks=\toks28
-\MT@count=\count117
+\MT@toks=\toks29
+\MT@count=\count118
 LaTeX Info: Redefining \textls on input line 793.
-\MT@outer@kern=\dimen120
+\MT@outer@kern=\dimen122
 LaTeX Info: Redefining \textmicrotypecontext on input line 1339.
-\MT@listname@count=\count118
+\MT@listname@count=\count119
 
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\microtype\microtyp
 e-pdftex.def"
@@ -802,7 +833,7 @@ File: microtype-pdftex.def 2018/01/14 v2.7a Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 913.
 LaTeX Info: Redefining \lslig on input line 913.
-\MT@outer@space=\skip133
+\MT@outer@space=\skip135
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
@@ -813,23 +844,6 @@ File: microtype.cfg 2018/01/14 v2.7a microtype main configuration file (RS)
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\setspace\setspace.
 sty"
 Package: setspace 2011/12/19 v6.7a set line spacing
-)
-("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphicx.
-sty"
-Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
-
-("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphics.
-sty"
-Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
-
-("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\graph
-ics.cfg"
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
-)
-Package graphics Info: Driver file: pdftex.def on input line 99.
-)
-\Gin@req@height=\dimen121
-\Gin@req@width=\dimen122
 )
 
 Class scrreprt Warning: Usage of package `fancyhdr' together
@@ -850,24 +864,24 @@ Class scrreprt Warning: Usage of package `fancyhdr' together
 sty"
 Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
 s
-\f@nch@headwidth=\skip134
-\f@nch@O@elh=\skip135
-\f@nch@O@erh=\skip136
-\f@nch@O@olh=\skip137
-\f@nch@O@orh=\skip138
-\f@nch@O@elf=\skip139
-\f@nch@O@erf=\skip140
-\f@nch@O@olf=\skip141
-\f@nch@O@orf=\skip142
+\f@nch@headwidth=\skip136
+\f@nch@O@elh=\skip137
+\f@nch@O@erh=\skip138
+\f@nch@O@olh=\skip139
+\f@nch@O@orh=\skip140
+\f@nch@O@elf=\skip141
+\f@nch@O@erf=\skip142
+\f@nch@O@olf=\skip143
+\f@nch@O@orf=\skip144
 )
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\enumitem\enumitem.
 sty"
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
-\labelindent=\skip143
+\labelindent=\skip145
 \enit@outerparindent=\dimen123
-\enit@toks=\toks29
-\enit@inbox=\box55
-\enitdp@description=\count119
+\enit@toks=\toks30
+\enit@inbox=\box56
+\enitdp@description=\count120
 )
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\blindtext\blindtex
 t.sty"
@@ -876,24 +890,24 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\xspace.sty"
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count120
-\c@Blindtext=\count121
-\c@blind@countparstart=\count122
-\blind@countxx=\count123
-\blindtext@numBlindtext=\count124
-\blind@countyy=\count125
-\c@blindlist=\count126
-\c@blindlistlevel=\count127
-\c@blindlist@level=\count128
-\blind@listitem=\count129
-\c@blind@listcount=\count130
-\c@blind@levelcount=\count131
-\blind@mathformula=\count132
-\blind@Mathformula=\count133
-\c@blind@randomcount=\count134
-\c@blind@randommax=\count135
-\c@blind@pangramcount=\count136
-\c@blind@pangrammax=\count137
+\c@blindtext=\count121
+\c@Blindtext=\count122
+\c@blind@countparstart=\count123
+\blind@countxx=\count124
+\blindtext@numBlindtext=\count125
+\blind@countyy=\count126
+\c@blindlist=\count127
+\c@blindlistlevel=\count128
+\c@blindlist@level=\count129
+\blind@listitem=\count130
+\c@blind@listcount=\count131
+\c@blind@levelcount=\count132
+\blind@mathformula=\count133
+\blind@Mathformula=\count134
+\c@blind@randomcount=\count135
+\c@blind@randommax=\count136
+\c@blind@pangramcount=\count137
+\c@blind@pangrammax=\count138
 ) ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\textcomp.st
 y"
 Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
@@ -1112,8 +1126,8 @@ Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen124
-\Hy@linkcounter=\count138
-\Hy@pagecounter=\count139
+\Hy@linkcounter=\count139
+\Hy@pagecounter=\count140
 
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\pd1enc.de
 f"
@@ -1121,7 +1135,7 @@ File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count140
+\Hy@SavedSpaceFactor=\count141
 
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\hyperref.
 cfg"
@@ -1135,14 +1149,14 @@ Package hyperref Info: Plain pages OFF on input line 4524.
 Package hyperref Info: Backreferencing OFF on input line 4529.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4762.
-\c@Hy@tempcnt=\count141
+\c@Hy@tempcnt=\count142
  ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5115.
 \XeTeXLinkMargin=\dimen125
-\Fld@menulength=\count142
+\Fld@menulength=\count143
 \Field@Width=\dimen126
 \Fld@charsize=\dimen127
 Package hyperref Info: Hyper figures OFF on input line 6369.
@@ -1154,17 +1168,17 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6394.
 Package hyperref Info: PDF/A mode OFF on input line 6399.
 LaTeX Info: Redefining \ref on input line 6439.
 LaTeX Info: Redefining \pageref on input line 6443.
-\Hy@abspage=\count143
-\c@Item=\count144
-\c@Hfootnote=\count145
+\Hy@abspage=\count144
+\c@Item=\count145
+\c@Hfootnote=\count146
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hpdftex.d
 ef"
 File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
-\Fld@listcount=\count146
-\c@bookmark@seq@number=\count147
+\Fld@listcount=\count147
+\c@bookmark@seq@number=\count148
 
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\rerunfile
 check.sty"
@@ -1172,7 +1186,7 @@ Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip144
+\Hy@SectionHShift=\skip146
 )
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\caption.st
 y"
@@ -1191,16 +1205,17 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 \caption@hangindent=\dimen134
 )
 Package caption Info: KOMA-Script document class.
-\c@ContinuedFloat=\count148
+\c@ContinuedFloat=\count149
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
+Package caption Info: rotating package is loaded.
 )
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometry.
 sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
-\Gm@cnth=\count149
-\Gm@cntv=\count150
-\c@Gm@tempcnt=\count151
+\Gm@cnth=\count150
+\Gm@cntv=\count151
+\c@Gm@tempcnt=\count152
 \Gm@bindingoffset=\dimen135
 \Gm@wd@mp=\dimen136
 \Gm@odd@mp=\dimen137
@@ -1209,7 +1224,7 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@layoutheight=\dimen140
 \Gm@layouthoffset=\dimen141
 \Gm@layoutvoffset=\dimen142
-\Gm@dimlist=\toks30
+\Gm@dimlist=\toks31
 
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometry.
 cfg"))
@@ -1220,15 +1235,15 @@ Package: csquotes 2018/02/11 v5.2c context-sensitive quotations (JAW)
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.
 sty"
 Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count152
+\etb@tempcnta=\count153
 )
-\csq@reset=\count153
-\csq@gtype=\count154
-\csq@glevel=\count155
-\csq@qlevel=\count156
-\csq@maxlvl=\count157
-\csq@tshold=\count158
-\csq@ltx@everypar=\toks31
+\csq@reset=\count154
+\csq@gtype=\count155
+\csq@glevel=\count156
+\csq@qlevel=\count157
+\csq@maxlvl=\count158
+\csq@tshold=\count159
+\csq@ltx@everypar=\toks32
 
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\csquotes\csquotes.
 def"
@@ -1251,74 +1266,71 @@ Package: biblatex 2017/12/19 v3.10 programmable bibliographies (PK/JW/AB)
 
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.sty"
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count159
+\lrq@indent=\count160
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.def"
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-)) ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ifthen.sty
-"
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)
+))
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xstring\xstring.st
 y"
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xstring\xstring.
 tex"
 \@xs@message=\write3
-\integerpart=\count160
-\decimalpart=\count161
+\integerpart=\count161
+\decimalpart=\count162
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
-\c@tabx@nest=\count162
-\c@listtotal=\count163
-\c@listcount=\count164
-\c@liststart=\count165
-\c@liststop=\count166
-\c@citecount=\count167
-\c@citetotal=\count168
-\c@multicitecount=\count169
-\c@multicitetotal=\count170
-\c@instcount=\count171
-\c@maxnames=\count172
-\c@minnames=\count173
-\c@maxitems=\count174
-\c@minitems=\count175
-\c@citecounter=\count176
-\c@savedcitecounter=\count177
-\c@uniquelist=\count178
-\c@uniquename=\count179
-\c@refsection=\count180
-\c@refsegment=\count181
-\c@maxextratitle=\count182
-\c@maxextratitleyear=\count183
-\c@maxextradate=\count184
-\c@maxextraalpha=\count185
-\c@abbrvpenalty=\count186
-\c@highnamepenalty=\count187
-\c@lownamepenalty=\count188
-\c@maxparens=\count189
-\c@parenlevel=\count190
-\blx@tempcnta=\count191
-\blx@tempcntb=\count192
-\blx@tempcntc=\count193
-\blx@maxsection=\count194
-\blx@maxsegment@0=\count195
-\blx@notetype=\count196
-\blx@parenlevel@text=\count197
-\blx@parenlevel@foot=\count198
-\blx@sectionciteorder@0=\count199
-\labelnumberwidth=\skip145
-\labelalphawidth=\skip146
-\biblabelsep=\skip147
-\bibitemsep=\skip148
-\bibnamesep=\skip149
-\bibinitsep=\skip150
-\bibparsep=\skip151
-\bibhang=\skip152
+\c@tabx@nest=\count163
+\c@listtotal=\count164
+\c@listcount=\count165
+\c@liststart=\count166
+\c@liststop=\count167
+\c@citecount=\count168
+\c@citetotal=\count169
+\c@multicitecount=\count170
+\c@multicitetotal=\count171
+\c@instcount=\count172
+\c@maxnames=\count173
+\c@minnames=\count174
+\c@maxitems=\count175
+\c@minitems=\count176
+\c@citecounter=\count177
+\c@savedcitecounter=\count178
+\c@uniquelist=\count179
+\c@uniquename=\count180
+\c@refsection=\count181
+\c@refsegment=\count182
+\c@maxextratitle=\count183
+\c@maxextratitleyear=\count184
+\c@maxextradate=\count185
+\c@maxextraalpha=\count186
+\c@abbrvpenalty=\count187
+\c@highnamepenalty=\count188
+\c@lownamepenalty=\count189
+\c@maxparens=\count190
+\c@parenlevel=\count191
+\blx@tempcnta=\count192
+\blx@tempcntb=\count193
+\blx@tempcntc=\count194
+\blx@maxsection=\count195
+\blx@maxsegment@0=\count196
+\blx@notetype=\count197
+\blx@parenlevel@text=\count198
+\blx@parenlevel@foot=\count199
+\blx@sectionciteorder@0=\count266
+\labelnumberwidth=\skip147
+\labelalphawidth=\skip148
+\biblabelsep=\skip149
+\bibitemsep=\skip150
+\bibnamesep=\skip151
+\bibinitsep=\skip152
+\bibparsep=\skip153
+\bibhang=\skip154
 \blx@bcfin=\read1
 \blx@bcfout=\write4
-\c@mincomprange=\count266
-\c@maxcomprange=\count267
-\c@mincompwidth=\count268
+\c@mincomprange=\count267
+\c@maxcomprange=\count268
+\c@mincompwidth=\count269
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -1328,80 +1340,80 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'alphabetic.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count269
-\c@savedafterword=\count270
-\c@annotator=\count271
-\c@savedannotator=\count272
-\c@author=\count273
-\c@savedauthor=\count274
-\c@bookauthor=\count275
-\c@savedbookauthor=\count276
-\c@commentator=\count277
-\c@savedcommentator=\count278
-\c@editor=\count279
-\c@savededitor=\count280
-\c@editora=\count281
-\c@savededitora=\count282
-\c@editorb=\count283
-\c@savededitorb=\count284
-\c@editorc=\count285
-\c@savededitorc=\count286
-\c@foreword=\count287
-\c@savedforeword=\count288
-\c@holder=\count289
-\c@savedholder=\count290
-\c@introduction=\count291
-\c@savedintroduction=\count292
-\c@namea=\count293
-\c@savednamea=\count294
-\c@nameb=\count295
-\c@savednameb=\count296
-\c@namec=\count297
-\c@savednamec=\count298
-\c@translator=\count299
-\c@savedtranslator=\count300
-\c@shortauthor=\count301
-\c@savedshortauthor=\count302
-\c@shorteditor=\count303
-\c@savedshorteditor=\count304
-\c@labelname=\count305
-\c@savedlabelname=\count306
-\c@institution=\count307
-\c@savedinstitution=\count308
-\c@lista=\count309
-\c@savedlista=\count310
-\c@listb=\count311
-\c@savedlistb=\count312
-\c@listc=\count313
-\c@savedlistc=\count314
-\c@listd=\count315
-\c@savedlistd=\count316
-\c@liste=\count317
-\c@savedliste=\count318
-\c@listf=\count319
-\c@savedlistf=\count320
-\c@location=\count321
-\c@savedlocation=\count322
-\c@organization=\count323
-\c@savedorganization=\count324
-\c@origlocation=\count325
-\c@savedoriglocation=\count326
-\c@origpublisher=\count327
-\c@savedorigpublisher=\count328
-\c@publisher=\count329
-\c@savedpublisher=\count330
-\c@language=\count331
-\c@savedlanguage=\count332
-\c@origlanguage=\count333
-\c@savedoriglanguage=\count334
-\c@pageref=\count335
-\c@savedpageref=\count336
-\shorthandwidth=\skip153
-\shortjournalwidth=\skip154
-\shortserieswidth=\skip155
-\shorttitlewidth=\skip156
-\shortauthorwidth=\skip157
-\shorteditorwidth=\skip158
+\c@afterword=\count270
+\c@savedafterword=\count271
+\c@annotator=\count272
+\c@savedannotator=\count273
+\c@author=\count274
+\c@savedauthor=\count275
+\c@bookauthor=\count276
+\c@savedbookauthor=\count277
+\c@commentator=\count278
+\c@savedcommentator=\count279
+\c@editor=\count280
+\c@savededitor=\count281
+\c@editora=\count282
+\c@savededitora=\count283
+\c@editorb=\count284
+\c@savededitorb=\count285
+\c@editorc=\count286
+\c@savededitorc=\count287
+\c@foreword=\count288
+\c@savedforeword=\count289
+\c@holder=\count290
+\c@savedholder=\count291
+\c@introduction=\count292
+\c@savedintroduction=\count293
+\c@namea=\count294
+\c@savednamea=\count295
+\c@nameb=\count296
+\c@savednameb=\count297
+\c@namec=\count298
+\c@savednamec=\count299
+\c@translator=\count300
+\c@savedtranslator=\count301
+\c@shortauthor=\count302
+\c@savedshortauthor=\count303
+\c@shorteditor=\count304
+\c@savedshorteditor=\count305
+\c@labelname=\count306
+\c@savedlabelname=\count307
+\c@institution=\count308
+\c@savedinstitution=\count309
+\c@lista=\count310
+\c@savedlista=\count311
+\c@listb=\count312
+\c@savedlistb=\count313
+\c@listc=\count314
+\c@savedlistc=\count315
+\c@listd=\count316
+\c@savedlistd=\count317
+\c@liste=\count318
+\c@savedliste=\count319
+\c@listf=\count320
+\c@savedlistf=\count321
+\c@location=\count322
+\c@savedlocation=\count323
+\c@organization=\count324
+\c@savedorganization=\count325
+\c@origlocation=\count326
+\c@savedoriglocation=\count327
+\c@origpublisher=\count328
+\c@savedorigpublisher=\count329
+\c@publisher=\count330
+\c@savedpublisher=\count331
+\c@language=\count332
+\c@savedlanguage=\count333
+\c@origlanguage=\count334
+\c@savedoriglanguage=\count335
+\c@pageref=\count336
+\c@savedpageref=\count337
+\shorthandwidth=\skip155
+\shortjournalwidth=\skip156
+\shortserieswidth=\skip157
+\shorttitlewidth=\skip158
+\shortauthorwidth=\skip159
+\shorteditorwidth=\skip160
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
@@ -1427,13 +1439,13 @@ Package biblatex Info: ... file 'biblatex.def' found.
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.
 def"
 File: biblatex.def 2017/12/19 v3.10 biblatex compatibility (PK/JW/AB)
-\c@textcitecount=\count337
-\c@textcitetotal=\count338
-\c@textcitemaxnames=\count339
-\c@biburlnumpenalty=\count340
-\c@biburlucpenalty=\count341
-\c@biburllcpenalty=\count342
-\c@smartand=\count343
+\c@textcitecount=\count338
+\c@textcitetotal=\count339
+\c@textcitemaxnames=\count340
+\c@biburlnumpenalty=\count341
+\c@biburlucpenalty=\count342
+\c@biburllcpenalty=\count343
+\c@smartand=\count344
 )
 Package biblatex Info: Trying to load natbib compatibility...
 Package biblatex Info: ... file 'blx-natbib.def' found.
@@ -1454,8 +1466,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\bbx\stand
 ard.bbx"
 File: standard.bbx 2017/12/19 v3.10 biblatex bibliography style (PK/JW/AB)
-\c@bbx:relatedcount=\count344
-\c@bbx:relatedtotal=\count345
+\c@bbx:relatedcount=\count345
+\c@bbx:relatedtotal=\count346
 ))
 Package biblatex Info: Trying to load citation style 'alphabetic'...
 Package biblatex Info: ... file 'alphabetic.cbx' found.
@@ -1496,12 +1508,12 @@ Class scrreprt Warning: Usage of package `titlesec' together
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\titlesec\titlesec.
 sty"
 Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
-\ttl@box=\box56
-\beforetitleunit=\skip159
-\aftertitleunit=\skip160
+\ttl@box=\box57
+\beforetitleunit=\skip161
+\aftertitleunit=\skip162
 \ttl@plus=\dimen143
 \ttl@minus=\dimen144
-\ttl@toksa=\toks32
+\ttl@toksa=\toks33
 \titlewidth=\dimen145
 \titlewidthlast=\dimen146
 \titlewidthfirst=\dimen147
@@ -1536,48 +1548,48 @@ Class scrreprt Warning: Activating an ugly workaround for a missing
 y"
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has chapter divisions on input line 51.
-\cftparskip=\skip161
-\cftbeforetoctitleskip=\skip162
-\cftaftertoctitleskip=\skip163
-\cftbeforepartskip=\skip164
-\cftpartnumwidth=\skip165
-\cftpartindent=\skip166
-\cftbeforechapskip=\skip167
-\cftchapindent=\skip168
-\cftchapnumwidth=\skip169
-\cftbeforesecskip=\skip170
-\cftsecindent=\skip171
-\cftsecnumwidth=\skip172
-\cftbeforesubsecskip=\skip173
-\cftsubsecindent=\skip174
-\cftsubsecnumwidth=\skip175
-\cftbeforesubsubsecskip=\skip176
-\cftsubsubsecindent=\skip177
-\cftsubsubsecnumwidth=\skip178
-\cftbeforeparaskip=\skip179
-\cftparaindent=\skip180
-\cftparanumwidth=\skip181
-\cftbeforesubparaskip=\skip182
-\cftsubparaindent=\skip183
-\cftsubparanumwidth=\skip184
-\cftbeforeloftitleskip=\skip185
-\cftafterloftitleskip=\skip186
-\cftbeforefigskip=\skip187
-\cftfigindent=\skip188
-\cftfignumwidth=\skip189
-\c@lofdepth=\count346
-\c@lotdepth=\count347
-\cftbeforelottitleskip=\skip190
-\cftafterlottitleskip=\skip191
-\cftbeforetabskip=\skip192
-\cfttabindent=\skip193
-\cfttabnumwidth=\skip194
+\cftparskip=\skip163
+\cftbeforetoctitleskip=\skip164
+\cftaftertoctitleskip=\skip165
+\cftbeforepartskip=\skip166
+\cftpartnumwidth=\skip167
+\cftpartindent=\skip168
+\cftbeforechapskip=\skip169
+\cftchapindent=\skip170
+\cftchapnumwidth=\skip171
+\cftbeforesecskip=\skip172
+\cftsecindent=\skip173
+\cftsecnumwidth=\skip174
+\cftbeforesubsecskip=\skip175
+\cftsubsecindent=\skip176
+\cftsubsecnumwidth=\skip177
+\cftbeforesubsubsecskip=\skip178
+\cftsubsubsecindent=\skip179
+\cftsubsubsecnumwidth=\skip180
+\cftbeforeparaskip=\skip181
+\cftparaindent=\skip182
+\cftparanumwidth=\skip183
+\cftbeforesubparaskip=\skip184
+\cftsubparaindent=\skip185
+\cftsubparanumwidth=\skip186
+\cftbeforeloftitleskip=\skip187
+\cftafterloftitleskip=\skip188
+\cftbeforefigskip=\skip189
+\cftfigindent=\skip190
+\cftfignumwidth=\skip191
+\c@lofdepth=\count347
+\c@lotdepth=\count348
+\cftbeforelottitleskip=\skip192
+\cftafterlottitleskip=\skip193
+\cftbeforetabskip=\skip194
+\cfttabindent=\skip195
+\cfttabnumwidth=\skip196
 ))
-Package hyperref Info: Option `plainpages' set `false' on input line 85.
-Package hyperref Info: Option `colorlinks' set `false' on input line 85.
-Package hyperref Info: Option `breaklinks' set `true' on input line 85.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 85.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 85.
+Package hyperref Info: Option `plainpages' set `false' on input line 89.
+Package hyperref Info: Option `colorlinks' set `false' on input line 89.
+Package hyperref Info: Option `breaklinks' set `true' on input line 89.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 89.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 89.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
@@ -1591,46 +1603,47 @@ LaTeX Warning: Label `fig:cky-beispiel' multiply defined.
 )
 \openout1 = `thesis-example.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 97.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 97.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 101.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 101.
+
  ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Try loading font information for T1+bch on input line 97.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Try loading font information for T1+bch on input line 101.
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1bch.fd"
 File: t1bch.fd 2004/10/18 font definitions for T1/bch.
 )
-\c@lstlisting=\count348
+\c@lstlisting=\count349
 
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
 ii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count349
+\scratchcounter=\count350
 \scratchdimen=\dimen148
-\scratchbox=\box57
-\nofMPsegments=\count350
-\nofMParguments=\count351
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count352
+\scratchbox=\box58
+\nofMPsegments=\count351
+\nofMParguments=\count352
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count353
 \MPscratchDim=\dimen149
-\MPnumerator=\count353
-\makeMPintoPDFobject=\count354
-\everyMPtoPDFconversion=\toks34
+\MPnumerator=\count354
+\makeMPintoPDFobject=\count355
+\everyMPtoPDFconversion=\toks35
 )
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-
 base.sty"
@@ -1647,7 +1660,7 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-LaTeX Info: Redefining \microtypecontext on input line 97.
+LaTeX Info: Redefining \microtypecontext on input line 101.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1663,8 +1676,8 @@ fg"
 File: mt-bch.cfg 2007/03/03 v1.5 microtype config. file: Bitstream Charter (RS)
 
 )
-\AtBeginShipoutBox=\box58
-Package hyperref Info: Link coloring OFF on input line 97.
+\AtBeginShipoutBox=\box59
+Package hyperref Info: Link coloring OFF on input line 101.
 
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.s
 ty"
@@ -1674,11 +1687,11 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 estring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count355
+\c@section@level=\count356
 )
-LaTeX Info: Redefining \ref on input line 97.
-LaTeX Info: Redefining \pageref on input line 97.
-LaTeX Info: Redefining \nameref on input line 97.
+LaTeX Info: Redefining \ref on input line 101.
+LaTeX Info: Redefining \pageref on input line 101.
+LaTeX Info: Redefining \nameref on input line 101.
  (thesis-example.out) (thesis-example.out)
 \@outlinefile=\write5
 \openout5 = `thesis-example.out'.
@@ -1732,12 +1745,12 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'thesis-example.bbl' not found.
 No file thesis-example.bbl.
-Package biblatex Info: Reference section=0 on input line 97.
-Package biblatex Info: Reference segment=0 on input line 97.
-Package scrbase Info: activating english \figurename on input line 104.
-Package scrbase Info: activating english \tablename on input line 105.
+Package biblatex Info: Reference section=0 on input line 101.
+Package biblatex Info: Reference segment=0 on input line 101.
+Package scrbase Info: activating english \figurename on input line 108.
+Package scrbase Info: activating english \tablename on input line 109.
 (content/titlepages.tex
-<gfx/AI4.png, id=119, 2283.53125pt x 832.10875pt>
+<gfx/AI4.png, id=167, 2283.53125pt x 832.10875pt>
 File: gfx/AI4.png Graphic file (type png)
 <use gfx/AI4.png>
 Package pdftex.def Info: gfx/AI4.png  used on input line 6.
@@ -1799,7 +1812,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--13
 
 ]
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <20.74> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 122.
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 126.
  (thesis-example.toc
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <10.95> not available
 (Font)              Font shape `T1/lmss/bx/n' tried instead on input line 4.
@@ -1832,18 +1845,15 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 4.
-)
-\tf@toc=\write6
-\openout6 = `thesis-example.toc'.
-
 
 [7
 
 
-] [8
+])
+\tf@toc=\write6
+\openout6 = `thesis-example.toc'.
 
-
-] (content/chapter-introduction.tex
+ [8] (content/chapter-einleitung.tex
 chapter 1.
 
 Class scrreprt Warning: \float@addtolists detected!
@@ -1868,6 +1878,8 @@ LaTeX Warning: Citation 'WEB:GNU:GPL:2010' on page 1 undefined on input line 14
 LaTeX Warning: Citation 'WEB:Miede:2011' on page 1 undefined on input line 14.
 
 ) (content/chapter-nlp.tex [1
+
+
 
 
 ] [2
@@ -1904,12 +1916,12 @@ LaTeX Warning: Reference `fig:cky-beispiel' on page 9 undefined on input line 1
 91.
 
 [9]
-<gfx/cky-beispiel.png, id=258, 423.984pt x 241.50224pt>
+<gfx/cky-beispiel.png, id=318, 423.984pt x 241.50224pt>
 File: gfx/cky-beispiel.png Graphic file (type png)
 <use gfx/cky-beispiel.png>
 Package pdftex.def Info: gfx/cky-beispiel.png  used on input line 195.
 (pdftex.def)             Requested size: 395.45181pt x 225.25436pt.
-<gfx/grammatik-cky-beispiel.png, id=259, 428.19975pt x 339.06676pt>
+<gfx/grammatik-cky-beispiel.png, id=319, 428.19975pt x 339.06676pt>
 File: gfx/grammatik-cky-beispiel.png Graphic file (type png)
 <use gfx/grammatik-cky-beispiel.png>
 Package pdftex.def Info: gfx/grammatik-cky-beispiel.png  used on input line 202
@@ -1960,24 +1972,18 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 (content/chapter-konzept.tex [16]
 chapter 3.
 
-Package caption Warning: \label without proper reference on input line 10.
+Package caption Warning: \label without proper reference on input line 11.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:konzept-aufbau' on page 17 undefined on input lin
-e 5.
+e 6.
 
-<gfx/konzept-aufbau-png.png, id=318, 652.23676pt x 417.9615pt>
+<gfx/konzept-aufbau-png.png, id=378, 652.23676pt x 417.9615pt>
 File: gfx/konzept-aufbau-png.png Graphic file (type png)
 <use gfx/konzept-aufbau-png.png>
-Package pdftex.def Info: gfx/konzept-aufbau-png.png  used on input line 9.
+Package pdftex.def Info: gfx/konzept-aufbau-png.png  used on input line 10.
 (pdftex.def)             Requested size: 395.45181pt x 253.41277pt.
-
-Overfull \hbox (0.35298pt too wide) in paragraph at lines 5--13
-\T1/bch/m/n/10.95 (-20) Abbildung [][][] zeigt das Konzept nach dem im-ple-men-
-tiert wurde. Hier wird dargestellt,
- []
-
 [17
 
 
@@ -1985,7 +1991,7 @@ tiert wurde. Hier wird dargestellt,
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [19]
-Underfull \hbox (badness 10000) in paragraph at lines 61--91
+Underfull \hbox (badness 10000) in paragraph at lines 63--93
 
  []
 
@@ -1994,18 +2000,90 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [20]) (content/chapter-implementierung.tex [21] [22]
 chapter 4.
-) [23
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--12
+
+ []
+
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 17.
+("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+[23
 
 
-] [24
+]
+Overfull \hbox (23.42712pt too wide) in paragraph at lines 32--33
+[]\T1/bch/m/n/10.95 (-20) Alle en-twick-el-ten Op-er-a-toren er-ben von der Kla
+sse \T1/lmtt/m/n/10.95 com.rapidminer.operator.Operator
+ []
+
+[24]
+Overfull \hbox (27.4555pt too wide) in paragraph at lines 49--50
+[]\T1/bch/m/n/10.95 (-20) Der Code für diesen Parser ist aus der Klasse \T1/lmt
+t/m/n/10.95 edu.berkeley.nlp.PCFGLA.BerkeleyParser
+ []
+
+
+Overfull \hbox (6.22893pt too wide) in paragraph at lines 51--53
+[]\T1/bch/m/n/10.95 (-20) Die Funk-tion-al-ität der \T1/lmtt/m/n/10.95 main \T1
+/bch/m/n/10.95 (-20) wurde in die \T1/lmtt/m/n/10.95 doWork() \T1/bch/m/n/10.95
+ (-20) geschrieben. Über den eigentlichen
+ []
+
+[25] [26]
+Underfull \vbox (badness 1325) has occurred while \output is active []
+
+ [27]
+Overfull \hbox (61.5725pt too wide) in paragraph at lines 88--89
+[]\T1/lmtt/m/n/10.95 private static List<ParseTreeNode> parseSentence(String s,
+ boolean removeSuffix,
+ []
+
+LaTeX Font Info:    Try loading font information for TS1+bch on input line 92.
+("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ts1bch.fd"
+File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
+)
+Overfull \hbox (9.53151pt too wide) in paragraph at lines 95--96
+\T1/lmtt/m/n/10.95 countOnlySyntacticTags == true\T1/bch/m/n/10.95 (-20) , so w
+er-den nur diejeni-gen \T1/lmtt/m/n/10.95 ParseTreeNodes
+ []
+
+[28]
+Overfull \hbox (29.13354pt too wide) in paragraph at lines 104--105
+[]\T1/bch/m/n/10.95 (-20) Dieser Op-er-a-tor di-ent lediglich dem Zusam-men-füh
+ren von mehreren Parser-Evaluationen. 
+ []
+
+) (content/chapter-evaluierung.tex [29] [30
+
+
+]
+chapter 5.
+
+Overfull \hbox (7.52429pt too wide) in paragraph at lines 14--31
+[][] 
+ []
+
+) (content/chapter-schluss.tex [31] [32]
+chapter 6.
+) [33
+
+
+] [34
 
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 147.
+LaTeX Warning: Empty bibliography on input line 153.
 
 
-Package biblatex Warning: Type 'online' not found on input line 148.
+Package biblatex Warning: Type 'online' not found on input line 154.
 
 
 Package biblatex Warning: 'prefixnumbers' option to '\printbibliography' is no 
@@ -2013,41 +2091,47 @@ longer supported.
 (biblatex)                Please use 'labelprefix' option to '\newrefcontext'.
 
 
-LaTeX Warning: Empty bibliography on input line 148.
+LaTeX Warning: Empty bibliography on input line 154.
 
 (thesis-example.lof)
 \tf@lof=\write7
 \openout7 = `thesis-example.lof'.
 
- [25
+ [35
 
 
-] [26
+] [36
 
 
 ] (thesis-example.lot)
 \tf@lot=\write8
 \openout8 = `thesis-example.lot'.
 
- [27] [28
+ [37] [38
 
 
 ]
-(content/declaration.tex) [29
+(content/declaration.tex) [39
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 168.
- [30
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 174.
+ [40
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 168.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 174.
  (thesis-example.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 168.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 168.
-Package rerunfilecheck Info: File `thesis-example.out' has not changed.
-(rerunfilecheck)             Checksum: 933FECDD44CBE78D15CB21350DFDEA70;1893.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 174.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 174.
 
+
+Package rerunfilecheck Warning: File `thesis-example.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `thesis-example.out':
+(rerunfilecheck)             Before: EBE2688DF391E168954C5E4E683DBE26;2672
+(rerunfilecheck)             After:  0173F23A6FEFA55139608CF799EE29C0;2473.
 
 LaTeX Warning: There were undefined references.
 
@@ -2062,43 +2146,50 @@ Package biblatex Warning: Please (re)run BibTeX on the file(s):
 Package logreq Info: Writing requests to 'thesis-example.run.xml'.
 \openout1 = `thesis-example.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 168.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 174.
  ) 
 Here is how much of TeX's memory you used:
- 24284 strings out of 493303
- 403583 string characters out of 3129784
- 1009016 words of memory out of 3000000
- 27110 multiletter control sequences out of 15000+200000
- 113532 words of font info for 206 fonts, out of 3000000 for 9000
+ 24497 strings out of 493303
+ 407090 string characters out of 3129784
+ 1010015 words of memory out of 3000000
+ 27274 multiletter control sequences out of 15000+200000
+ 114168 words of font info for 208 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,13n,106p,8827b,3351s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.en
-c}{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathi
-t.enc}{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-m
-athex.enc}{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/
-lm-mathsy.enc}{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips
-/lm/lm-ec.enc}{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips
-/base/8r.enc}{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/
-tex-gyre/q-ec.enc}<C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/bitstrea/charter/bchb8a.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/bitstrea/charter/bchr8a.pfb><C:/Users/Klaus/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/bitstrea/charter/bchri8a.pfb><C:/Users/Klaus/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/Klaus/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Klaus/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Klaus/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/Kla
-us/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/K
-laus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss10.pfb><C:/Use
-rs/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><
-C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.p
-fb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/tex-gyr
-e/qhvb.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
-/tex-gyre/qhvr.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/tex-gyre/qhvri.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on thesis-example.pdf (38 pages, 609909 bytes).
+pdfTeX warning (dest): name{section*.49} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.47} has been referenced but does not exist
+, replaced by a fixed one
+
+{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}
+{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}
+{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.
+enc}{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mat
+hex.enc}{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm
+-mathsy.enc}{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/b
+ase/8r.enc}{C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/te
+x-gyre/q-ec.enc}<C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/b
+itstrea/charter/bchb8a.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/bitstrea/charter/bchr8a.pfb><C:/Users/Klaus/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/bitstrea/charter/bchri8a.pfb><C:/Users/Klaus/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/Klaus/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Klaus/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Klaus/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/Klaus
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Kla
+us/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss10.pfb><C:/Users
+/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:
+/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb
+><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt10
+.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/tex-g
+yre/qhvb.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/tex-gyre/qhvr.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/tex-gyre/qhvri.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on thesis-example.pdf (48 pages, 682298 bytes).
 PDF statistics:
- 502 PDF objects out of 1000 (max. 8388607)
- 127 named destinations out of 1000 (max. 500000)
- 35069 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 629 PDF objects out of 1000 (max. 8388607)
+ 158 named destinations out of 1000 (max. 500000)
+ 36189 words of extra memory for PDF output out of 42996 (max. 10000000)
 

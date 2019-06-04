@@ -26,4 +26,13 @@
 \BOOKMARK [1][]{section*.32}{3.6 Evaluierung}{chapter.3}% 26
 \BOOKMARK [0][]{chapter.4}{4 Implementierung}{}% 27
 \BOOKMARK [1][]{section*.36}{4.1 RapidMiner Studio}{chapter.4}% 28
-\BOOKMARK [0][]{Declaration.0}{Declaration}{}% 29
+\BOOKMARK [1][]{section*.37}{4.2 Verwendete Operatoren}{chapter.4}% 29
+\BOOKMARK [1][]{section*.38}{4.3 Eigene Operatoren}{chapter.4}% 30
+\BOOKMARK [2][]{section*.39}{4.3.1 Berkeley-Parser}{section*.38}% 31
+\BOOKMARK [2][]{section*.40}{4.3.2 OpenNLP-Parser}{section*.38}% 32
+\BOOKMARK [2][]{section*.41}{4.3.3 Stanford-Parser}{section*.38}% 33
+\BOOKMARK [2][]{section*.42}{4.3.4 Compare Results}{section*.38}% 34
+\BOOKMARK [2][]{section*.43}{4.3.5 Show Results}{section*.38}% 35
+\BOOKMARK [0][]{chapter.5}{5 Evaluierung}{}% 36
+\BOOKMARK [0][]{chapter.6}{6 Schluss}{}% 37
+\BOOKMARK [0][]{Declaration.0}{Declaration}{}% 38

@@ -1,0 +1,33 @@
+% !TEX root = ../thesis-example.tex
+%
+\chapter{Evaluierung}
+\label{sec:eval}
+
+In diesem Kapitel wird die Leistung der Parser anhand der Ted-Talks-Treebank getestet.
+
+Dieser Korpus enthält zehn Texte unterschiedlicher Länge, die alle von jedem Parser bearbeitet werden. In Tabelle \ref{tab:eval-parser} sind die Ergebnisse aufgeführt. Für die Messung wurden alle Tags gewertet, nicht nur die syntaktischen. In einer Zeile stehen die Werte für die entsprechende Datei. Für den totalen Wert wurde die Anzahl der unterschiedlichen Konstituenten über alle zehn Dateien aufsummiert und anhand dieser Zahlen nach entsprechender Formel berechnet. Somit wird die unterschiedliche Größe der Texte berücksichtigt. \\
+Der Berkeley-Parser nimmt mit Precision- und Recall-Resultaten von über 93\% den ersten Platz ein. Der OpenNLP-Parser liegt, mit weniger als 1\% Vorsprung in beiden Werten, vor dem Stanford-Parser. Beide weisen einen gleich hohen Anteil an kreuzenden Konstituenten auf.\\
+Für die Interpretation dieser Ergebnisse muss beachtet werden, dass die Modelle nicht mit den selben Texten trainiert wurden. Es handelt sich um die vortrainierten Modelle der Parser-Anbieter. Um aussagekräftigere Ergebnisse zu erhalten, müssen eigene Modelle erstellt werden. 
+%TODO zeitmessung
+\begin{sidewaystable}
+
+\begin{tabular}{ | l || l | l | l | l || l | l | l | l || l | l | l | l |}
+	\hline
+	& \multicolumn{4}{|c||}{Berkeley Parser} & \multicolumn{4}{|c||}{Stanford Parser} & \multicolumn{4}{|c|}{OpenNLP Parser}\\ \hline
+	Dateiname & Precision & Recall & \( F_1 \) & RCB & Precision & Recall & \( F_1 \) & RCB & Precision & Recall & \( F_1 \) & RCB  \\
+	\hline \hline
+	SheaHembrey\_2011 & 93,3\%  & 93,2\% & 93,2\% & 2,7\% & 89,4\% & 89,2\% & 89,3\% & 4,4\% & 89,9\% & 89,3\% & 89,6\% & 3,6\%\\ \hline
+	RobertLang\_2008 & 93,8\% & 93,4\% & 93,6\% & 2,4\% & 89,4\% & 89,1\% & 89,3\% & 3,5\% & 89,2\% & 89,1\% & 89,2\% & 3,3\% \\ \hline
+	JessaGamble\_2010G & 94,3\% & 94,4\% & 94,4\% & 2,2\% & 88,3\% & 89,6\% & 88,9\% & 3,8\% & 90,3\% & 90,3\% & 90,3\% & 2,9\% \\ \hline
+	MihalyCsikszentmihaly\_2004 & 93,8\% & 93,0\% & 93,4\% & 3,8\% & 87,8\% & 85,2\% & 86,4\% & 6,0\% & 89,6\% & 89,1\% & 89,3\% & 5,5\% \\ \hline
+	YvesBahar\_2009 & 91,9\% & 92,0\% & 91,9\% & 1,4\% & 88,2\% & 88,8\% & 88,5\% & 3,7\% & 89,4\% & 89,6\% & 89,5\% & 1,4\% \\ \hline
+	KatherineFulton\_2007 & 92,8\% & 92,3\% & 92,5\% & 3,5\% & 85,7\% & 83,4\% & 84,5\% & 4,8\% & 87,2\% & 87,3\% & 87,2\% & 6,0\% \\ \hline
+	HannaRosin\_2010W & 93,1\% & 92,8\% & 92,9\% & 4,1\% & 90,0\% & 89,3\% & 89,7\% & 4,2\% & 89,3\% & 88,5\% & 88,9\% & 4,8\% \\ \hline
+	HansRosling\_2010S1 & 92,4\% & 92,6\% & 92,5\% & 2,9\% & 88,9\% & 89,6\% & 89,2\% & 3,6\% & 87,4\% & 87,2\% & 87,3\% & 4,4\% \\ \hline
+	StefanaBroadbent\_2009G & 92,8\% & 92,1\% & 92,5\% & 3,8\% & 88,5\% & 88,0\% & 88,2\% & 5,6\% & 87,9\% & 87,8\% & 87,8\% & 5,5\% \\ \hline
+	AnthonyAtala\_2009P & 94,5\% & 94,3\% & 94,4\% & 2,0\% & 89,0\% & 87,9\% & 88,4\% & 3,9\% & 90,3\% & 90,4\% & 90,3\% & 3,4\% \\ \hline \hline
+	Total & 93,4\% & 93,1\% & 93,3\% & 3,0\% & 88,7\% & 87,9\% & 88,3\% & 4,4\% & 89,1\% & 88,8\% & 89,0\% & 4,4\% \\ \hline
+\end{tabular}
+\caption{Evaluation der Parser für die Ted-Talks-Treebank} 
+\label{tab:eval-parser}
+\end{sidewaystable} 
