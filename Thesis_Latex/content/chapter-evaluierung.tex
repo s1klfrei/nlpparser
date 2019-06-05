@@ -3,8 +3,9 @@
 \chapter{Evaluierung}
 \label{sec:eval}
 
-In diesem Kapitel wird die Leistung der Parser anhand der Ted-Talks-Treebank getestet.
+In diesem Kapitel wird die Leistung der Parser anhand der Ted-Talks-Treebank getestet und verwandte Arbeiten betrachtet
 
+\section{Leistung der Parser}
 Dieser Korpus enthält zehn Texte unterschiedlicher Länge, die alle von jedem Parser bearbeitet werden. In Tabelle \ref{tab:eval-parser} sind die Ergebnisse aufgeführt. Für die Messung wurden alle Tags gewertet, nicht nur die syntaktischen. In einer Zeile stehen die Werte für die entsprechende Datei. Für den totalen Wert wurde die Anzahl der unterschiedlichen Konstituenten über alle zehn Dateien aufsummiert und anhand dieser Zahlen nach entsprechender Formel berechnet. Somit wird die unterschiedliche Größe der Texte berücksichtigt. \\
 Der Berkeley-Parser nimmt mit Precision- und Recall-Resultaten von über 93\% den ersten Platz ein. Der OpenNLP-Parser liegt, mit weniger als 1\% Vorsprung in beiden Werten, vor dem Stanford-Parser. Beide weisen einen gleich hohen Anteil an kreuzenden Konstituenten auf.\\
 Für die Interpretation dieser Ergebnisse muss beachtet werden, dass die Modelle nicht mit den selben Texten trainiert wurden. Es handelt sich um die vortrainierten Modelle der Parser-Anbieter. Um aussagekräftigere Ergebnisse zu erhalten, müssen eigene Modelle erstellt werden. 
@@ -31,3 +32,7 @@ Für die Interpretation dieser Ergebnisse muss beachtet werden, dass die Modelle
 \caption{Evaluation der Parser für die Ted-Talks-Treebank} 
 \label{tab:eval-parser}
 \end{sidewaystable} 
+
+\section{Verwandte Arbeiten}
+
+%TODO

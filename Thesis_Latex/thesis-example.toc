@@ -1,5 +1,5 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\babel@toc {english}{}
+\babel@toc {ngerman}{}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
@@ -13,58 +13,64 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}Grundlagen}{3}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Syntaktisches Parsen}{7}{section*.12}
+\contentsline {section}{\numberline {2.2}Syntaktisches Parsen}{7}{section*.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}Ambiguit\IeC {\"a}t}{8}{section*.13}
+\contentsline {subsection}{\numberline {2.2.1}Ambiguit\IeC {\"a}t}{8}{section*.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}Dynamische Programmierung}{9}{section*.14}
+\contentsline {subsection}{\numberline {2.2.2}Dynamische Programmierung}{9}{section*.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.3}Cocke-Kasami-Younger Algorithmus}{9}{section*.15}
+\contentsline {subsection}{\numberline {2.2.3}Cocke-Kasami-Younger Algorithmus}{9}{section*.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Statistisches Parsen}{12}{section*.18}
+\contentsline {section}{\numberline {2.3}Statistisches Parsen}{12}{section*.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}Probabilistische Kontextfreie Grammatiken}{12}{section*.19}
+\contentsline {subsection}{\numberline {2.3.1}Probabilistische Kontextfreie Grammatiken}{12}{section*.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.2}Probabilistische Lexikalisierte Kontextfreie Grammatiken}{14}{section*.20}
+\contentsline {subsection}{\numberline {2.3.2}Probabilistische Lexikalisierte Kontextfreie Grammatiken}{14}{section*.21}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Konpzept}{17}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Input Text}{17}{section*.24}
+\contentsline {section}{\numberline {3.1}Input Text}{17}{section*.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Parser Output}{18}{section*.25}
+\contentsline {section}{\numberline {3.2}Parser Output}{18}{section*.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Parser Modell}{18}{section*.26}
+\contentsline {section}{\numberline {3.3}Parser Modell}{18}{section*.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Goldstandard}{19}{section*.27}
+\contentsline {section}{\numberline {3.4}Goldstandard}{19}{section*.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Parser}{19}{section*.28}
+\contentsline {section}{\numberline {3.5}Parser}{19}{section*.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.1}Stanford-Parser}{20}{section*.29}
+\contentsline {subsection}{\numberline {3.5.1}Stanford-Parser}{20}{section*.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.2}Berkeley-Parser}{20}{section*.30}
+\contentsline {subsection}{\numberline {3.5.2}Berkeley-Parser}{20}{section*.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.3}OpenNLP-Parser}{20}{section*.31}
+\contentsline {subsection}{\numberline {3.5.3}OpenNLP-Parser}{20}{section*.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.6}Evaluierung}{20}{section*.32}
+\contentsline {section}{\numberline {3.6}Evaluierung}{20}{section*.33}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Implementierung}{23}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}RapidMiner Studio}{23}{section*.36}
+\contentsline {section}{\numberline {4.1}RapidMiner Studio}{23}{section*.37}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Verwendete Operatoren}{23}{section*.37}
+\contentsline {section}{\numberline {4.2}Verwendete Operatoren}{23}{section*.38}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Eigene Operatoren}{24}{section*.38}
+\contentsline {section}{\numberline {4.3}Eigene Operatoren}{24}{section*.39}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}Berkeley-Parser}{25}{section*.39}
+\contentsline {subsection}{\numberline {4.3.1}Berkeley-Parser}{25}{section*.40}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.2}OpenNLP-Parser}{26}{section*.40}
+\contentsline {subsection}{\numberline {4.3.2}OpenNLP-Parser}{26}{section*.41}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.3}Stanford-Parser}{26}{section*.41}
+\contentsline {subsection}{\numberline {4.3.3}Stanford-Parser}{26}{section*.42}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.4}Compare Results}{27}{section*.42}
+\contentsline {subsection}{\numberline {4.3.4}Compare Results}{27}{section*.43}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.5}Show Results}{29}{section*.43}
+\contentsline {subsection}{\numberline {4.3.5}Show Results}{29}{section*.44}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Evaluierung}{31}{chapter.5}
 \defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Leistung der Parser}{31}{section*.46}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Verwandte Arbeiten}{31}{section*.48}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {6}Schluss}{33}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Literatur}{35}{chapter*.50}

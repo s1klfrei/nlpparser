@@ -1,23 +1,27 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\babel@toc {english}{}
+\babel@toc {ngerman}{}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Syntaxbaum zum Satz \textit {My dog also likes eating sausage.}\relax }}{6}{figure.caption.11}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Syntaktische Annotation in mehrzeiliger, geklammerter Darstellung\relax }}{5}{figure.caption.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Beispielmatrix f\IeC {\"u}r den CKY-Algorithmus, entnommen aus .. \relax }}{10}{figure.caption.16}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Syntaxbaum zu \textit {My dog also likes eating sausage.}\relax }}{5}{figure.caption.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Grammatik f\IeC {\"u}r entnommen aus .. \relax }}{11}{figure.caption.17}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Beispielmatrix f\IeC {\"u}r den \textit {CKY}-Algorithmus, entnommen aus .. \relax }}{10}{figure.caption.17}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Lexikalisierter Baum, entnommen aus\relax }}{15}{figure.caption.21}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Grammatik f\IeC {\"u}r entnommen aus .. \relax }}{11}{figure.caption.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Lexikalisierter Baum, entnommen aus\relax }}{15}{figure.caption.22}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Konzeptueller Aufbau\relax }}{17}{figure.caption.23}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Konzeptueller Aufbau\relax }}{17}{figure.caption.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Syntaxbaum zu \textit {They learn much faster.}\relax }}{20}{figure.caption.33}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Syntaxbaum zu \textit {They learn much faster.}\relax }}{20}{figure.caption.34}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
