@@ -1,28 +1,8 @@
 % !TEX root = ../thesis-example.tex
 %
-\chapter{Related Work}
+\chapter{Verwandte Arbeit}
 \label{sec:related}
 
-\cleanchapterquote{A picture is worth a thousand words. An interface is worth a thousand pictures.}{Ben Shneiderman}{(Professor for Computer Science)}
-
-\Blindtext[2][1]
-
-\section{Related Work Section 1}
-\label{sec:related:sec1}
-
-\Blindtext[2][2]
-
-\section{Related Work Section 2}
-\label{sec:related:sec2}
-
-\Blindtext[3][2]
-
-\section{Related Work Section 3}
-\label{sec:related:sec3}
-
-\Blindtext[4][2]
-
-\section{Conclusion}
-\label{sec:related:conclusion}
-
-\Blindtext[2][1]
+Für RapidMiner ist kein weiteres Parser-Evaluations-Rahmenwerk bekannt. Dagegen wird in \cite{ucompare1} und \cite{ucompare2} \textit{U-Compare} vorgestellt. Es handelt sich dabei um ein umfassendes Rahmenwerk zur Evaluation verschiedener NLP-Techniken. Es ist unter anderem möglich Tokenizer, POS-Tagger und syntaktische Parser zu vergleichen. Stand 2009 waren sowohl der Stanford-, als auch der OpenNLP-Parser im Framework integriert. Das Programm wird angeboten vom \textit{National Centre for Text Mining (NaCTeM)} \cite{nactem}, mit Sitz in der Universität von Manchester.\\
+\textit{U-Compare} baut auf \textit{UIMA} \cite{uima} auf. Dies ist ein einem Rahmenwerk zum Erstellen von Anwendungen für die Verarbeitung unstrukturierter Informationen, was zum Beispiel natürlich-sprachlicher Text ist. Die Arbeitsweise von \textit{U-Compare} ist ähnlich zur hier vorgestellten RapidMiner Erweiterung. Es werden Daten eingelesen und durch verschiedene Komponenten verarbeitet. Diese Komponenten sind vergleichbar mit RapidMiner Operatoren. Per Drag-and-Drop können mehrere Komponenten hintereinander zu einem Ablaufplan angeordnet werden. Eine Komponenten kann beispielsweise ein Tokenizer, ein POS-Tagger, ein Parser oder auch eine Kombination aus allen drei sein. Es gibt die Möglichkeit diese Ablaufpläne zu evaluieren. So können mehrere Tokenizer, POS-Tagger und Parser angegeben werden und \textit{U-Compare} errechnet für alle möglichen Kombinationen die \textit{Precision}, \textit{Recall} und \(F_1\) Werte. \cite{ucompare2} \cite{ucompareeval} \\
+Somit ist hiermit ein mächtiges Werkzeug zur NLP-Evaluierung auf einer anderen Plattform bereits vorhanden, welches die Funktionalität dieser Arbeit größtenteils beinhaltet. Dennoch ist die Entwicklung eines NLP-Evaluations-Rahmenwerks für RapidMiner, in Hinblick auf die \textit{RapidMiner Community} mit einer Größe von über 500.000 Mitgliedern (Stand 07.06.2018), ein interessantes Projekt. %TODO weil? 

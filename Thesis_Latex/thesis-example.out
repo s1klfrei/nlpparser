@@ -2,40 +2,41 @@
 \BOOKMARK [0][]{Titlepage.0}{Titlepage}{}% 2
 \BOOKMARK [0][]{Abstract.0}{Abstract}{}% 3
 \BOOKMARK [0][]{chapter.1}{1 Einleitung}{}% 4
-\BOOKMARK [1][]{section*.4}{1.1 Motivation and Problem Statement}{chapter.1}% 5
-\BOOKMARK [2][]{section*.5}{1.1.1 Some References}{section*.4}% 6
-\BOOKMARK [1][]{section*.6}{1.2 Thesis Structure}{chapter.1}% 7
-\BOOKMARK [0][]{chapter.2}{2 Natural Language Processing}{}% 8
-\BOOKMARK [1][]{section*.8}{2.1 Grundlagen}{chapter.2}% 9
-\BOOKMARK [1][]{section*.13}{2.2 Syntaktisches Parsen}{chapter.2}% 10
-\BOOKMARK [2][]{section*.14}{2.2.1 Ambiguit\344t}{section*.13}% 11
-\BOOKMARK [2][]{section*.15}{2.2.2 Dynamische Programmierung}{section*.13}% 12
-\BOOKMARK [2][]{section*.16}{2.2.3 Cocke-Kasami-Younger Algorithmus}{section*.13}% 13
-\BOOKMARK [1][]{section*.19}{2.3 Statistisches Parsen}{chapter.2}% 14
-\BOOKMARK [2][]{section*.20}{2.3.1 Probabilistische Kontextfreie Grammatiken}{section*.19}% 15
-\BOOKMARK [2][]{section*.21}{2.3.2 Probabilistische Lexikalisierte Kontextfreie Grammatiken}{section*.19}% 16
-\BOOKMARK [0][]{chapter.3}{3 Konpzept}{}% 17
-\BOOKMARK [1][]{section*.25}{3.1 Input Text}{chapter.3}% 18
-\BOOKMARK [1][]{section*.26}{3.2 Parser Output}{chapter.3}% 19
-\BOOKMARK [1][]{section*.27}{3.3 Parser Modell}{chapter.3}% 20
-\BOOKMARK [1][]{section*.28}{3.4 Goldstandard}{chapter.3}% 21
-\BOOKMARK [1][]{section*.29}{3.5 Parser}{chapter.3}% 22
-\BOOKMARK [2][]{section*.30}{3.5.1 Stanford-Parser}{section*.29}% 23
-\BOOKMARK [2][]{section*.31}{3.5.2 Berkeley-Parser}{section*.29}% 24
-\BOOKMARK [2][]{section*.32}{3.5.3 OpenNLP-Parser}{section*.29}% 25
-\BOOKMARK [1][]{section*.33}{3.6 Evaluierung}{chapter.3}% 26
-\BOOKMARK [0][]{chapter.4}{4 Implementierung}{}% 27
-\BOOKMARK [1][]{section*.37}{4.1 RapidMiner Studio}{chapter.4}% 28
-\BOOKMARK [1][]{section*.38}{4.2 Verwendete Operatoren}{chapter.4}% 29
-\BOOKMARK [1][]{section*.39}{4.3 Eigene Operatoren}{chapter.4}% 30
-\BOOKMARK [2][]{section*.40}{4.3.1 Berkeley-Parser}{section*.39}% 31
-\BOOKMARK [2][]{section*.41}{4.3.2 OpenNLP-Parser}{section*.39}% 32
-\BOOKMARK [2][]{section*.42}{4.3.3 Stanford-Parser}{section*.39}% 33
-\BOOKMARK [2][]{section*.43}{4.3.4 Compare Results}{section*.39}% 34
-\BOOKMARK [2][]{section*.44}{4.3.5 Show Results}{section*.39}% 35
-\BOOKMARK [0][]{chapter.5}{5 Evaluierung}{}% 36
-\BOOKMARK [1][]{section*.46}{5.1 Leistung der Parser}{chapter.5}% 37
-\BOOKMARK [1][]{section*.48}{5.2 Verwandte Arbeiten}{chapter.5}% 38
-\BOOKMARK [0][]{chapter.6}{6 Schluss}{}% 39
-\BOOKMARK [0][]{chapter*.50}{Literatur}{}% 40
-\BOOKMARK [0][]{Declaration.0}{Declaration}{}% 41
+\BOOKMARK [1][]{section*.4}{1.1 Problemstellung der Arbeit}{chapter.1}% 5
+\BOOKMARK [1][]{section*.5}{1.2 Aufbau der Arbeit}{chapter.1}% 6
+\BOOKMARK [0][]{chapter.2}{2 Natural Language Processing}{}% 7
+\BOOKMARK [1][]{section*.7}{2.1 Grundlagen}{chapter.2}% 8
+\BOOKMARK [1][]{section*.12}{2.2 Syntaktisches Parsen}{chapter.2}% 9
+\BOOKMARK [2][]{section*.13}{2.2.1 Ambiguit\344t}{section*.12}% 10
+\BOOKMARK [2][]{section*.14}{2.2.2 Dynamische Programmierung}{section*.12}% 11
+\BOOKMARK [2][]{section*.15}{2.2.3 Cocke-Kasami-Younger Algorithmus}{section*.12}% 12
+\BOOKMARK [1][]{section*.18}{2.3 Statistisches Parsen}{chapter.2}% 13
+\BOOKMARK [2][]{section*.19}{2.3.1 Probabilistische Kontextfreie Grammatiken}{section*.18}% 14
+\BOOKMARK [2][]{section*.20}{2.3.2 Probabilistische Lexikalisierte Kontextfreie Grammatiken}{section*.18}% 15
+\BOOKMARK [0][]{chapter.3}{3 Konzept des Evaluations-Rahmenwerks}{}% 16
+\BOOKMARK [1][]{section*.24}{3.1 Input Text}{chapter.3}% 17
+\BOOKMARK [1][]{section*.25}{3.2 Parser Output}{chapter.3}% 18
+\BOOKMARK [1][]{section*.26}{3.3 Parser Modell}{chapter.3}% 19
+\BOOKMARK [1][]{section*.27}{3.4 Goldstandard}{chapter.3}% 20
+\BOOKMARK [1][]{section*.28}{3.5 Parser}{chapter.3}% 21
+\BOOKMARK [1][]{section*.29}{3.6 Evaluierung}{chapter.3}% 22
+\BOOKMARK [0][]{chapter.4}{4 Implementierung}{}% 23
+\BOOKMARK [1][]{section*.33}{4.1 RapidMiner Studio}{chapter.4}% 24
+\BOOKMARK [1][]{section*.34}{4.2 Verwendete Operatoren}{chapter.4}% 25
+\BOOKMARK [1][]{section*.35}{4.3 Eigene Operatoren}{chapter.4}% 26
+\BOOKMARK [2][]{section*.36}{4.3.1 Berkeley-Parser}{section*.35}% 27
+\BOOKMARK [2][]{section*.37}{4.3.2 OpenNLP-Parser}{section*.35}% 28
+\BOOKMARK [2][]{section*.38}{4.3.3 Stanford-Parser}{section*.35}% 29
+\BOOKMARK [2][]{section*.39}{4.3.4 Compare Results}{section*.35}% 30
+\BOOKMARK [2][]{section*.40}{4.3.5 Show Results}{section*.35}% 31
+\BOOKMARK [1][]{section*.41}{4.4 Prozess zum Evaluieren der Parser}{chapter.4}% 32
+\BOOKMARK [0][]{chapter.5}{5 Evaluierung der Parser}{}% 33
+\BOOKMARK [1][]{section*.45}{5.1 Stanford-Parser}{chapter.5}% 34
+\BOOKMARK [1][]{section*.46}{5.2 Berkeley-Parser}{chapter.5}% 35
+\BOOKMARK [1][]{section*.47}{5.3 OpenNLP-Parser}{chapter.5}% 36
+\BOOKMARK [1][]{section*.48}{5.4 Leistung der Parser}{chapter.5}% 37
+\BOOKMARK [1][]{section*.50}{5.5 Weitere Evaluationen}{chapter.5}% 38
+\BOOKMARK [0][]{chapter.6}{6 Verwandte Arbeit}{}% 39
+\BOOKMARK [0][]{chapter.7}{7 Schluss}{}% 40
+\BOOKMARK [0][]{chapter*.53}{Literatur}{}% 41
+\BOOKMARK [0][]{Declaration.0}{Declaration}{}% 42

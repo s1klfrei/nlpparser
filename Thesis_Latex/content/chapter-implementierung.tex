@@ -104,3 +104,21 @@ Dieser Operator dient lediglich dem Zusammenführen von mehreren Parser-Evaluati
 Es wird für die Input-Ports wieder ein PortExtender verwendet, um beliebig viele Compare-Results-Operatoren anschließen zu können. Der Output-Port liefert eine Tabelle, in der pro Zeile die Ergebnisse eines Parsers stehen.
 
 In der \texttt{doWork()} werden alle Input-Ports durchlaufen und die Werte in die Ergebnistabelle übertragen. Diese wird zuletzt an den Output-Port geliefert.
+
+
+\section{Prozess zum Evaluieren der Parser}
+
+Mit den vorgestellten Operatoren lässt sich im RapidMiner Studio nun ein Prozess zum Evaluieren der Parser erstellen. Die Anordnung der Operatoren zur Evaluierung des Berkeley-Parsers wird in Abbildung \ref{fig:screenshot-prozess} präsentiert. Dieser Aufbau ist für alle Parser gleich. Lediglich bei \textbf{Read Grammar} muss beachtet werden, dass das entsprechende Modell geladen wird. Um mehrere Parser zu vergleichen,  muss das Konstrukt aus \textbf{Compare Results}, und allen links davon liegenden Operatoren, für die anderen Parser erstellt werden. Die Ausgänge der \textbf{Compare Results}-Operatoren werden mit \textbf{Show Results} verbunden. \\
+Abbildung \ref{fig:results} zeigt einen Teil der Ausgabe des Prozesses beim Vergleich aller Parser. Nach dem Namen der Parser werden die vier Metriken aufgelistet. In der Abbildung wurden rechts vier Spalten entfernt, welche die Zahlen angeben, aus denen sich die Metriken berechnen. Diese Zahlen sollen unter anderem dabei helfen die Größe der geparsten Datei einzuordnen.
+
+\begin{figure}
+\includegraphics[width=\textwidth]{gfx/berkeley-skizze.png} 
+\label{fig:screenshot-prozess}	
+\caption{RapidMiner-Prozess zur Evaluierung des Berkeley-Parsers}	
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\textwidth]{gfx/shortresults.png} 
+\label{fig:results}	
+\caption{Teil der Ausgabe des RapidMiner-Prozesses beim Vergleich aller Parser}	
+\end{figure}

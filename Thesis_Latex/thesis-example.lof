@@ -5,21 +5,27 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Syntaktische Annotation in mehrzeiliger, geklammerter Darstellung\relax }}{5}{figure.caption.11}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Syntaktische Annotation in mehrzeiliger, geklammerter Darstellung\relax }}{5}{figure.caption.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Syntaxbaum zu \textit {My dog also likes eating sausage.}\relax }}{5}{figure.caption.12}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Syntaxbaum zu \textit {My dog also likes eating sausage.}\relax }}{8}{figure.caption.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Beispielmatrix f\IeC {\"u}r den \textit {CKY}-Algorithmus, entnommen aus .. \relax }}{10}{figure.caption.17}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Beispielmatrix f\IeC {\"u}r den \textit {CKY}-Algorithmus, entnommen aus .. \relax }}{11}{figure.caption.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Grammatik f\IeC {\"u}r entnommen aus .. \relax }}{11}{figure.caption.18}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Grammatik f\IeC {\"u}r entnommen aus .. \relax }}{12}{figure.caption.17}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Lexikalisierter Baum, entnommen aus\relax }}{15}{figure.caption.22}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Lexikalisierter Baum, entnommen aus\relax }}{16}{figure.caption.21}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Konzeptueller Aufbau\relax }}{17}{figure.caption.24}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Konzeptueller Aufbau\relax }}{19}{figure.caption.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Syntaxbaum zu \textit {They learn much faster.}\relax }}{20}{figure.caption.34}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Syntaxbaum zu \textit {They learn much faster.}\relax }}{22}{figure.caption.30}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces RapidMiner-Prozess zur Evaluierung des Berkeley-Parsers\relax }}{32}{figure.caption.42}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Teil der Ausgabe des RapidMiner-Prozesses beim Vergleich aller Parser\relax }}{32}{figure.caption.43}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

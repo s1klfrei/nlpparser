@@ -207,6 +207,179 @@
     \field{urlyear}{2019}
   \endentry
 
+  \entry{dynamischeprog}{book}{}
+    \name{author}{2}{}{%
+      {{hash=GMT}{%
+         family={Goodrich},
+         familyi={G\bibinitperiod},
+         given={Michael\bibnamedelima T},
+         giveni={M\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+      {{hash=TR}{%
+         family={Tamassia},
+         familyi={T\bibinitperiod},
+         given={Roberto},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {John Wiley \& Sons}%
+    }
+    \strng{namehash}{GMTTR1}
+    \strng{fullhash}{GMTTR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{GT11}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{title}{Data structures and algorithms in Java}
+    \field{year}{2011}
+  \endentry
+
+  \entry{ti}{book}{}
+    \name{author}{1}{}{%
+      {{hash=HDW}{%
+         family={Hoffmann},
+         familyi={H\bibinitperiod},
+         given={Dirk\bibnamedelima W},
+         giveni={D\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Carl Hanser Verlag GmbH Co KG}%
+    }
+    \strng{namehash}{HDW1}
+    \strng{fullhash}{HDW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Hof15}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{Theoretische Informatik}
+    \field{year}{2015}
+  \endentry
+
+  \entry{ucompare2}{article}{}
+    \name{author}{7}{}{%
+      {{hash=KY}{%
+         family={Kano},
+         familyi={K\bibinitperiod},
+         given={Yoshinobu},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=BJWA}{%
+         family={Baumgartner\bibnamedelima Jr},
+         familyi={B\bibinitperiod\bibinitdelim J\bibinitperiod},
+         given={William\bibnamedelima A},
+         giveni={W\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=ML}{%
+         family={McCrohon},
+         familyi={M\bibinitperiod},
+         given={Luke},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=AS}{%
+         family={Ananiadou},
+         familyi={A\bibinitperiod},
+         given={Sophia},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=CKB}{%
+         family={Cohen},
+         familyi={C\bibinitperiod},
+         given={K\bibnamedelima Bretonnel},
+         giveni={K\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=HL}{%
+         family={Hunter},
+         familyi={H\bibinitperiod},
+         given={Lawrence},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=TJ}{%
+         family={Tsujii},
+         familyi={T\bibinitperiod},
+         given={Jun'ichi},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Oxford University Press}%
+    }
+    \strng{namehash}{KY+1}
+    \strng{fullhash}{KYBJWAMLASCKBHLTJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Kan+09}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{number}{15}
+    \field{pages}{1997\bibrangedash 1998}
+    \field{title}{U-Compare: share and compare text mining tools with UIMA}
+    \field{volume}{25}
+    \field{journaltitle}{Bioinformatics}
+    \field{year}{2009}
+  \endentry
+
+  \entry{ucompare1}{article}{}
+    \name{author}{6}{}{%
+      {{hash=KY}{%
+         family={Kano},
+         familyi={K\bibinitperiod},
+         given={Yoshinobu},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=MM}{%
+         family={Miwa},
+         familyi={M\bibinitperiod},
+         given={Makoto},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=CKB}{%
+         family={Cohen},
+         familyi={C\bibinitperiod},
+         given={K\bibnamedelima Bretonnel},
+         giveni={K\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=HLE}{%
+         family={Hunter},
+         familyi={H\bibinitperiod},
+         given={Lawrence\bibnamedelima E},
+         giveni={L\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=AS}{%
+         family={Ananiadou},
+         familyi={A\bibinitperiod},
+         given={Sophia},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=TJ}{%
+         family={Tsujii},
+         familyi={T\bibinitperiod},
+         given={Jun’ichi},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IBM}%
+    }
+    \strng{namehash}{KY+1}
+    \strng{fullhash}{KYMMCKBHLEASTJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Kan+11}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{number}{3}
+    \field{pages}{11\bibrangedash 1}
+    \field{title}{U-Compare: A modular NLP workflow construction and evaluation
+  system}
+    \field{volume}{55}
+    \field{journaltitle}{IBM Journal of Research and Development}
+    \field{year}{2011}
+  \endentry
+
   \entry{stanfordparser}{inproceedings}{}
     \name{author}{2}{}{%
       {{hash=KD}{%
@@ -340,6 +513,20 @@
     \field{year}{2009}
   \endentry
 
+  \entry{nactem}{online}{}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Nac}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{title}{NaCTeM}
+    \verb{url}
+    \verb http://nactem.ac.uk/
+    \endverb
+    \field{urlday}{07}
+    \field{urlmonth}{06}
+    \field{urlyear}{2019}
+  \endentry
+
   \entry{tedtalks}{inproceedings}{}
     \name{author}{6}{}{%
       {{hash=NG}{%
@@ -465,6 +652,35 @@
     \field{year}{2006}
   \endentry
 
+  \entry{relationaltags}{online}{}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Rel}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{Penn Treebank II tag set}
+    \verb{url}
+    \verb https://www.clips.uantwerpen.be/pages/mbsp-tags
+    \endverb
+    \field{urlday}{06}
+    \field{urlmonth}{06}
+    \field{urlyear}{2019}
+  \endentry
+
+  \entry{rmguide}{online}{}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Rmg}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{Creating your Own Extension}
+    \verb{url}
+    \verb https://docs.rapidminer.com/latest/developers/creating-your-own-exten
+    \verb sion/
+    \endverb
+    \field{urlday}{05}
+    \field{urlmonth}{06}
+    \field{urlyear}{2019}
+  \endentry
+
   \entry{rmstudio}{online}{}
     \field{labeltitlesource}{title}
     \field{labelalpha}{Rms}
@@ -504,6 +720,35 @@
     \verb .xhtml?productId=rmx_text
     \endverb
     \field{urlday}{05}
+    \field{urlmonth}{06}
+    \field{urlyear}{2019}
+  \endentry
+
+  \entry{ucompareeval}{online}{}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Uco}
+    \field{sortinit}{U}
+    \field{sortinithash}{U}
+    \field{title}{Evaluation and comparison mechanism}
+    \verb{url}
+    \verb http://nactem.ac.uk/ucompare/documentation/evaluation-and-comparison-
+    \verb mechanism/
+    \endverb
+    \field{urlday}{07}
+    \field{urlmonth}{06}
+    \field{urlyear}{2019}
+  \endentry
+
+  \entry{uima}{online}{}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Uim}
+    \field{sortinit}{U}
+    \field{sortinithash}{U}
+    \field{title}{Apache UIMA}
+    \verb{url}
+    \verb http://uima.apache.org/
+    \endverb
+    \field{urlday}{07}
     \field{urlmonth}{06}
     \field{urlyear}{2019}
   \endentry

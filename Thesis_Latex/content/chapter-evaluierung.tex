@@ -1,9 +1,18 @@
 % !TEX root = ../thesis-example.tex
 %
-\chapter{Evaluierung}
+\chapter{Evaluierung der Parser}
 \label{sec:eval}
 
-In diesem Kapitel wird die Leistung der Parser anhand der Ted-Talks-Treebank getestet und verwandte Arbeiten betrachtet
+In diesem Kapitel wird die Funktionsweise der Parser vorgestellt. Danach wird die Leistung der Parser anhand der Ted-Talks-Treebank getestet und eine weitere Parser-Evaluation betrachtet.
+
+
+\section{Stanford-Parser}
+%TODO https://nlp.stanford.edu/nlp/javadoc/javanlp/edu/stanford/nlp/parser/lexparser/package-summary.html
+Der Stanford-Parser bringt ein Modell namens \textit{englishPCFG} mit. Es handelt sich dabei um eine unlexikalisierte PCFG für die englische Sprache. 
+\section{Berkeley-Parser}
+
+\section{OpenNLP-Parser}
+
 
 \section{Leistung der Parser}
 Dieser Korpus enthält zehn Texte unterschiedlicher Länge, die alle von jedem Parser bearbeitet werden. In Tabelle \ref{tab:eval-parser} sind die Ergebnisse aufgeführt. Für die Messung wurden alle Tags gewertet, nicht nur die syntaktischen. In einer Zeile stehen die Werte für die entsprechende Datei. Für den totalen Wert wurde die Anzahl der unterschiedlichen Konstituenten über alle zehn Dateien aufsummiert und anhand dieser Zahlen nach entsprechender Formel berechnet. Somit wird die unterschiedliche Größe der Texte berücksichtigt. \\
@@ -33,6 +42,6 @@ Für die Interpretation dieser Ergebnisse muss beachtet werden, dass die Modelle
 \label{tab:eval-parser}
 \end{sidewaystable} 
 
-\section{Verwandte Arbeiten}
+\section{Weitere Evaluationen}
 
 %TODO
