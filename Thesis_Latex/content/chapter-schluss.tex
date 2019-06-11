@@ -3,6 +3,18 @@
 \chapter{Schluss}
 \label{sec:schluss}
 
-Zuletzt wird ein Fazit gezogen und ein Ausblick gegeben. 
+Zuletzt wird ein Fazit gezogen und ein Ausblick gegeben.
 
+Die erstellte Erweiterung enthält alle notwendigen Operatoren um syntaktische NLP-Parser zu evaluieren und zu vergleichen. Die Parser-Operatoren können auch zum Zweck der Annotation eingesetzt werden, da ihre Ausgabe mit Hilfe der Text-Processing-Erweiterung als Datei abgespeichert werden kann. Für das Einbringen von weiteren Parsern ist, durch die bestehenden Operatoren eine Vorlage gegeben.
 
+Des weiteren bietet dieses Rahmenwerk einige Punkte zur Weiterentwicklung.
+\begin{description}
+\item[Zeitmessung]
+Für die Bewertung der Parser kann neben der Korrektheit auch noch die Geschwindigkeit einbezogen werden. 
+\item[Modelle trainieren]
+Oft bieten die Parser die Möglichkeit ein neues Modell anhand einer Treebank zu trainieren. Die Umsetzung dieses Features mittels RapidMiner-Operatoren würde das Evaluations-Rahmenwerk enorm bereichern. 
+\item[Vorverarbeitung der Ergebnisse]
+Für den Vergleich von Parser-Ausgabe und Goldstandard werden beispielsweise in \cite{parseval} Möglichkeiten zur Bearbeitung der annotierten Sätze vorgestellt. Diese können ins Rahmenwerk eingebracht, und dann mittels Parameter aktiviert oder deaktiviert werden.
+\item[Dependenz-Parser]
+Das Rahmenwerk beinhaltet aktuell nur Parser, welche die Konstituenten der Sätze errechnen. Sogenannte Dependenz-Parser geben die Abhängigkeiten der Wörter untereinander an. Eine mögliche Erweiterung ist das Einbringen des Vergleichs von Dependenz-Parsern.
+\end{description}

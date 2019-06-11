@@ -11,6 +11,7 @@ Die Plattform für das Parser-Framework wurde auf RapidMiner Studio \cite{rmstud
 verwendet. RapidMiner bietet zusätzlich die Möglichkeit eigene Operatoren zu programmieren, was im Rahmen dieser Arbeit auch genutzt wurde. Das RapidMiner Studio, die Erweiterungen und die eigenen Operatoren wurden in Java geschrieben. \\
 
 \section{Verwendete Operatoren}
+\label{sec:impl:vwo}
 
 Hier werden die bereits bestehenden Operatoren beschrieben, welche im Prozess verwendet wurden.
 
@@ -122,3 +123,14 @@ Abbildung \ref{fig:results} zeigt einen Teil der Ausgabe des Prozesses beim Verg
 \label{fig:results}	
 \caption{Teil der Ausgabe des RapidMiner-Prozesses beim Vergleich aller Parser}	
 \end{figure}
+
+\section{Limitierung des Rahmenwerks}
+
+Das Rahmenwerk besitzt auf Grund des zeitlichen Rahmens, der für diese Arbeit gesetzt war, noch Einschränkungen, die bei der Nutzung zu beachten sind. 
+
+Der Eingabetext darf keine runden Klammern enthalten, da diese in der annotierten Version als Begrenzung einer Konstituente gesehen werden. Falls eine Klammer als Tag oder Terminal in der annotierten Version auftaucht, so wird sie nicht als dieses erkannt. 
+
+Wie bereits in Abschnitt \ref{sec:impl:vwo} erwähnt, können der Stanford-Parser und RapidMiner nur unter gewissen Umständen zusammenarbeiten. Falls die nötigen Voraussetzungen nicht geschaffen werden können, muss der Stanford-Parser herausgelassen werden.
+
+Um in den Parser-Operatoren das eingehende \texttt{IOObject} auf die Klasse \texttt{Document} zu casten, musste die Text-Processing-Erweiterung in der Rahmenwerk-Erweiterung eingebunden werden. Das führt dazu, dass beim Start von RapidMiner Studio eine Fehlermeldung bezüglich inkompatibler Erweiterungen erscheint. Diese erscheint, da RapidMiner versucht die Text-Processing-Erweiterung doppelt zu laden. Durch den Button \textit{Ignore} kann, ohne Auswirkungen, zum RapidMiner Studio fortgefahren werden.
+ 
