@@ -5,7 +5,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.1}Problemstellung der Arbeit}{1}{section*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Aufbau der Arbeit}{1}{section*.5}
+\contentsline {section}{\numberline {1.2}Aufbau der Arbeit}{2}{section*.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Natural Language Processing}{3}{chapter.2}
 \defcounter {refsection}{0}\relax 
@@ -19,9 +19,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.3}Cocke-Kasami-Younger Algorithmus}{10}{section*.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Statistisches Parsen}{13}{section*.18}
+\contentsline {section}{\numberline {2.3}Statistisches Parsen}{12}{section*.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}Probabilistische Kontextfreie Grammatiken}{13}{section*.19}
+\contentsline {subsection}{\numberline {2.3.1}Probabilistische Kontextfreie Grammatiken}{12}{section*.19}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3.2}Probabilistische Lexikalisierte Kontextfreie Grammatiken}{16}{section*.20}
 \defcounter {refsection}{0}\relax 
@@ -47,11 +47,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.3}Eigene Operatoren}{26}{section*.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}Berkeley-Parser}{27}{section*.36}
+\contentsline {subsection}{\numberline {4.3.1}Berkeley-Parser}{28}{section*.36}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3.2}OpenNLP-Parser}{28}{section*.37}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.3}Stanford-Parser}{28}{section*.38}
+\contentsline {subsection}{\numberline {4.3.3}Stanford-Parser}{29}{section*.38}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3.4}Compare Results}{29}{section*.39}
 \defcounter {refsection}{0}\relax 
@@ -59,20 +59,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.4}Prozess zum Evaluieren der Parser}{31}{section*.41}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Evaluierung der Parser}{33}{chapter.5}
+\contentsline {section}{\numberline {4.5}Limitierung des Rahmenwerks}{32}{section*.44}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Stanford-Parser}{33}{section*.45}
+\contentsline {chapter}{\numberline {5}Evaluierung der Parser}{35}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Berkeley-Parser}{33}{section*.46}
+\contentsline {section}{\numberline {5.1}Stanford-Parser}{35}{section*.46}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}OpenNLP-Parser}{33}{section*.47}
+\contentsline {section}{\numberline {5.2}Berkeley-Parser}{35}{section*.47}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}Leistung der Parser}{33}{section*.48}
+\contentsline {section}{\numberline {5.3}OpenNLP-Parser}{35}{section*.48}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}Weitere Evaluationen}{35}{section*.50}
+\contentsline {section}{\numberline {5.4}Leistung der Parser}{36}{section*.49}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Verwandte Arbeit}{37}{chapter.6}
+\contentsline {chapter}{\numberline {6}Verwandte Arbeit}{39}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Schluss}{39}{chapter.7}
+\contentsline {chapter}{\numberline {7}Schluss}{41}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Literatur}{41}{chapter*.53}
+\contentsline {chapter}{\nonumberline Literatur}{43}{chapter*.53}

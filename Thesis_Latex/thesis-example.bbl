@@ -161,6 +161,81 @@
     \field{year}{1991}
   \endentry
 
+  \entry{berkeleycky}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BN}{%
+         family={Bodenstab},
+         familyi={B\bibinitperiod},
+         given={Nathan},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BN1}
+    \strng{fullhash}{BN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Bod09}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{title}{Efficient Implementation of the cky algorithm}
+    \field{journaltitle}{Computational Linguistics, Final Project Paper}
+    \field{year}{2009}
+  \endentry
+
+  \entry{cl}{book}{}
+    \name{author}{6}{}{%
+      {{hash=CKU}{%
+         family={Carstensen},
+         familyi={C\bibinitperiod},
+         given={Kai-Uwe},
+         giveni={K\bibinitperiod-U\bibinitperiod},
+      }}%
+      {{hash=EC}{%
+         family={Ebert},
+         familyi={E\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=EC}{%
+         family={Ebert},
+         familyi={E\bibinitperiod},
+         given={Cornelia},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=JS}{%
+         family={Jekat},
+         familyi={J\bibinitperiod},
+         given={Susanne},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=LH}{%
+         family={Langer},
+         familyi={L\bibinitperiod},
+         given={Hagen},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=KR}{%
+         family={Klabunde},
+         familyi={K\bibinitperiod},
+         given={Ralf},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer-Verlag}%
+    }
+    \strng{namehash}{CKU+1}
+    \strng{fullhash}{CKUECECJSLHKR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Car+09}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{title}{Computerlinguistik und Sprachtechnologie: Eine
+  Einf{\"u}hrung}
+    \field{year}{2009}
+  \endentry
+
   \entry{collinsModel}{article}{}
     \name{author}{1}{}{%
       {{hash=CM}{%

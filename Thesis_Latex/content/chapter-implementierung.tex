@@ -7,8 +7,8 @@ Dieses Kapitel beschreibt, wie das Konzept aus Kapitel \ref{sec:konzept} umgeset
 \section{RapidMiner Studio}
 \label{sec:impl:rms}
 
-Die Plattform für das Parser-Framework wurde auf RapidMiner Studio \cite{rmstudio} festgelegt. Hierbei handelt es sich um eine Data Science Plattform, in der Operatoren im Steckkasten-Prinzip miteinander verbunden werden. Zwischen diesen Operatoren werden Daten in unterschiedlicher Form übergeben. Die Operatoren selbst führen verschiedene Aufgaben aus. Das eigentliche RapidMiner Studio bietet hauptsächlich Operatoren für die Verarbeitung von Tabellen an. Allerdings sind über den RapidMiner Marketplace auch eine Vielzahl von Erweiterungen erhältlich. Im Rahmen dieser Arbeit wird die Text Processing Extension (Version 8.1.0) \cite{textExt} %TODO ref text processing ext, ref https://rapidminer.com/products/studio/ 
-verwendet. RapidMiner bietet zusätzlich die Möglichkeit eigene Operatoren zu programmieren, was im Rahmen dieser Arbeit auch genutzt wurde. Das RapidMiner Studio, die Erweiterungen und die eigenen Operatoren wurden in Java geschrieben. \\
+Die Plattform für das Parser-Framework wurde auf RapidMiner Studio \cite{rmstudio} festgelegt. Hierbei handelt es sich um eine Data Science Plattform, in der Operatoren im Steckkasten-Prinzip zu einem Prozess verbunden werden. Beim Ausführen eines Prozesses werden alle Operatoren, entsprechend der Reihenfolge in der sie verbunden sind, durchlaufen. Zwischen diesen Operatoren können Daten in unterschiedlicher Form übergeben werden. Die Operatoren selbst führen verschiedene Aufgaben aus. Das eigentliche RapidMiner Studio bietet hauptsächlich Operatoren für die Verarbeitung von Tabellen an. Allerdings sind über den RapidMiner Marketplace auch eine Vielzahl von Erweiterungen erhältlich. Im Rahmen dieser Arbeit wird die \textit{Text-Processing-Extension} (Version 8.1.0) \cite{textExt} %TODO ref text processing ext, ref https://rapidminer.com/products/studio/ 
+verwendet. Diese stellt einfache NLP-Funktionalitäten zur Verfügung. RapidMiner bietet zusätzlich die Möglichkeit eigene Operatoren zu programmieren, was im Rahmen dieser Arbeit auch genutzt wurde. Das RapidMiner Studio, die Erweiterungen und die eigenen Operatoren wurden in Java geschrieben. \\
 
 \section{Verwendete Operatoren}
 \label{sec:impl:vwo}
@@ -19,7 +19,7 @@ Zum Einlesen des Parser-Modells wurde der Operator \textbf{Read File} aus dem Or
 
 Aus der Text-Processing-Extension wird der Operator \textbf{Read Document} verwendet. Er wird an zwei Stellen verwendet. Zum einen wird über ihn der Input-Text für den Parser eingelesen. Zum anderen wird der \textit{Goldstandard} für die Evaluierung damit in den Prozess gebracht. In beiden Fällen wird nur der Parameter \textit{file} auf den entsprechenden Dateipfad gesetzt und alle anderen Parameter auf ihrem Default-Wert belassen. Auch sein Input-Port wird nicht verwendet. Über den Output-Port wird die geöffnete Datei als \texttt{com.rapidminer.operator.text.Document} an die nachfolgenden Operatoren übergeben.
 
-Der letzte verwendete Operator ist \textbf{Execute Script} aus dem Ordner \textit{Utility\textbackslash Scripting}. Dessen Aufgabe ist das Ausführen von Java Code. Verwendung findet er lediglich in Kombination mit dem Stanford-Parser. Die verwendeten Packages von Stanford werden hier einmal initialisiert, da es sonst einen Fehler seitens RapidMiner gibt. Hierfür wird ein Objekt der Klasse  \texttt{edu.stanford.nlp.trees.TreebankLanguagePack} erstellt und wieder auf \texttt{null} gesetzt. Weder die Input- noch die Output Ports des Operators werden genutzt, wodurch er vor den anderen Operatoren ausgeführt wird, und die Stanford-Packages korrekt initialisiert werden. Um diese Strategie der Fehlerumgehung nutzen zu können, sind zwei zusätzliche Schritte notwendig. Zum einen muss die Datei \textit{stanford-parser.jar}, welche die entsprechenden Packages beinhaltet, in den lib Ordner von RapidMiner Studio gelegt werden. Diesen findet man typischerweise unter \textit{Programme\textbackslash RapidMiner\textbackslash RapidMiner Studio\textbackslash  lib}. Das zweite und schwerwiegendere Problem ist der Bedarf einer Large License von RapidMiner. Mit der Lizenz in Kombination mit dem vorherigen Schritten wird der Fehler nicht geworfen. Anderweitig wird die Lizenz nicht benötigt. Für die Dauer dieser Arbeit wurde mir diese von RapidMiner kostenlos zur Verfügung gestellt.
+Der letzte verwendete Operator ist \textbf{Execute Script} aus dem Ordner \textit{Utility\textbackslash Scripting}. Dessen Aufgabe ist das Ausführen von Java Code. Verwendung findet er lediglich in Kombination mit dem Stanford-Parser. Die verwendeten Pakete von Stanford werden hier einmal initialisiert, da es sonst einen Fehler seitens RapidMiner gibt. Hierfür wird ein Objekt der Klasse  \texttt{edu.stanford.nlp.trees.TreebankLanguagePack} erstellt und wieder auf \texttt{null} gesetzt. Weder die Input- noch die Output Ports des Operators werden genutzt, wodurch er vor den anderen Operatoren ausgeführt wird, und die Stanford-Pakete korrekt initialisiert werden. Um diese Strategie der Fehlerumgehung nutzen zu können, sind zwei zusätzliche Schritte notwendig. Zum einen muss die Datei \textit{stanford-parser.jar}, welche die entsprechenden Pakete beinhaltet, in den \textit{lib}-Ordner von RapidMiner Studio gelegt werden. Diesen findet man typischerweise unter \textit{Programme\textbackslash RapidMiner\textbackslash RapidMiner Studio\textbackslash  lib}. Das zweite und schwerwiegendere Problem ist der Bedarf einer Large License von RapidMiner. Mit der Lizenz in Kombination mit dem vorherigen Schritten wird der Fehler nicht geworfen. Anderweitig wird die Lizenz nicht benötigt. Für die Dauer dieser Arbeit wurde mir diese von RapidMiner kostenlos zur Verfügung gestellt.
 \section{Eigene Operatoren}
 \label{sec:impl:eigene}
 
@@ -28,7 +28,7 @@ Hier werden die Operatoren und alle dazugehörigen Klassen, die für dieses Pars
 Zur Entwicklung einer eigenen Erweiterung stellt RapidMiner eine Anleitung zur Verfügung \cite{rmguide}. %TODO ref https://docs.rapidminer.com/latest/developers/creating-your-own-extension/ 
 Als Entwicklungsumgebung wurde Eclipse (Version: Oxygen.3a Release (4.7.3a)) in Kombination mit dem Gradle Plugin  gewählt. 
 
-Alle entwickelten Operatoren erben von der Klasse \texttt{com.rapidminer.operator.Operator} und die Methode \texttt{doWork()} wird aufgerufen, wenn der Operator im Workflow durchlaufen wird. 
+Alle entwickelten Operatoren erben von der Klasse \texttt{com.rapidminer.operator.Operator} und die Methode \texttt{doWork()} wird aufgerufen, wenn der Operator im Prozess durchlaufen wird. 
 
 Die Übergabe von Daten zwischen Operatoren erfolgt über Klassen, die das Interface \texttt{com.rapidminer.operator.IOObject} implementieren, wie z.B. \texttt{ExampleSet} oder \texttt{Document}. 
 
@@ -39,9 +39,11 @@ Alle Parser-Operatoren haben die gleichen Ports zur Ein- und Ausgabe.
 \item[ioobjectInputGrammar]
 Über diesen Port wird das Modell des Parsers eingelesen. Dieses wird in \texttt{doWork()} auf ein \texttt{SimpleFileObject} gecastet, um den Dateipfad auslesen zu können. Er wird mit dem Read-File-Operator verbunden.
 \item[ioobjectInputText] Hier liest der Operator den Input-Text für den Parser ein. Das \texttt{IOObject} wird auf ein \texttt{Document} gecastet, um den Inhalt als String zu bekommen. Dieser String wird dann nach Zeilen getrennt, da jeder Parser immer eine Zeile eingegeben bekommt. Er wird mit dem Read-Document-Operator verbunden.
-\item[nameOutputExt] Es wurde ein PortExtender verwendet. Das heißt, falls man diesen Port verbindet wird der selbe Port nochmals erstellt. Somit kann man die Parser Ausgabe öfters verwerten. Dies kann man z.B. nutzen, um in der Evaluation unterschiedliche Paramter zu setzen. Extender müssen im Konstruktor mit der Methode \texttt{start()} aktiviert werden. Über die von diesem Extender erstellten Ports wird der Name des Parsers in einem \texttt{Document} nach außen gegeben. Hierfür gibt es einen Konstruktor der Klasse Document dessen Übergabeparameter ein String ist. 
+\item[nameOutputExt] Es wurde ein PortExtender verwendet. Das heißt, falls man diesen Port verbindet wird der selbe Port nochmals erstellt. Somit kann man die Parser Ausgabe öfters verwerten. Dies kann man z.B. nutzen, um in der Evaluation unterschiedliche Paramter zu setzen. Extender müssen im Konstruktor des Operators mit der Methode \texttt{start()} aktiviert werden. Über die von diesem Extender erstellten Ports wird der Name des Parsers in einem \texttt{Document} nach außen gegeben. Hierfür gibt es einen Konstruktor der Klasse Document dessen Übergabeparameter ein String ist. 
 \item[resultOutputExt] Dieser Extender gibt den geparsten Text in einem \texttt{Document} aus. Hier sind alle einzeln verarbeiteten Zeilen wieder zu einem String zusammen gefügt worden.
 \end{description}
+
+Für zukünftiges Einbringen von weiteren Parsern ist zu beachten, dass diese die gleichen Ports anbieten müssen und an diese auch Objekte der gleichen Form liefern müssen.
 
 \subsection{Berkeley-Parser}
 
@@ -55,14 +57,14 @@ Die Methode \texttt{outputTrees(...)} wurde als Methode des Operators aufgenomme
 \subsection{OpenNLP-Parser}
 \label{sec:impl:eigene:opennlp}
 
-OpenNLP bietet eine Anleitung zum Integrieren des Parsers in eine Anwendung mit Hilfe seiner API. Zu finden unter \cite{openNlpManual}. %TODO ref http://opennlp.apache.org/docs/1.9.1/manual/opennlp.html#tools.parser
+OpenNLP bietet eine Anleitung zum Integrieren des Parsers in eine Anwendung mit Hilfe seiner API, zu finden unter \cite{openNlpManual}. %TODO ref http://opennlp.apache.org/docs/1.9.1/manual/opennlp.html#tools.parser
 Der Code aus dieser Anleitung wurde in die \texttt{doWork()} des Operator geschrieben. Dieser Code wurde von einem zusätzlichen \texttt{try-catch}-Block umgeben, um eine \texttt{FileNotFoundException} zu fangen. Diese Exception wird beim Öffnen der Datei des Parser-Modells geworfen. Per \texttt{for}-Schleife werden die Sätze der Eingabe in den Parser geschickt. 
 
-Über die String Methode \texttt{outputText.replaceAll("\textbackslash \textbackslash (TOP ", "( ");} wird das Startsymbol des Parsers entfernt. Um zu verhindern, dass das Auftreten des Wortes ``TOP'' im Eingabesatz gelöscht wird, wurde die Klammer mit in den regulären Ausdruck aufgenommen. Worte des Satzes haben in der Formatierung immer eine schließende Klammer nach sich, aber nie eine öffnende vorher.
+Über die String Methode \texttt{outputText.replaceAll("\textbackslash \textbackslash (TOP ", "( ");} wird das Startsymbol des Parsers entfernt. Um zu verhindern, dass das Auftreten des Wortes ``TOP'' im Eingabesatz gelöscht wird, wurde die Klammer mit in den regulären Ausdruck aufgenommen. Worte des Satzes haben in der Formatierung immer eine schließende Klammer nach sich, aber nie eine öffnende vorher. Deshalb wird so nur das Startsymbol entfernt.
 
 \subsection{Stanford-Parser}
 
-Beim Herunterladen des Parsers wird eine Demo-Klasse mitgeliefert, in welcher der Code zum Starten des Parsers aufgeführt wird. Hieraus wurden die notwendigen Befehle in die Methode \texttt{doWork()} des Operators übernommen. Zu beachten ist hier noch, dass der Parser den Satz nicht als \texttt{String} entgegen nimmt, sondern die Token des Satzes in einem \texttt{String}-Array.
+Beim Herunterladen des Parsers wird eine Demo-Klasse mitgeliefert, in welcher der Code zum Starten des Parsers aufgeführt wird. Hieraus wurden die notwendigen Befehle in die Methode \texttt{doWork()} des Operators übernommen. Zu beachten ist hier, dass der Parser den Satz nicht als \texttt{String} entgegen nimmt, sondern die Token des Satzes in einem \texttt{String}-Array.
 
 Das Startsymbol dieses Parser lautet ``ROOT'' und wird analog zum OpenNLP-Parser aus \ref{sec:impl:eigene:opennlp} entfernt.
 
@@ -72,8 +74,7 @@ In diesem Operator findet die Evaluierung statt. Es wird die Ausgabe von genau e
 
 Hierzu gibt es drei Input-Ports, deren \texttt{IOObject} jeweils zu einem \texttt{Document} gecastet wird. Der erste Port erhält den Namen des Parsers, der zweite die Ausgabe der Parser und der dritte den \textit{Goldstandard}. Das Ergebnis wird in einem einzeiligen  \texttt{com.rapidminer.example.ExampleSet} ausgegeben. Dadurch kann man später mehrere Evaluierungen in einer Tabelle untereinander anzeigen lassen. 
 
-Der Operator hat zwei \texttt{Boolean}-Parameter. \texttt{PARAMETER\_REMOVE\_SUFFIX} gibt an, ob den syntaktischen Tags die Suffixe entfernt werden sollen. Das heißt, dass NP-SBJ als NP gewertet wird. \texttt{PARAMETER\_COUNT\_ONLY\_SYNTACTIC\_TAGS} entscheidet ob alle Tags oder nur die syntaktischen in die Bewertung zählen. Die Parameter wurden entsprechend dem Extension Manual \cite{rmguide} %TODO ref extension manual 
-erstellt. Default-Wert bezüglich der Suffixe ist \texttt{true} und bezüglich der syntaktischen Tags \texttt{false}.
+Der Operator hat zwei \texttt{Boolean}-Parameter. \texttt{PARAMETER\_REMOVE\_SUFFIX} gibt an, ob den syntaktischen Tags die Suffixe entfernt werden sollen. Das heißt, dass NP-SBJ als NP gewertet wird. \texttt{PARAMETER\_COUNT\_ONLY\_SYNTACTIC\_TAGS} entscheidet ob alle Tags oder nur die syntaktischen in die Bewertung zählen. Die Parameter wurden entsprechend dem Extension Manual \cite{rmguide} erstellt. Default-Wert bezüglich der Suffixe ist \texttt{true} und bezüglich der syntaktischen Tags \texttt{false}.
 
 Für die Evaluierung benötigt dieser Operator zwei zusätzliche Hilfsstrukturen. Zum einen das Enum \textbf{PennTag}. Hier sind alle Tags der Penn Treebank aufgelistet. Jedes Literal hat einen String als Attribut, der die Schreibweise angibt. Somit kann über die statische Methode \texttt{stringToPennTag(String s, boolean removeSuffix)} ein String auf ein Enum-Literal abgebildet werden. Hierzu werden alle Tags durchlaufen und deren Attribut mit dem Übergabestring verglichen. Das entsprechende Literal wird zurückgegeben. Für den Fall, dass dem String kein Tag entspricht, wird das zusätzlich eingeführte Literal \texttt{Empty}, mit leerem String als Attribut, zurückgegeben. Das passiert beispielsweise dann, wenn im Parser oder \textit{Goldstandard} zusätzliche Tags verwendet werden. Eine Konstituente, die als Typ \texttt{Empty} hat, wird immer als falsch gewertet. \texttt{removeSuffix} sorgt dafür, dass die Tags ab dem ersten Bindestrich abgeschnitten werden und somit nur das ursprüngliche betrachtet wird. \\
 Zum anderen wird die Klasse \textbf{ParseTreeNode} verwendet. Ein Objekt dieser Klasse entspricht einer Konstituente aus Kapitel \ref{sec:konzept:eval}. Realisiert wurde dieses Konzept über ein \texttt{PennTag} und zwei \texttt{int} Membervariablen für den Typ und die Grenzen. Über die Methode \texttt{equals(Object obj)} wird getestet, ob sowohl Tag, als auch Grenzen des übergebenen \texttt{ParseTreeNodes} mit dem aufrufendem übereinstimmen. 
@@ -114,14 +115,14 @@ Abbildung \ref{fig:results} zeigt einen Teil der Ausgabe des Prozesses beim Verg
 
 \begin{figure}
 \includegraphics[width=\textwidth]{gfx/berkeley-skizze.png} 
-\label{fig:screenshot-prozess}	
 \caption{RapidMiner-Prozess zur Evaluierung des Berkeley-Parsers}	
+\label{fig:screenshot-prozess}	
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\textwidth]{gfx/shortresults.png} 
-\label{fig:results}	
 \caption{Teil der Ausgabe des RapidMiner-Prozesses beim Vergleich aller Parser}	
+\label{fig:results}	
 \end{figure}
 
 \section{Limitierung des Rahmenwerks}

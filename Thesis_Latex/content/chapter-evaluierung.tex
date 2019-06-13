@@ -11,16 +11,15 @@ In diesem Kapitel wird die Funktionsweise der Parser vorgestellt. Danach wird di
 Der Stanford-Parser bringt ein Modell namens \textit{englishPCFG} mit. Es handelt sich dabei um eine unlexikalisierte PCFG für die englische Sprache, welche auf den Abschnitten 2 bis 21 der Penn-Treebank trainiert wurde. Als Parsing-Algorithmus wurde CKY implementiert. Dieser Parser erreicht laut \cite{stanfordparser} auf Abschnitt 23 der Penn-Treebank einen \(F_1\)-Wert von 86,3\% und einen \textit{RCB}-Wert von 1,1\%. \cite{stanfordparser}
 
 \section{Berkeley-Parser}
-Die Grammatik des Berkeley-Parsers wurde, wie die des Stanford-Parsers, auf Abschnitt 2 bis 21 der Penn-Treebank trainiert. Verwendet wurde das unlexikalisierte Modell namens \textit{eng\_sm6}. Dieses entstand, indem die Nichtterminale in sechs Split-and-Merge Durchgängen (detaillierter in Abschnitt \ref{sec:nlp:stat-parsen:pcfg}) erweitert wurden. %TODO Algorithmus, CKY: https://pdfs.semanticscholar.org/b2e3/0053b54df93e39edbdd84d4e5611252110c5.pdf, oder anderer
-Laut eigenen Angaben erreicht der Parser auf dem 23. Abschnitt der Penn-Treebank einen \(F_1\)-Wert von 90,2\%. \cite{berkeleyparser1}
+Die Grammatik des Berkeley-Parsers wurde, wie die des Stanford-Parsers, auf Abschnitt 2 bis 21 der Penn-Treebank trainiert. Verwendet wurde das unlexikalisierte Modell namens \textit{eng\_sm6}. Dieses entstand, indem die Nichtterminale in sechs Split-and-Merge Durchgängen (detaillierter in Abschnitt \ref{sec:nlp:stat-parsen:pcfg}) erweitert wurden. Es wurde ebenfalls der CKY-Algorithmus zum Parsen verwendet \cite{berkeleycky}. Laut eigenen Angaben erreicht der Parser auf dem 23. Abschnitt der Penn-Treebank einen \(F_1\)-Wert von 90,2\%. \cite{berkeleyparser1}
 
 \section{OpenNLP-Parser}
 
-Das verwendete Modell heißt \textit{en-parser-chunking}. Jedoch gibt es ließen sich weder über dieses Modell, noch über den Algorithmus nach dem geparst wurde Informationen finden.
+Das verwendete Modell heißt \textit{en-parser-chunking}. Jedoch ließen sich weder über dieses Modell, noch über den Algorithmus nach dem geparst wurde Informationen finden.
 
 
 \section{Leistung der Parser}
-Dieser Korpus enthält zehn Texte unterschiedlicher Länge, die alle von jedem Parser bearbeitet werden. In Tabelle \ref{tab:eval-parser} sind die Ergebnisse aufgeführt. Für die Messung wurden alle Tags gewertet, nicht nur die syntaktischen. In einer Zeile stehen die Werte für die entsprechende Datei. Für den totalen Wert wurde die Anzahl der unterschiedlichen Konstituenten über alle zehn Dateien aufsummiert und anhand dieser Zahlen nach entsprechender Formel berechnet. Somit wird die unterschiedliche Größe der Texte berücksichtigt. \\
+Die Treebank enthält zehn Texte unterschiedlicher Länge, die alle von jedem Parser bearbeitet werden. In Tabelle \ref{tab:eval-parser} sind die Ergebnisse aufgeführt. Für die Messung wurden alle Tags gewertet, nicht nur die syntaktischen. In einer Zeile stehen die Werte für die entsprechende Datei. Für den totalen Wert wurde die Anzahl der unterschiedlichen Konstituenten über alle zehn Dateien aufsummiert und anhand dieser Zahlen nach entsprechender Formel berechnet. Somit wird die unterschiedliche Größe der Texte berücksichtigt. \\
 Der Berkeley-Parser nimmt mit Precision- und Recall-Resultaten von über 93\% den ersten Platz ein. Der OpenNLP-Parser liegt, mit weniger als 1\% Vorsprung in beiden Werten, vor dem Stanford-Parser. Beide weisen einen gleich hohen Anteil an kreuzenden Konstituenten auf.\\
 Für die Interpretation der Ergebnisse eines Parser-Vergleichs muss beachtet werden, dass nicht alle Modelle mit den selben Texten trainiert wurden. In diesem Fall handelt es sich um die vortrainierten Modelle der Parser-Anbieter. Um aussagekräftigere Ergebnisse zu erhalten, müssen für jeden Parser eigene Modelle erstellt werden. 
 %TODO zeitmessung

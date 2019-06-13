@@ -5,21 +5,21 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Syntaktische Annotation in mehrzeiliger, geklammerter Darstellung\relax }}{5}{figure.caption.10}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Syntaktische Annotation in mehrzeiliger, geklammerter Darstellung zum Satz ``My dog also likes eating sausage.''\relax }}{5}{figure.caption.10}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Syntaxbaum zu \textit {My dog also likes eating sausage.}\relax }}{8}{figure.caption.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Beispielmatrix f\IeC {\"u}r den \textit {CKY}-Algorithmus, entnommen aus .. \relax }}{11}{figure.caption.16}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Links: Beispielmatrix f\IeC {\"u}r den \textit {CKY}-Algorithmus angewandt auf den Satz \textit {``Book the flight through Houston''}. Rechts: F\IeC {\"u}llrichtung der Matrix. Beides entnommen aus \cite [S. 473]{nlpGrundlagen} \relax }}{12}{figure.caption.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Grammatik f\IeC {\"u}r entnommen aus .. \relax }}{12}{figure.caption.17}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Grammatik welche zum Parsen von \textit {``Book the flight through Houston''} verwendet wurde. Links in urspr\IeC {\"u}nglicher Form, rechts in CNF. Entnommen aus \cite [S. 472]{nlpGrundlagen} \relax }}{13}{figure.caption.17}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Lexikalisierter Baum, entnommen aus\relax }}{16}{figure.caption.21}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Lexikalisierter Baum f\IeC {\"u}r den Satz \textit {``Workers dumped sacks into a bin''}, entnommen aus \cite [S. 445]{nlpGrundlagen}\relax }}{16}{figure.caption.21}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Konzeptueller Aufbau\relax }}{19}{figure.caption.23}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Konzeptueller Aufbau des Evaluationsprozesses\relax }}{19}{figure.caption.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Syntaxbaum zu \textit {They learn much faster.}\relax }}{22}{figure.caption.30}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Syntaxbaum zu \textit {``They learn much faster.''}\relax }}{22}{figure.caption.30}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
