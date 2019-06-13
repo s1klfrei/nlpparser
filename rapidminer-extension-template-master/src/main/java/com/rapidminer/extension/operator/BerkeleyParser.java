@@ -221,7 +221,10 @@ public class BerkeleyParser extends Operator{
 						sentence = tokenizer.tokenizeLine(line);
 					}
 				}
-	
+				// Nachfolgend wurde die Behandlung für zu lange Sätze entfernt
+				// Falls Bedarf besteht lange Sätze zu ignorieren, so muss der nachfolgende Code 
+				// so angepasst werden, dass er dem outputText eine entsprechende Ausgabe liefert.
+				
 				// if (sentence.size()==0) { outputData.write("\n"); continue;
 				// }//break;
 				/*if (sentence.size() > opts.maxLength) {

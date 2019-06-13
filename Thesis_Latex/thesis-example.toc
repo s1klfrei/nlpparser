@@ -17,11 +17,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.2}Dynamische Programmierung}{10}{section*.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.3}Cocke-Kasami-Younger Algorithmus}{10}{section*.15}
+\contentsline {subsection}{\numberline {2.2.3}Cocke-Kasami-Younger Algorithmus}{11}{section*.15}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Statistisches Parsen}{12}{section*.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}Probabilistische Kontextfreie Grammatiken}{12}{section*.19}
+\contentsline {subsection}{\numberline {2.3.1}Probabilistische Kontextfreie Grammatiken}{13}{section*.19}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3.2}Probabilistische Lexikalisierte Kontextfreie Grammatiken}{16}{section*.20}
 \defcounter {refsection}{0}\relax 

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="9.1.000">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="9.1.000" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="execute_script" compatibility="9.1.000" expanded="true" height="68" name="Initialize Stanford Parser" width="90" x="45" y="34">
+        <parameter key="script" value="/* &#10; * You can use both Java and Groovy syntax in this script.&#10; * &#10; * Note that you have access to the following two predefined variables:&#10; * 1) input (an array of all input data)&#10; * 2) operator (the operator instance which is running this script)&#10; */&#10;&#10;// Take first input data and treat it as generic IOObject&#10;// Alternatively, you could treat it as an ExampleSet if it is one:&#10;// ExampleSet inputData = input[0];&#10;&#10;// You can add any code here&#10;import com.rapidminer.tools.LogService;&#10;import java.util.logging.Level;&#10;&#10;import edu.stanford.nlp.trees.PennTreebankLanguagePack;&#10;import edu.stanford.nlp.trees.TreebankLanguagePack;&#10;import edu.stanford.nlp.ling.SentenceUtils;&#10;import edu.stanford.nlp.parser.lexparser.LexicalizedParser;&#10;import edu.stanford.nlp.trees.GrammaticalStructure;&#10;import edu.stanford.nlp.trees.GrammaticalStructureFactory;&#10;import edu.stanford.nlp.trees.PennTreebankLanguagePack;&#10;import edu.stanford.nlp.trees.Tree;&#10;import edu.stanford.nlp.trees.TreebankLanguagePack;&#10;import edu.stanford.nlp.trees.TypedDependency;&#10;&#10;TreebankLanguagePack tlp = new PennTreebankLanguagePack();&#10;tlp = null;"/>
+        <parameter key="standard_imports" value="true"/>
+      </operator>
+      <operator activated="true" class="text:read_document" compatibility="8.1.000" expanded="true" height="68" name="Read Source" width="90" x="246" y="136">
+        <parameter key="extract_text_only" value="true"/>
+        <parameter key="use_file_extension_as_type" value="true"/>
+        <parameter key="content_type" value="txt"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="text:read_document" compatibility="8.1.000" expanded="true" height="68" name="Read Source (2)" width="90" x="246" y="391">
+        <parameter key="extract_text_only" value="true"/>
+        <parameter key="use_file_extension_as_type" value="true"/>
+        <parameter key="content_type" value="txt"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="text:read_document" compatibility="8.1.000" expanded="true" height="68" name="Read Gold Standard (2)" width="90" x="380" y="442">
+        <parameter key="extract_text_only" value="true"/>
+        <parameter key="use_file_extension_as_type" value="true"/>
+        <parameter key="content_type" value="txt"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="text:read_document" compatibility="8.1.000" expanded="true" height="68" name="Read GoldStandard" width="90" x="380" y="187">
+        <parameter key="extract_text_only" value="true"/>
+        <parameter key="use_file_extension_as_type" value="true"/>
+        <parameter key="content_type" value="txt"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="open_file" compatibility="9.1.000" expanded="true" height="68" name="Read Grammar" width="90" x="246" y="34">
+        <parameter key="resource_type" value="file"/>
+      </operator>
+      <operator activated="true" class="nlp_parser:berkeley_parser" compatibility="1.0.000" expanded="true" height="124" name="Berkeley Parser" width="90" x="447" y="34"/>
+      <operator activated="true" class="nlp_parser:compare_results" compatibility="1.0.000" expanded="true" height="103" name="Compare Results" width="90" x="648" y="85">
+        <parameter key="remove suffixes" value="true"/>
+        <parameter key="count only syntactic tags" value="false"/>
+      </operator>
+      <operator activated="true" class="open_file" compatibility="9.1.000" expanded="true" height="68" name="Read Grammar (2)" width="90" x="246" y="289">
+        <parameter key="resource_type" value="file"/>
+      </operator>
+      <operator activated="true" class="nlp_parser:stanford_parser" compatibility="1.0.000" expanded="true" height="124" name="Stanford Parser" width="90" x="447" y="289"/>
+      <operator activated="true" class="nlp_parser:compare_results" compatibility="1.0.000" expanded="true" height="103" name="Compare Results (2)" width="90" x="648" y="340">
+        <parameter key="remove suffixes" value="true"/>
+        <parameter key="count only syntactic tags" value="false"/>
+      </operator>
+      <operator activated="true" class="text:read_document" compatibility="8.1.000" expanded="true" height="68" name="Read Source (4)" width="90" x="246" y="646">
+        <parameter key="extract_text_only" value="true"/>
+        <parameter key="use_file_extension_as_type" value="true"/>
+        <parameter key="content_type" value="txt"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="text:read_document" compatibility="8.1.000" expanded="true" height="68" name="Read Gold Standard (4)" width="90" x="380" y="697">
+        <parameter key="extract_text_only" value="true"/>
+        <parameter key="use_file_extension_as_type" value="true"/>
+        <parameter key="content_type" value="txt"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="open_file" compatibility="9.1.000" expanded="true" height="68" name="Read Grammar (3)" width="90" x="246" y="544">
+        <parameter key="resource_type" value="file"/>
+      </operator>
+      <operator activated="true" class="nlp_parser:opennlp_parser" compatibility="1.0.000" expanded="true" height="124" name="OpenNLP Parser" width="90" x="447" y="544"/>
+      <operator activated="true" class="nlp_parser:compare_results" compatibility="1.0.000" expanded="true" height="103" name="Compare Results (3)" width="90" x="648" y="595">
+        <parameter key="remove suffixes" value="true"/>
+        <parameter key="count only syntactic tags" value="false"/>
+      </operator>
+      <operator activated="false" class="open_file" compatibility="9.1.000" expanded="true" height="68" name="Open File" width="90" x="179" y="1411">
+        <parameter key="resource_type" value="file"/>
+        <parameter key="filename" value="C:\Users\Klaus\Documents\Uni\BachelorArbeit\Treebanks\naist-ntt-ted-treebank-v1\en-tok\000-SheaHembrey_2011.tok"/>
+      </operator>
+      <operator activated="false" class="python_scripting:execute_python" compatibility="8.2.000" expanded="true" height="82" name="Tokenizer" width="90" x="380" y="1411">
+        <parameter key="script" value="import nltk&#10;from nltk.parse.api import ParserI&#10;from nltk.parse.bllip import BllipParser&#10;from nltk.tree import Tree&#10;from nltk.data import find&#10;# rm_main is a mandatory function, &#10;# the number of arguments has to be the number of input ports (can be none)&#10;def rm_main(data):&#10;&#9;&#10;&#9;model_dir = find('models/bllip_wsj_no_aux').path&#10;&#9;bllip = BllipParser.from_unified_model_dir(model_dir)&#10;&#9;# 1-best parsing&#10;&#9;sentence1 = 'British left waffles on Falklands .'.split()&#10;&#9;top_parse = bllip.parse_one(sentence1)&#10;&#9;print(top_parse)&#10;&#9;return data"/>
+      </operator>
+      <operator activated="false" class="execute_script" compatibility="9.1.000" expanded="true" height="68" name="PythonToDocument" width="90" x="581" y="1462">
+        <parameter key="script" value="/* &#10; * You can use both Java and Groovy syntax in this script.&#10; * &#10; * Note that you have access to the following two predefined variables:&#10; * 1) input (an array of all input data)&#10; * 2) operator (the operator instance which is running this script)&#10; */&#10;&#10; import com.rapidminer.operator.text.Document;&#10; import com.rapidminer.extension.pythonscripting.operator.scripting.python.PythonNativeObject;&#10; //import com.rapidminer.operator.scripting.python.PythonNativeObject;&#10; &#10;// Take first input data and treat it as generic IOObject&#10;// Alternatively, you could treat it as an ExampleSet if it is one:&#10;// ExampleSet inputData = input[0];&#10;PythonNativeObject inputData = (PythonNativeObject) input[0];&#10;&#10;&#10;java.io.File datei = inputData.getFile();&#10;java.io.FileReader fr = new FileReader(datei);&#10;char[] cbuf = new char[datei.length()];&#10;fr.read(cbuf, 0, (int) datei.length());&#10;String result = cbuf.toString();&#10;//result = result.substring(10);&#10;//result = result.replaceAll(&quot;(?m)^[ \t]*\r?\n&quot;, &quot;&quot;);&#10;Document returnDoc = new Document(result);&#10;// You can add any code here&#10;&#10;&#10;// This line returns the first input as the first output&#10;return returnDoc;"/>
+        <parameter key="standard_imports" value="true"/>
+      </operator>
+      <operator activated="false" class="python_scripting:execute_python" compatibility="8.2.000" expanded="true" height="82" name="Tokenizer (2)" width="90" x="380" y="1564">
+        <parameter key="script" value="import nltk&#10;from nltk.tokenize import TreebankWordTokenizer&#10;&#10;# rm_main is a mandatory function, &#10;# the number of arguments has to be the number of input ports (can be none)&#10;def rm_main(data):&#10;&#9;returnString = ''&#10;&#9;i = 0&#10;&#9;for line in data:&#10;&#9;&#9;tokSentence = TreebankWordTokenizer().tokenize(line)&#10;&#9;&#9;for word in tokSentence:&#10;&#9;&#9;&#9;returnString += word + ' '&#10;&#9;&#9;returnString+='\n'&#10;&#9;&#9;&#10;&#9;&#10;&#9;return returnString"/>
+      </operator>
+      <operator activated="true" class="nlp_parser:show_results" compatibility="1.0.000" expanded="true" height="124" name="Show Results" width="90" x="849" y="187"/>
+      <connect from_op="Read Source" from_port="output" to_op="Berkeley Parser" to_port="text"/>
+      <connect from_op="Read Source (2)" from_port="output" to_op="Stanford Parser" to_port="text"/>
+      <connect from_op="Read Gold Standard (2)" from_port="output" to_op="Compare Results (2)" to_port="gold standard"/>
+      <connect from_op="Read GoldStandard" from_port="output" to_op="Compare Results" to_port="gold standard"/>
+      <connect from_op="Read Grammar" from_port="file" to_op="Berkeley Parser" to_port="grammar"/>
+      <connect from_op="Berkeley Parser" from_port="output 1" to_op="Compare Results" to_port="parser"/>
+      <connect from_op="Berkeley Parser" from_port="name 1" to_op="Compare Results" to_port="name"/>
+      <connect from_op="Compare Results" from_port="res" to_op="Show Results" to_port="input 1"/>
+      <connect from_op="Read Grammar (2)" from_port="file" to_op="Stanford Parser" to_port="grammar"/>
+      <connect from_op="Stanford Parser" from_port="name 1" to_op="Compare Results (2)" to_port="name"/>
+      <connect from_op="Stanford Parser" from_port="output 1" to_op="Compare Results (2)" to_port="parser"/>
+      <connect from_op="Compare Results (2)" from_port="res" to_op="Show Results" to_port="input 2"/>
+      <connect from_op="Read Source (4)" from_port="output" to_op="OpenNLP Parser" to_port="text"/>
+      <connect from_op="Read Gold Standard (4)" from_port="output" to_op="Compare Results (3)" to_port="gold standard"/>
+      <connect from_op="Read Grammar (3)" from_port="file" to_op="OpenNLP Parser" to_port="grammar"/>
+      <connect from_op="OpenNLP Parser" from_port="output 1" to_op="Compare Results (3)" to_port="parser"/>
+      <connect from_op="OpenNLP Parser" from_port="name 1" to_op="Compare Results (3)" to_port="name"/>
+      <connect from_op="Compare Results (3)" from_port="res" to_op="Show Results" to_port="input 3"/>
+      <connect from_op="Show Results" from_port="res" to_port="result 1"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+    </process>
+  </operator>
+</process>

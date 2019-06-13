@@ -164,33 +164,8 @@ public class CompareResults extends Operator{
 					}
 				}
 			}
-
-			// Precision, Recall, F1 und CrossingBrackets der Zeile nach Vorschrift berechnen
-			double precision = 0.0;
-			double recall = 0.0;
-			double f1 = 0.0;
-			double crossing = 0.0;
 			
-			if(parserNodes.size() != 0) {
-				precision = (double)numberCorrectNodes/(double)parserNodes.size();
-				crossing = (double)numberCrossingBrackets/(double)parserNodes.size();
-			}
-
-			if(goldStandardNodes.size() != 0) {
-				recall = (double)numberCorrectNodes/(double)goldStandardNodes.size();
-			}
-			
-			if(precision + recall != 0 ) {
-				f1 = 2*(precision*recall)/(precision+recall);
-			}
-			
-			// Werte der Zeile zum globalen Wert addieren und Zeilenzähler erhöhen
-			if(precision != 0.0 && recall != 0.0) {
-				globalPrecision += precision;
-				globalRecall += recall;
-				globalF1 += f1;
-				globalCrossingBrackets += crossing;
-			}
+			// Zeilenzähler erhöhen und lokale Werte zum globalen Wert addieren
 			count ++;
 			
 			globalCountCorrectNodes += numberCorrectNodes;
@@ -199,13 +174,7 @@ public class CompareResults extends Operator{
 			globalCountCrossingNodes += numberCrossingBrackets;
 			
 		}
-		/*
-		// Globale Werte durch Zeilenzähler teilen
-		globalPrecision /= (double)count;
-		globalRecall /= (double)count;
-		globalF1 /= (double)count;
-		globalCrossingBrackets /= (double)count;
-		*/
+		
 		if(globalCountParserNodes != 0) {
 			globalPrecision =  (double)globalCountCorrectNodes /  (double)globalCountParserNodes;
 			globalCrossingBrackets =  (double)globalCountCrossingNodes /  (double)globalCountParserNodes;
@@ -284,6 +253,9 @@ public class CompareResults extends Operator{
 				// wobei x eine eckige runde oder geschweifte Klammer ist. 
 				// Sonst kann hier kein Zeichen an x stehen, deswegen wird es nicht abgefragt
 				// boolean, da i eventuell hochgezählt wurde und dann dieser Schleifendurchlauf verlassen werden muss
+				
+				// Implementierung des Sonderfalls funktioniert so noch nicht und wurde deshalb auskommentiert.
+				
 				boolean bracketsFound = false;
 				/*if(token[i+1].equals("(") && token[i+3].equals(")")) {
 					if(!countOnlySyntacticTags) {
