@@ -1,5 +1,10 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: thesis-example.aux
 The style file: biblatex.bst
+White space in argument---line 182 of file thesis-example.aux
+ : \citation{nlpGrun
+ :                   dlagen}
+I'm skipping whatever remains of this command
 Database file #1: thesis-example-blx.bib
 Database file #2: bib-refs.bib
 Biblatex version: 3.8
+(There was 1 error message)

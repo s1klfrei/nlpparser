@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.22)  13 JUN 2019 14:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.22)  14 JUN 2019 10:04
 entering extended mode
 **./thesis-example.tex
 (thesis-example.tex
@@ -2088,7 +2088,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 167.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2293) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 181.
@@ -2372,15 +2372,15 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 7.
 
-Underfull \hbox (badness 10000) in paragraph at lines 10--12
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 13.
+(babel)             in language  on input line 12.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 13.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 18.
+(babel)             in language  on input line 12.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 17.
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -2389,29 +2389,29 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (3.27367pt too wide) in paragraph at lines 18--19
+Overfull \hbox (3.27367pt too wide) in paragraph at lines 17--18
 \T1/lmtt/m/n/10.95 com.rapidminer.operator.nio.file.SimpleFileObject \T1/bch/m/
 n/10.95 (-20) ver-ar-bei-tet wer-den kann.
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 19.
+(babel)             in language  on input line 18.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 19.
+(babel)             in language  on input line 18.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 19.
+(babel)             in language  on input line 18.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 19.
+(babel)             in language  on input line 18.
 [25
 
 
 ]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 23.
+(babel)             in language  on input line 22.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 23.
+(babel)             in language  on input line 22.
 
-Overfull \hbox (23.42712pt too wide) in paragraph at lines 31--32
+Overfull \hbox (23.42712pt too wide) in paragraph at lines 30--31
 []\T1/bch/m/n/10.95 (-20) Alle ent-wi-ckel-ten Ope-ra-to-ren er-ben von der Kla
 s-se \T1/lmtt/m/n/10.95 com.rapidminer.operator.Operator
  []
@@ -2420,20 +2420,20 @@ s-se \T1/lmtt/m/n/10.95 com.rapidminer.operator.Operator
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 33.
+(babel)             in language  on input line 32.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 33.
+(babel)             in language  on input line 32.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 33.
+(babel)             in language  on input line 32.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 33.
+(babel)             in language  on input line 32.
  [26]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 48.
+(babel)             in language  on input line 47.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 48.
+(babel)             in language  on input line 47.
 
-Overfull \hbox (27.4555pt too wide) in paragraph at lines 50--51
+Overfull \hbox (27.4555pt too wide) in paragraph at lines 49--50
 []\T1/bch/m/n/10.95 (-20) Der Co-de für die-sen Par-ser ist aus der Klas-se \T1
 /lmtt/m/n/10.95 edu.berkeley.nlp.PCFGLA.BerkeleyParser
  []
@@ -2442,116 +2442,116 @@ Overfull \hbox (27.4555pt too wide) in paragraph at lines 50--51
 Underfull \vbox (badness 3989) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 51.
+(babel)             in language  on input line 50.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 51.
+(babel)             in language  on input line 50.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 51.
+(babel)             in language  on input line 50.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 51.
+(babel)             in language  on input line 50.
  [27]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 57.
+(babel)             in language  on input line 56.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 57.
+(babel)             in language  on input line 56.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 63.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 63.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 63.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 63.
 
 [28]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 65.
+(babel)             in language  on input line 64.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 65.
+(babel)             in language  on input line 64.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 71.
+(babel)             in language  on input line 70.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 71.
+(babel)             in language  on input line 70.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 81.
+(babel)             in language  on input line 80.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 81.
+(babel)             in language  on input line 80.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 81.
+(babel)             in language  on input line 80.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 81.
+(babel)             in language  on input line 80.
  [29]
-Overfull \hbox (61.5725pt too wide) in paragraph at lines 88--89
+Overfull \hbox (61.5725pt too wide) in paragraph at lines 87--88
 []\T1/lmtt/m/n/10.95 private static List<ParseTreeNode> parseSentence(String s,
  boolean removeSuffix,
  []
 
-LaTeX Font Info:    Try loading font information for TS1+bch on input line 92.
+LaTeX Font Info:    Try loading font information for TS1+bch on input line 91.
 ("C:\Users\Klaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ts1bch.fd"
 File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
 )
-Overfull \hbox (9.38553pt too wide) in paragraph at lines 95--96
+Overfull \hbox (9.38553pt too wide) in paragraph at lines 94--95
 \T1/lmtt/m/n/10.95 countOnlySyntacticTags == true\T1/bch/m/n/10.95 (-20) , so w
 er-den nur die-je-ni-gen \T1/lmtt/m/n/10.95 ParseTreeNodes
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 96.
+(babel)             in language  on input line 95.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 96.
+(babel)             in language  on input line 95.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 96.
+(babel)             in language  on input line 95.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 96.
+(babel)             in language  on input line 95.
 [30]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 102.
+(babel)             in language  on input line 101.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 102.
+(babel)             in language  on input line 101.
 
-Overfull \hbox (29.13354pt too wide) in paragraph at lines 104--105
+Overfull \hbox (29.13354pt too wide) in paragraph at lines 103--104
 []\T1/bch/m/n/10.95 (-20) Dieser Ope-ra-tor dient le-dig-lich dem Zu-sam-men-fü
 h-ren von meh-re-ren Parser-Evaluationen. 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 111.
+(babel)             in language  on input line 110.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 111.
+(babel)             in language  on input line 110.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 115.
+(babel)             in language  on input line 114.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 115.
+(babel)             in language  on input line 114.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 115.
+(babel)             in language  on input line 114.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 115.
+(babel)             in language  on input line 114.
 [31]
 <gfx/berkeley-skizze.png, id=550, 380.622pt x 184.2885pt>
 File: gfx/berkeley-skizze.png Graphic file (type png)
 <use gfx/berkeley-skizze.png>
-Package pdftex.def Info: gfx/berkeley-skizze.png  used on input line 117.
+Package pdftex.def Info: gfx/berkeley-skizze.png  used on input line 116.
 (pdftex.def)             Requested size: 395.45181pt x 191.48116pt.
 <gfx/shortresults.png, id=551, 372.1905pt x 85.5195pt>
 File: gfx/shortresults.png Graphic file (type png)
 <use gfx/shortresults.png>
-Package pdftex.def Info: gfx/shortresults.png  used on input line 123.
+Package pdftex.def Info: gfx/shortresults.png  used on input line 122.
 (pdftex.def)             Requested size: 395.45181pt x 90.86421pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 128.
+(babel)             in language  on input line 127.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 128.
+(babel)             in language  on input line 127.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 135.
+(babel)             in language  on input line 134.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 135.
+(babel)             in language  on input line 134.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 135.
+(babel)             in language  on input line 134.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 135.
+(babel)             in language  on input line 134.
  [32 <./gfx/berkeley-skizze.png> <./gfx/shortresults.png>])
 (content/chapter-evaluierung.tex
 Package babel Info: Redefining ngerman shorthand "|
@@ -2850,7 +2850,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 175.
  ) 
 Here is how much of TeX's memory you used:
  24878 strings out of 493303
- 414166 string characters out of 3129784
+ 414169 string characters out of 3129784
  1026330 words of memory out of 3000000
  27461 multiletter control sequences out of 15000+200000
  142505 words of font info for 305 fonts, out of 3000000 for 9000
@@ -2881,7 +2881,7 @@ fb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt
 blic/tex-gyre/qhvr.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2.9/fonts/
 type1/public/tex-gyre/qhvri.pfb><C:/Users/Klaus/AppData/Local/Programs/MiKTeX 2
 .9/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on thesis-example.pdf (58 pages, 805281 bytes).
+Output written on thesis-example.pdf (58 pages, 805337 bytes).
 PDF statistics:
  849 PDF objects out of 1000 (max. 8388607)
  202 named destinations out of 1000 (max. 500000)
